@@ -5,8 +5,8 @@ use App\Http\Controllers\AntrianController;
 use App\Http\Controllers\ObatController;
 use App\Http\Controllers\PengambilanObatController;
 use App\Http\Controllers\MelihatJadwalController;
+use App\Http\Controllers\DoctorController;  
 use App\Http\Controllers\JadwalController;
-use App\Http\Controllers\DoctorController;
 
 
 /*
