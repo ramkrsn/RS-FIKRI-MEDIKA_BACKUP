@@ -104,7 +104,7 @@
                             </div>
                             <div class="d-flex justify-content-between">
                                 <button type="submit" class="btn btn-primary">Create</button> 
-                                <a href="{{url('/dokter')}}" class="btn btn-danger">Cancel</a>
+                                <a href="{{url('dokter/')}}" class="btn btn-danger">Cancel</a>
                             </div>
                             @csrf
                         </form>

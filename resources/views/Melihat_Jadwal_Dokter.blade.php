@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FikriMedika</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{asset('css/styleJadwal.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/styleJadwal.css') }}">
 </head>
 <body>
     <header>
@@ -19,12 +19,12 @@
             <h2>Jadwal Dokter</h2>
         </div>
     <div> <h3>Poli Penyakit Dalam</h3>
-    @foreach ($doctors as $doctor)
         <ul>
             <div class="shadow p-3 mb-5 bg-body rounded">
-
             <img src="DOKTER FOTO.jpeg" class= "fotodokter">    
-            <span class= name>{{$doctor->namadokter}}</span>
+            <span class= name_doctor>@foreach ($doctorNames as $doctorName)
+                                    <li>{{ $doctorName }}</li>
+                                    @endforeach</span>
             <div class="space">
                 Senin    Selasa     Rabu    Kamis    Jumat</div>
             <div class="space2">
@@ -33,7 +33,18 @@
             <div class="row-row-cols-auto">
             
         </ul>
-        @endforeach
+        <ul>
+            <div class="shadow p-3 mb-5 bg-body rounded">
+            <img src="DOKTER FOTO.jpeg" class= "fotodokter">    
+            <span class= name>{{$doctor->namadokter}}</span>
+            <div class="space">
+                Senin    Selasa     Rabu    Kamis    Jumat</div>
+            <div class="space2">
+                08.00-12.00 08.00-12.00 08.00-12.00 08.00-12.00 08.00-12.00</div>
+            <div class="container text-left">
+            <div class="row-row-cols-auto">
+        
+        </ul>
     </div>
     <div> <h3>Poli Anak</h3>
     <ul>
