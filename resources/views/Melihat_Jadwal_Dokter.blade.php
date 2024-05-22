@@ -22,7 +22,7 @@
         <ul>
             <div class="shadow p-3 mb-5 bg-body rounded">
             <img src="DOKTER FOTO.jpeg" class= "fotodokter">    
-            <span class= name_doctor>@foreach ($doctorNames as $doctorName)
+            <span class= name_doctor>@foreach ($doctors as $doctorName)
                                     <li>{{ $doctorName }}</li>
                                     @endforeach</span>
             <div class="space">
@@ -36,7 +36,7 @@
         <ul>
             <div class="shadow p-3 mb-5 bg-body rounded">
             <img src="DOKTER FOTO.jpeg" class= "fotodokter">    
-            <span class= name>{{$doctor->namadokter}}</span>
+            <span class= name>{{$doctors->namadokter}}</span>
             <div class="space">
                 Senin    Selasa     Rabu    Kamis    Jumat</div>
             <div class="space2">
@@ -50,7 +50,7 @@
     <ul>
             <div class="shadow p-3 mb-5 bg-body rounded">
             <img src="DOKTER FOTO.jpeg" class= "fotodokter">    
-            <span class= name>Dr. Ade Hafni, Sp.A</span>
+            <span class= name>{{$doctors->namadokter}}</span>
             <div class="space">
                 Senin    Selasa     Rabu    Kamis    Jumat</div>
             <div class="space2">
@@ -62,7 +62,7 @@
         <ul>
             <div class="shadow p-3 mb-5 bg-body rounded">
             <img src="DOKTER FOTO.jpeg" class= "fotodokter">    
-            <span class= name>Dr. Irma Laila, Sp.A</span>
+            <span class= name>{{$doctors->namadokter}}</span>
             <div class="space">
                 Senin    Selasa     Rabu    Kamis    Jumat</div>
             <div class="space2">
@@ -74,7 +74,7 @@
         <ul>
             <div class="shadow p-3 mb-5 bg-body rounded">
             <img src="DOKTER FOTO.jpeg" class= "fotodokter">    
-            <span class= name>Dr. Adam Sultansah H., Sp.A</span>
+            <span class= name>{{$doctors->namadokter}}</span>
             <div class="space">
                 Senin    Selasa     Rabu    Kamis    Jumat</div>
             <div class="space2">
@@ -88,7 +88,7 @@
     <ul>
             <div class="shadow p-3 mb-5 bg-body rounded">
             <img src="DOKTER FOTO.jpeg" class= "fotodokter">    
-            <span class= name>Dr. Dendi Suryadi K, Sp.Og</span>
+            <span class= name>{{$doctors->namadokter}}</span>
             <div class="space">
                 Senin    Selasa     Rabu    Kamis    Jumat</div>
             <div class="space2">
@@ -100,7 +100,7 @@
         <ul>
             <div class="shadow p-3 mb-5 bg-body rounded">
             <img src="DOKTER FOTO.jpeg" class= "fotodokter">    
-            <span class= name>Dr. Yandi Jayaprana, Sp.Og</span>
+            <span class= name>{{$doctors->namadokter}}</span>
             <div class="space">
                 Senin    Selasa     Rabu    Kamis    Jumat</div>
             <div class="space2">
@@ -112,7 +112,7 @@
         <ul>
             <div class="shadow p-3 mb-5 bg-body rounded">
             <img src="DOKTER FOTO.jpeg" class= "fotodokter">    
-            <span class= name>Dr. Mariana Afiati H, Sp.Og</span>
+            <span class= name>{{$doctors->namadokter}}</span>
             <div class="space">
                 Senin    Selasa     Rabu    Kamis    Jumat</div>
             <div class="space2">
