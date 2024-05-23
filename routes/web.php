@@ -7,6 +7,7 @@ use App\Http\Controllers\PengambilanObatController;
 use App\Http\Controllers\MelihatJadwalController;
 use App\Http\Controllers\DoctorController;  
 use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\KamarController;
 
 
 /*
@@ -68,4 +69,6 @@ Route::get('/pengambilan-obat', [PengambilanObatController::class, 'pengambilan_
 
 
 Route::get('/Melihat_Jadwal_Dokter',[ MelihatJadwalController::class, 'index']);
+
+Route::get('/kamar', [KamarController::class, 'index']);
 
