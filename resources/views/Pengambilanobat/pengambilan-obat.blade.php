@@ -284,6 +284,7 @@
         <section id="content" style="padding: 16px; min-height: 100%">
         @foreach ($obats as $obat)
             <ul>
+                <ui>{{$obt->id}}</ui>
                 <li>{{$obat->name}}</li>
                 <li>{{$obat->description}}</li>
                 <li>{{$obat->price}}</li>
