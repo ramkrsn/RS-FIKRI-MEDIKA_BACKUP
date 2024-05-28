@@ -8,6 +8,7 @@ use App\Http\Controllers\MelihatJadwalController;
 use App\Http\Controllers\DoctorController;  
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KamarController;
+use App\Http\Controllers\KunjunganPasienController;
 
 
 /*
@@ -72,3 +73,10 @@ Route::get('/Melihat_Jadwal_Dokter',[ MelihatJadwalController::class, 'index']);
 
 Route::get('/kamar', [KamarController::class, 'index']);
 
+Route::get('/KunjunganPasien', function () {
+    return view('KunjunganPasien');
+});
+
+Route::post('/KunjunganPasien', [KunjunganPasienController::class, 'index']);
+Route::get('/KunjunganPasienCek', [KunjunganPasienController::class, 'showScheduleForm']);
+Route::post('/KunjunganPasienCek', [KunjunganPasienController::class, 'JadwalKunjungan']);
