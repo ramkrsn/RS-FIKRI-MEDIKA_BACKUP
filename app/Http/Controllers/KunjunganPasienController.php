@@ -7,53 +7,26 @@ use App\Models\Kunjungan;
 
 class KunjunganPasienController extends Controller
 {
-    public function index(Request $request)
+
+    public function index()
     {
-        // Validate the input data
-        $request->validate([
-            'nama_depan' => 'required|string|max:255',
-            'nama_belakang' => 'required|string|max:255',
-            'nik_ktp' => 'required|integer|max:255',
-            'email' => 'required|email|max:255',
-            'phone' => 'required|integer|max:255',
-            'no_handphone' => 'required|string|max:255',
-            'patient_id' => 'required|integer|max:255',
-        ]);
-
-        // Store data in session
-        $request->session()->put('kunjungans', $request->all());
-
-        // Redirect to the schedule selection page
-        return redirect('/KunjunganPasienCek');
+        $kunjungan = Kunjungan::all();
+        return view('KunjunganPasien');
     }
-
-    public function showScheduleForm(Request $request)
+    public function Store(Request $request)
     {
-        // Ensure visitor data is available in session
-        if (!$request->session()->has('kunjungans')) {
-            return redirect('/KunjunganPasien');
-        }
+        $kunjungan= new Kunjungan;
+        $kunjungan->nama_depan = $request->nama_depan;
+        $kunjungan->nama_belakang = $request->nama_belakang;
+        $kunjungan->nik = $request->nik;
+        $kunjungan->email = $request->email;
+        $kunjungan->no_hp = $request->no_hp;
+        $kunjungan->nama_pasien = $request->nama_pasien;
+        $kunjungan->id_pasien = $request->id_pasien;
+        $kunjungan->tanggal = $request->tanggal;
+        $kunjungan->waktu= $request->waktu;
 
-        return view('KunjunganPasienCek');
-    }
-
-    public function JadwalKunjungan(Request $request)
-    {
-        // Validate the schedule input
-        $request->validate([
-            'tanggal' => 'required|tanggal',
-            'waktu' => 'required',
-        ]);
-
-        // Retrieve visitor data from session
-        $visitorData = $request->session()->get('kunjungans');
-
-        // Process the scheduling (e.g., save to database)
-
-        // Clear the session data
-        $request->session()->forget('kunjungans');
-
-        // Return a success message
-        return back()->with('status', 'Visit scheduled successfully!');
+        $kunjungan->save();
+        return redirect(url('/KunjunganPasien'));
     }
 }

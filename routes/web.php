@@ -73,10 +73,5 @@ Route::get('/Melihat_Jadwal_Dokter',[ MelihatJadwalController::class, 'index']);
 
 Route::get('/kamar', [KamarController::class, 'index']);
 
-Route::get('/KunjunganPasien', function () {
-    return view('KunjunganPasien');
-});
-
-Route::post('/KunjunganPasien', [KunjunganPasienController::class, 'index']);
-Route::get('/KunjunganPasienCek', [KunjunganPasienController::class, 'showScheduleForm']);
-Route::post('/KunjunganPasienCek', [KunjunganPasienController::class, 'JadwalKunjungan']);
+Route::get('/KunjunganPasien', [KunjunganPasienController::class, 'index']);
+Route::post('/KunjunganPasien', [KunjunganPasienController::class, 'Store'])->name('KunjunganPasien'); 
