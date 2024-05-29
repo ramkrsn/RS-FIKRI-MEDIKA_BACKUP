@@ -283,10 +283,14 @@
 
         <section id="content" style="padding: 16px; min-height: 100%">
             <div>
-                <button class=""
-                    style="background-color: #21BF73; color: white; padding: 5px 10px; border: 1px solid #21BF73; border-radius: 0.5rem; cursor: pointer">Pertemuan</button>
-                <button
-                    style="background-color: white; color: #21BF73; padding: 5px 10px; border: 1px solid white; border-radius: 0.5rem; cursor: pointer">Obat</button>
+                <a href="{{url('/queue')}}">
+                    <button
+                        style="background-color: #21BF73; color: white; padding: 5px 10px; border: 1px solid #21BF73; border-radius: 0.5rem; cursor: pointer">Pertemuan</button>
+                </a>
+                <a href="{{url('/antrian-obat')}}">
+                    <button 
+                        style="background-color: white; color: #21BF73; padding: 5px 10px; border: 1px solid white; border-radius: 0.5rem; cursor: pointer">Obat</button>
+                </a>
             </div>
             <hr style="border: 1px solid black; margin: 10px 0px">
             <div style="display: flex; flex-direction: column; gap: 0.5rem">
@@ -392,11 +396,7 @@
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Beranda</a>
                 </li>
                 <li>
-
-                    <a href="{{ route('profil') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Profil</a>
-=======
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Profil</a>
-
                 </li>
                 <li>
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Jadwal Dokter</a>
@@ -410,20 +410,16 @@
                         Obat</a>
                 </li>
                 <li>
-
                     <a href="#" class="menu-sidebar"
                         style="text-align: end; color: #21BF73">Jadwalkan Pertemuan</a>
                 </li>
                 <li>
                     <a href="{{ route('queue.index') }}" class="menu-sidebar"
                         style="text-align: end; color: #21BF73">Antrian</a>
-=======
-                    <a href="{{ route('queue.index') }}" class="menu-sidebar"
-                        style="text-align: end; color: #21BF73">Jadwalkan Pertemuan</a>
-
                 </li>
                 <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Artikel Online</a>
+                    <a href="#" class="menu-sidebar" 
+                    style="text-align: end; color: #21BF73">Artikel Online</a>
                 </li>
                 <li>
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>

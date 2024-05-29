@@ -2,66 +2,51 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Obat;
 use Illuminate\Http\Request;
+use App\Models\Obat;
+use Session;
 
 class ObatController extends Controller
 {
-    public function index()
+    public function showManageObat()
     {
-        $obat = Obat::all();
-        return view('obat.index', compact('obat'));
+        $data_obat = Obat::all();
+        return view('admin.manage-obat', compact('data_obat'));
     }
 
-    public function create()
+    public function addObat(Request $request)
     {
-        return view('obat.create');
-    }
-
-    public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'price' => 'required|numeric',
+        $request->validate([
+            'nomor_resep' => 'required',
+            'resep_obat' => 'required',
+            'nomor_antrian' => 'required',
         ]);
 
-        Obat::create($validatedData);
-
-        return redirect()->route('obat.index')->with('success', 'Obat created successfully.');
-    }
-
-    public function show($id)
-    {
-        $obat = Obat::findOrFail($id);
-        return view('obat.show', compact('obat'));
-    }
-
-    public function edit($id)
-    {
-        $obat = Obat::findOrFail($id);
-        return view('obat.edit', compact('obat'));
-    }
-
-    public function update(Request $request, $id)
-    {
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'price' => 'required|numeric',
+        $createObat = Obat::create([
+            'nomor_resep' => $request->input('nomor_resep'),
+            'resep_obat' => $request->input('resep_obat'),
+            'nomor_antrian' => $request->input('nomor_antrian'),
         ]);
 
-        Obat::whereId($id)->update($validatedData);
+        if($createObat) {
+            Session::flash('success','Data Obat Berhasil Ditambahkan');
+            return redirect('manage-obat');
+        } else { 
+            Session::flash('fail', 'Data Obat Gagal Ditambahkan');
+            return redirect('manage-obat');
+        }
 
-        return redirect()->route('obat.index')->with('success', 'Obat updated successfully.');
+        
     }
 
-    public function destroy($id)
+    public function deleteObat($id)
     {
-        $obat = Obat::findOrFail($id);
-        $obat->delete();
-
-        return redirect()->route('obat.index')->with('success', 'Obat deleted successfully.');
+        $deleteObat = Obat::find($id);
+        $deleteObat->delete();   
+        
+        if($deleteObat) {
+            Session::flash('successDeleteObat','Data berhasil dihapus');
+            return redirect('manage-obat');
+        } 
     }
 }
-
