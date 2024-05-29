@@ -9,7 +9,7 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\KunjunganPasienController;
-
+use App\Http\Controllers\FeedbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,3 +80,6 @@ Route::get('/KunjunganPasien', function () {
 Route::post('/KunjunganPasien', [KunjunganPasienController::class, 'index']);
 Route::get('/KunjunganPasienCek', [KunjunganPasienController::class, 'showScheduleForm']);
 Route::post('/KunjunganPasienCek', [KunjunganPasienController::class, 'JadwalKunjungan']);
+
+Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
+Route::post('/feedback', [FeedbackController::class, 'submit'])->name('feedback.submit');

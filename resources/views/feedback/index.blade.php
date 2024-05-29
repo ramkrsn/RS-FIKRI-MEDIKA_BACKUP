@@ -5,12 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Profil RSU Fikri Medika</title>
+    <title>Feedback</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -269,39 +272,74 @@
             </button>
         </header>
 
-        <p class="header-title poppins-bold">Profil RSU Fikri Medika</p>
+        <p class="header-title poppins-bold">Feedback</p>
 
+        
         <section id="content">
 
-            <div class="image" style="background-image: url('./assets/image 5.png')">
-                <img src="{{ asset ('assets/image 5.png') }}" style="visibility: hidden">
-            </div>
 
             <main class="main" class="h1">
                 <section>
-                    <h3>Visi</h3>
-                    <p>Menyediakan Rumah Sakit Swasta yang Menyediakan Layanan Berkualitas, Unggul dan Terpercaya Di
-                        Karawang</p>
+                <div class="container">
+        <div class="feedback-form">
+        @if(session('success'))
+        <div id="successAlert" class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    <style>
+    /* Animasi fade */
+    @keyframes fadeOut {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+
+    .alert {
+        animation: fadeOut 2s ease forwards;
+    }
+</style>
+    <script>
+    // Menghilangkan notifikasi setelah 3 detik
+    setTimeout(function() {
+        var successAlert = document.getElementById('successAlert');
+        if (successAlert) {
+            successAlert.style.display = 'none';
+        }
+    }, 3000);
+</script>
+@endif
+
+            <h2 class="text-center" style="color: #21BF73;">Feedback Form</h2>
+            <form action="{{ route('feedback.submit') }}" method="POST">
+                @csrf
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success btn-block" style="background-color: #21BF73; border-color: #21BF73;">Submit</button>
+            </form>
+        </div>
+    </div>
                 </section>
 
+                <br>
                 <section>
                     <img src="{{ asset('assets/line.png') }}">
                 </section>
 
-                <section>
-                    <h3>Misi</h3>
-                    <p>Memberikan pelayanan kesehatan dan media terbaik kepada masyarakat. Mewujudkan Kesejahteraan bagi
-                        seluruh stakeholder. Peduli kepada lingkungan, masyarakat dan bangsa.</p>
-                </section>
+                
 
-                <section>
-                    <img src="{{ asset('assets/line.png') }}">
-                </section>
-
-                <section>
-                    <h3>Motto</h3>
-                    <p>"Kesehatan Anda Prioritas Layanan Utama Kami"</p>
-                </section>
+            
             </main>
 
         </section>
@@ -330,7 +368,7 @@
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Beranda</a>
                 </li>
                 <li>
-                    <a href="{{ route('profil') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Profil</a>
+                    <a href="" class="menu-sidebar" style="text-align: end; color: #21BF73">Profil</a>
                 </li>
                 <li>
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Jadwal Dokter</a>
@@ -355,27 +393,17 @@
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Artikel Online</a>
                 </li>
                 <li>
-                <a href="{{ route('feedback') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
+                    <a href="{{ route('feedback') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
                 </li>
                 <li>
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Riwayat
                         Pembayaran</a>
-                </li>
+                </li>   
             </ul>
         </div>
     </div>
-    <script>
-        window.addEventListener("DOMContentLoaded", () => {
-            document.getElementById("openToggle").addEventListener("click", () => {
-                const sidebarEl = document.getElementsByClassName("sidebar")[0];
-                sidebarEl.classList.toggle("hidden");
-            });
-            document.getElementById("closeToggle").addEventListener("click", () => {
-                const sidebarEl = document.getElementsByClassName("sidebar")[0];
-                sidebarEl.classList.toggle("hidden");
-            });
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
 
 </html>
