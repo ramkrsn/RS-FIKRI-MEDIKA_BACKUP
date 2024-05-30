@@ -9,7 +9,7 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\ArtikelController;
-
+use App\Http\Controllers\KunjunganPasienController;
 
 
 /*
@@ -82,5 +82,5 @@ Route::patch('updatekamar/{idkamar}/update', [KamarController::class, 'updatekam
 
 Route::delete('/deletekamar/{idkamar}/delete', [KamarController::class, 'destroykamar']);
 
-
-
+Route::get('/KunjunganPasien', [KunjunganPasienController::class, 'index']);
+Route::post('/KunjunganPasien', [KunjunganPasienController::class, 'Store'])->name('KunjunganPasien'); 
