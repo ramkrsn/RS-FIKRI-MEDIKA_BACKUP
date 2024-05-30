@@ -29,4 +29,5 @@ class AntrianController extends Controller
 
         return view('antrian.index', compact('queues'));
     }
+
 }
