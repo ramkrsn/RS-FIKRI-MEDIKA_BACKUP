@@ -104,3 +104,16 @@
     margin-right: 5px;
 }
 
+.table-container {
+    background-color: #f8f9fa; /* Light grey background */
+    padding: 20px; /* Container padding */
+    border-radius: 10px; /* Rounded corners */
+    margin-top: 20px; /* Top margin */
+}
+.table th, .table td {
+    vertical-align: middle; /* Center content vertically */
+}
+.btn-space {
+    margin-right: 5px; /* Space between buttons */
+}
+
