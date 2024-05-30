@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("tipekamar");
             $table->bigInteger("harga");
             $table->integer("jumlahkamar");
-            $table->string("gedunngkamar");
+            $table->string("gedungkamar");
             $table->string("lantaikamar");
             $table->text("infokamar");
             $table->timestamps();
