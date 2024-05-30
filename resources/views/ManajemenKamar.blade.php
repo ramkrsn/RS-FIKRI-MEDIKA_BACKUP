@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Manajemen Dokter</title>
+    <title>Manajemen Kamar</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/desktop.css">
 </head>
@@ -17,12 +17,12 @@
                         <a class="nav-link black-text" href="#">Dashboard</a>
                     </li>
                     <li class="nav-item d-flex align-items-center">
-                        <img src="/img/2.png" alt="" class="mr-2" >
+                        <img src="/img/2.png" alt="" class="mr-2">
                         <a class="nav-link black-text" href="{{url('/dokter')}}">Manajemen Dokter</a>
                     </li>
                     <li class="nav-item d-flex align-items-center">
                         <img src="/img/3.png" alt="" class="mr-2">
-                        <a class="nav-link black-text" href="#">Manajemen Kamar</a>
+                        <a class="nav-link black-text" href="{{url('/kamar')}}">Manajemen Kamar</a>
                     </li>
                     <li class="nav-item d-flex align-items-center">
                         <img src="/img/4.png" alt="" class="mr-2">
@@ -42,24 +42,42 @@
                 </div>
                 <div class="container-inner">
                     <h1 class="black-title spacing">Kamar List</h1>
-                    <a class="button btn btn-green spacing" href="{{url('createkamar')}}">Add</a>
-                    @foreach ($kamars as $kamar)
-                    <div class="doctor-wrapper">
-                        <div class="details">
-                            <p class="nama-text">{{$kamar->tipekamar}}</p>
-                            <p class="poli-text">{{$kamar->harga}}</p>
-                        </div>
-                        <div class="button-wrapper">
-                            <a class="button btn btn-success" href="{{url('updatekamar/'.$kamar->idkamar.'/update')}}">Edit</a>
-                            <form action="{{url('/deletekamar/'.$kamar->idkamar.'/delete')}}" method="POST"> <!-- Adjusted form action URL -->
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger right-spacing">Delete</button>
-                            </form>
-                        </div>
+                    <a class="button btn btn-green spacing mb-3" href="{{url('createkamar')}}">Add</a>
+                    <div class="table-container">
+                        <table class="table table-striped table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Tipe Kamar</th>
+                                    <th scope="col">Harga</th>
+                                    <th scope="col">Jumlah Kamar</th>
+                                    <th scope="col">Gedung Kamar</th>
+                                    <th scope="col">Lantai Kamar</th>
+                                    <th scope="col">Info Kamar</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($kamars as $kamar)
+                                <tr>
+                                    <td>{{$kamar->tipekamar}}</td>
+                                    <td>{{$kamar->harga}}</td>
+                                    <td>{{$kamar->jumlahkamar}}</td>
+                                    <td>{{$kamar->gedungkamar}}</td>
+                                    <td>{{$kamar->lantaikamar}}</td>
+                                    <td>{{$kamar->infokamar}}</td>
+                                    <td class="d-flex">
+                                        <a class="btn btn-success btn-space" href="{{url('updatekamar/'.$kamar->idkamar.'/update')}}">Edit</a>
+                                        <form action="{{url('/deletekamar/'.$kamar->idkamar.'/delete')}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
-                    @endforeach
-                
                 </div>
             </div>
         </div>
