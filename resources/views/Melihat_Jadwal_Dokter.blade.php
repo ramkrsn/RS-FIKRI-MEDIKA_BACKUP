@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="container_header">
-            <img src="image 1.png" alt="Logo FikriMedika" class="img-fluid">
+        <img src="{{ asset('assets/logo.png') }}" alt="RSU Fikri Medika Logo">
         </div>
     </header>
     <main>
@@ -18,123 +18,34 @@
     <div class="h2">
             <h2>Jadwal Dokter</h2>
         </div>
-    <div> <h3>Poli Penyakit Dalam</h3>
         <ul>
             <div class="shadow p-3 mb-5 bg-body rounded">
-            <img src="DOKTER FOTO.jpeg" class= "fotodokter">    
-            <span class= name_doctor>@foreach ($doctors as $doctorName)
-                                    <li>{{ $doctorName }}</li>
-                                    @endforeach</span>
-            <div class="space">
-                Senin    Selasa     Rabu    Kamis    Jumat</div>
-            <div class="space2">
-                08.00-12.00 08.00-12.00 08.00-12.00 08.00-12.00 08.00-12.00</div>
+            @foreach ($doctors as $doctor)
+            <img src="{{asset('storage/'.$doctor->wajahdokter)}}" alt="" width="70" height="70" class="rounded-circle spacing top-spacing" style="object-fit: cover;">
+            <span class= name_doctor> <li>{{$doctor->namadokter }}</li></span>
+            <div class="card-header">
+                    Poli: {{ $doctor->polidokter}}
+                </div>
+            <div class="days">
+                                <div class="day">Senin</div>
+                                <div class="day">Selasa</div>
+                                <div class="day">Rabu</div>
+                                <div class="day">Kamis</div>
+                                <div class="day">Jumat</div>
+                                <div class="day">Sabtu</div>
+                            </div>
+                            <div class="times">
+                                <div class="time">{{ \Carbon\Carbon::parse($doctor->seninstart)->format('H:i') }} - {{ \Carbon\Carbon::parse($doctor->seninend)->format('H:i') }}</div>
+                                <div class="time">{{ \Carbon\Carbon::parse($doctor->selasastart)->format('H:i') }} - {{ \Carbon\Carbon::parse($doctor->selasaend)->format('H:i') }}</div>
+                                <div class="time">{{ \Carbon\Carbon::parse($doctor->rabustart)->format('H:i') }} - {{ \Carbon\Carbon::parse($doctor->rabuend)->format('H:i') }}</div>
+                                <div class="time">{{ \Carbon\Carbon::parse($doctor->kamisstart)->format('H:i') }} - {{ \Carbon\Carbon::parse($doctor->kamisend)->format('H:i') }}</div>
+                                <div class="time">{{ \Carbon\Carbon::parse($doctor->jumatstart)->format('H:i') }} - {{ \Carbon\Carbon::parse($doctor->jumatend)->format('H:i') }}</div>
+                                <div class="time">{{ \Carbon\Carbon::parse($doctor->sabtustart)->format('H:i') }} - {{ \Carbon\Carbon::parse($doctor->sabtuend)->format('H:i') }}</div>
+                            </div>
+                            @endforeach
             <div class="container text-left">
-            <div class="row-row-cols-auto">
-            
-        </ul>
-        <ul>
-            <div class="shadow p-3 mb-5 bg-body rounded">
-            <img src="DOKTER FOTO.jpeg" class= "fotodokter">    
-            <span class= name_doctor>@foreach ($doctors as $doctorName)
-                                    <li>{{ $doctorName }}</li>
-                                    @endforeach</span>
-            <div class="space">
-                Senin    Selasa     Rabu    Kamis    Jumat</div>
-            <div class="space2">
-                08.00-12.00 08.00-12.00 08.00-12.00 08.00-12.00 08.00-12.00</div>
-            <div class="container text-left">
-            <div class="row-row-cols-auto">
-        
-        </ul>
-    </div>
-    <div> <h3>Poli Anak</h3>
-    <ul>
-            <div class="shadow p-3 mb-5 bg-body rounded">
-            <img src="DOKTER FOTO.jpeg" class= "fotodokter">    
-            <span class= name_doctor>@foreach ($doctors as $doctorName)
-                                    <li>{{ $doctorName }}</li>
-                                    @endforeach</span>
-            <div class="space">
-                Senin    Selasa     Rabu    Kamis    Jumat</div>
-            <div class="space2">
-                08.00-12.00 08.00-12.00 08.00-12.00 08.00-12.00 08.00-12.00</div>
-            <div class="container text-left">
-            <div class="row-row-cols-auto">
-        
-        </ul>
-        <ul>
-            <div class="shadow p-3 mb-5 bg-body rounded">
-            <img src="DOKTER FOTO.jpeg" class= "fotodokter">    
-            <span class= name_doctor>@foreach ($doctors as $doctorName)
-                                    <li>{{ $doctorName }}</li>
-                                    @endforeach</span>
-            <div class="space">
-                Senin    Selasa     Rabu    Kamis    Jumat</div>
-            <div class="space2">
-                08.00-12.00 08.00-12.00 08.00-12.00 08.00-12.00 08.00-12.00</div>
-            <div class="container text-left">
-            <div class="row-row-cols-auto">
-        
-        </ul>
-        <ul>
-            <div class="shadow p-3 mb-5 bg-body rounded">
-            <img src="DOKTER FOTO.jpeg" class= "fotodokter">    
-            <span class= nname_doctor>@foreach ($doctors as $doctorName)
-                                    <li>{{ $doctorName }}</li>
-                                    @endforeach</span>
-            <div class="space">
-                Senin    Selasa     Rabu    Kamis    Jumat</div>
-            <div class="space2">
-                08.00-12.00 08.00-12.00 08.00-12.00 08.00-12.00 08.00-12.00</div>
-            <div class="container text-left">
-            <div class="row-row-cols-auto">
-        
-        </ul>
-    </div>
-    <div> <h3>Poli Kandungan (Obgyn)</h3>
-    <ul>
-            <div class="shadow p-3 mb-5 bg-body rounded">
-            <img src="DOKTER FOTO.jpeg" class= "fotodokter">    
-            <span class= name_doctor>@foreach ($doctors as $doctorName)
-                                    <li>{{ $doctorName }}</li>
-                                    @endforeach</span>
-            <div class="space">
-                Senin    Selasa     Rabu    Kamis    Jumat</div>
-            <div class="space2">
-                08.00-12.00 08.00-12.00 08.00-12.00 08.00-12.00 08.00-12.00</div>
-            <div class="container text-left">
-            <div class="row-row-cols-auto">
-        
-        </ul>
-        <ul>
-            <div class="shadow p-3 mb-5 bg-body rounded">
-            <img src="DOKTER FOTO.jpeg" class= "fotodokter">    
-            <span class= name_doctor>@foreach ($doctors as $doctorName)
-                                    <li>{{ $doctorName }}</li>
-                                    @endforeach</span>
-            <div class="space">
-                Senin    Selasa     Rabu    Kamis    Jumat</div>
-            <div class="space2">
-                08.00-12.00 08.00-12.00 08.00-12.00 08.00-12.00 08.00-12.00</div>
-            <div class="container text-left">
-            <div class="row-row-cols-auto">
-        
-        </ul>
-        <ul>
-            <div class="shadow p-3 mb-5 bg-body rounded">
-            <img src="DOKTER FOTO.jpeg" class= "fotodokter">    
-            <span class= name_doctor>@foreach ($doctors as $doctorName)
-                                    <li>{{ $doctorName }}</li>
-                                    @endforeach</span>
-            <div class="space">
-                Senin    Selasa     Rabu    Kamis    Jumat</div>
-            <div class="space2">
-                08.00-12.00 08.00-12.00 08.00-12.00 08.00-12.00 08.00-12.00</div>
-            <div class="container text-left">
-            <div class="row-row-cols-auto">
-        
-        </ul>
+            <div class="row-row-cols-auto">   
+        </ul>   
     </div>
 </div>
  </main>

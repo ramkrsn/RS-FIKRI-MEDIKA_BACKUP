@@ -11,6 +11,13 @@
     padding: 20px;
 }
 
+.top-section {
+    position: relative; 
+     background-color: #ffeb3b; 
+     min-height: 100px;
+     border-radius: 10px;
+    }
+
 .container {
     max-width: 720px;
     margin: 0 auto;
@@ -94,6 +101,14 @@ ul {
 
 .col{
     text-align: flex;
+}
+
+.days, .times {
+    display: flex;
+    justify-content: space-between;
+}
+.day, .time {
+    flex: 1;
 }
 
 
