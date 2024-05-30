@@ -11,7 +11,7 @@ class KunjunganPasienController extends Controller
     public function index()
     {
         $kunjungan = Kunjungan::all();
-        return view('KunjunganPasien');
+        return view('KunjunganPasien', ['kunjungan' => $kunjungan]);
     }
     public function Store(Request $request)
     {
@@ -27,6 +27,6 @@ class KunjunganPasienController extends Controller
         $kunjungan->waktu= $request->waktu;
 
         $kunjungan->save();
-        return redirect(url('/KunjunganPasien'));
+        return redirect(url('/KunjunganPasien') );
     }
 }
