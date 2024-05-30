@@ -29,4 +29,23 @@ class AntrianController extends Controller
 
         return view('antrian.index', compact('queues'));
     }
+
+    private function getAntrianAnda($jampertemuan) {
+        $timeSlots = [
+            '07:00:00' => 'P001',
+            '07:30:00' => 'P002',
+            '08:00:00' => 'P003',
+            '08:30:00' => 'P004',
+            '09:00:00' => 'P005',
+            '09:30:00' => 'P006',
+            '10:00:00' => 'P007',
+            '10:30:00' => 'P008',
+            '11:00:00' => 'P009',
+            '11:30:00' => 'P010',
+            '12:00:00' => 'P011',
+            '12:30:00' => 'P012',
+        ];
+
+        return $timeSlots[$jampertemuan] ?? 'N/A';
+    }
 }
