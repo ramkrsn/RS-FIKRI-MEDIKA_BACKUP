@@ -26,7 +26,7 @@ class AntrianController extends Controller
             $queue->dokter = $queue->namadokter;
             return $queue;
         });
-
+        
         return view('antrian.index', compact('queues'));
     }
 
