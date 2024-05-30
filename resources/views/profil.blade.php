@@ -357,10 +357,6 @@
                 <li>
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
                 </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Riwayat
-                        Pembayaran</a>
-                </li>
             </ul>
         </div>
     </div>
