@@ -84,3 +84,4 @@ Route::delete('/deletekamar/{idkamar}/delete', [KamarController::class, 'destroy
 
 Route::get('/KunjunganPasien', [KunjunganPasienController::class, 'index']);
 Route::post('/KunjunganPasien', [KunjunganPasienController::class, 'Store'])->name('KunjunganPasien'); 
+
