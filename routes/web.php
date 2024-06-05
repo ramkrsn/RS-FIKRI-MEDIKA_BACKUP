@@ -10,6 +10,7 @@ use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KunjunganPasienController;
+use App\Http\Controllers\ReservasiController;
 
 
 /*
@@ -88,4 +89,6 @@ Route::post('/KunjunganPasien', [KunjunganPasienController::class, 'Store'])->na
 Route::get('/FasilitiasRumahSakit', function () {
     return view('FasilitiasRumahSakit');
 });
+
+Route::get('/MenerimaReservasi', [ReservasiController::class, 'index']);
 
