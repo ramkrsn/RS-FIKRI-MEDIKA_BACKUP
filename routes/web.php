@@ -11,6 +11,8 @@ use App\Http\Controllers\KamarController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KunjunganPasienController;
 use App\Http\Controllers\ReservasiController;
+use App\Http\Controllers\FeedbackController;
+
 
 
 /*
@@ -92,3 +94,10 @@ Route::get('/FasilitiasRumahSakit', function () {
 
 Route::get('/MenerimaReservasi', [ReservasiController::class, 'index']);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
+Route::post('/feedback', [FeedbackController::class, 'submit'])->name('feedback.submit');
