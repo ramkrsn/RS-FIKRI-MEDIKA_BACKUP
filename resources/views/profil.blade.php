@@ -356,8 +356,24 @@
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Artikel Online</a>
                 </li>
                 <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
+                <a href="{{ route('feedback') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
                 </li>
+<<<<<<< HEAD
+=======
+                <li>
+                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Riwayat
+                        Pembayaran</a>
+                </li>
+                <li>
+               
+
+<!-- Form untuk logout -->
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+</form>
+    
+    </li>
+>>>>>>> 700c57d34432be0c020c6fd752b62dad45873037
             </ul>
         </div>
     </div>
@@ -373,6 +389,46 @@
             });
         });
     </script>
+    <style>
+    /* CSS umum untuk desktop */
+    #crisp-chatbox {
+        bottom: 20px !important; 
+        right: 20px !important;
+        left: auto !important; 
+    }
+
+    .crisp-client .cc-widget {
+        right: 20px !important; 
+        left: auto !important; 
+    }
+
+    /* Media query untuk perangkat mobile dengan mode potret */
+    @media only screen and (max-width: 600px) and (orientation: portrait) {
+        #crisp-chatbox {
+            bottom: 20px !important; 
+            left: 20px !important; 
+            right: auto !important; 
+        }
+
+        .crisp-client .cc-widget {
+            left: 20px !important; 
+            right: auto !important; 
+        }
+    }
+</style>
+
+<!-- Script Crisp -->
+<script type="text/javascript">
+    window.$crisp=[];window.CRISP_WEBSITE_ID="b64fab3e-fe60-40a4-bf30-fc3bd2f60504";
+    (function(){
+        d=document;
+        s=d.createElement("script");
+        s.src="https://client.crisp.chat/l.js";
+        s.async=1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+</script>
+
 </body>
 
 </html>

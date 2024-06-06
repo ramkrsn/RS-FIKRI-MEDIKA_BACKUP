@@ -297,7 +297,11 @@
             <input type="checkbox" class="form-check-input" id="remember" name="remember">
             <label class="form-check-label" for="remember">Remember me</label>
         </div>
+<<<<<<< HEAD
         <button type="submit" class="btn btn-success btn-block">Login</button>
+=======
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+>>>>>>> 700c57d34432be0c020c6fd752b62dad45873037
     </form>
     <p class="mt-3">Belum memiliki akun? <a href="{{ route('register') }}">Daftar</a></p>
 </div>

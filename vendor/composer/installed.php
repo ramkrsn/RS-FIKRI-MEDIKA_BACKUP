@@ -5,7 +5,11 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
+<<<<<<< HEAD
         'reference' => '5493304c4002d721842c2dfb82fd35d808e7491d',
+=======
+        'reference' => 'b9e31acc9a68deae2c81e8cc482d41426418eae3',
+>>>>>>> 700c57d34432be0c020c6fd752b62dad45873037
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -385,7 +389,11 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
+<<<<<<< HEAD
             'reference' => '5493304c4002d721842c2dfb82fd35d808e7491d',
+=======
+            'reference' => 'b9e31acc9a68deae2c81e8cc482d41426418eae3',
+>>>>>>> 700c57d34432be0c020c6fd752b62dad45873037
             'dev_requirement' => false,
         ),
         'laravel/pint' => array(
@@ -656,12 +664,21 @@
             'dev_requirement' => true,
         ),
         'phpunit/phpunit' => array(
+<<<<<<< HEAD
             'pretty_version' => '11.1.2',
             'version' => '11.1.2.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpunit/phpunit',
             'aliases' => array(),
             'reference' => '51e342a0bc987e0ea8418105d0711f08ae116de3',
+=======
+            'pretty_version' => '11.1.3',
+            'version' => '11.1.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpunit/phpunit',
+            'aliases' => array(),
+            'reference' => 'd475be032238173ca3b0a516f5cc291d174708ae',
+>>>>>>> 700c57d34432be0c020c6fd752b62dad45873037
             'dev_requirement' => true,
         ),
         'psr/clock' => array(
