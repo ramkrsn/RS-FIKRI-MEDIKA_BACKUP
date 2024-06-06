@@ -10,6 +10,7 @@ use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\KunjunganPasienController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,11 @@ Route::get('/queue/{id}', [AntrianController::class, "show"])->name('queue.show'
 
 // routes/web.php
 
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register']);
 
 Route::get('/login', function () {
     return view('login'); // login.blade.php
@@ -54,11 +60,6 @@ Route::get('/register', function () {
     return view('register'); // register.blade.php
 })->name('register');
 
-// Route untuk menampilkan form registrasi
-Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-
-// Route untuk menangani pengiriman form registrasi
-Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
 
 Route::post('/register', 'Auth\RegisterController@register')->name('register');
 Route::post('/login', 'Auth\LoginController@login')->name('login');
@@ -83,3 +84,6 @@ Route::post('/KunjunganPasienCek', [KunjunganPasienController::class, 'JadwalKun
 
 Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
 Route::post('/feedback', [FeedbackController::class, 'submit'])->name('feedback.submit');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
