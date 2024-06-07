@@ -281,27 +281,31 @@
             <main class="main" class="h1">
                 <section>
                 <div class="container">
-        <div class="login-form">
-            <h2 class="text-center">Login</h2>
-            <form>
-                <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
-                </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="remember">
-                    <label class="form-check-label" for="remember">Remember me</label>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Login</button>
-            </form>
-            <p>belu memiliki akun? <a href="{{ route('register') }}">Daftar</a></p>
+                <div class="login-form">
+    <h2 class="text-center">Login</h2>
+    <form method="POST" action="{{ route('login') }}">
+        @csrf
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
         </div>
-    </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="remember" name="remember">
+            <label class="form-check-label" for="remember">Remember me</label>
+        </div>
+<<<<<<< HEAD
+        <button type="submit" class="btn btn-success btn-block">Login</button>
+=======
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+>>>>>>> 700c57d34432be0c020c6fd752b62dad45873037
+    </form>
+    <p class="mt-3">Belum memiliki akun? <a href="{{ route('register') }}">Daftar</a></p>
+</div>
+
                 </section>
 
 
@@ -323,11 +327,11 @@
             </div>
             <div
                 style="display: flex; flex-direction: column; align-items: flex-end;  justify-content: flex-end; padding-right: 10px; row-gap: 0.5rem;">
-                <a href="#" class="w3-bar-item w3-button"
-                    style="text-align: end; width: fit-content; padding: 4px 8px; background-color: #21BF73; color: white; border-radius: 0.375rem;">Masuk</a>
-                <a href="#" class="w3-bar-item w3-button"
-                    style="text-align: end; width: fit-content; padding: 4px 8px; background-color: #21BF73; color: white; border-radius: 0.375rem;">Daftar</a>
-            </div>
+                <a href="{{ route('login') }}" class="w3-bar-item w3-button"
+   style="text-align: end; width: fit-content; padding: 4px 8px; background-color: #21BF73; color: white; border-radius: 0.375rem;">Masuk</a>
+<a href="{{ route('register') }}" class="w3-bar-item w3-button"
+   style="text-align: end; width: fit-content; padding: 4px 8px; background-color: #21BF73; color: white; border-radius: 0.375rem;">Daftar</a>
+   </div>
             <ul
                 style="margin-top: 8px;text-decoration: none; text-align: end;  list-style-type: none; display: flex; flex-direction: column; row-gap: 0.75rem; ">
                 <li>

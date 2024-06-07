@@ -9,11 +9,10 @@ class Obat extends Model
 {
     use HasFactory;
 
-    protected $table = 'obat'; // Menentukan nama tabel secara manual
-
+    protected $table = 'medicine';
     protected $fillable = [
-        'name',
-        'description',
-        'price',
+        'nomor_resep',
+        'resep_obat',
+        'nomor_antrian',
     ];
 }

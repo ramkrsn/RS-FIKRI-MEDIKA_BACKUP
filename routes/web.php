@@ -11,6 +11,10 @@ use App\Http\Controllers\KamarController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KunjunganPasienController;
 use App\Http\Controllers\FasilitasController;
+use App\Http\Controllers\ReservasiController;
+use App\Http\Controllers\FeedbackController;
+
+
 
 
 /*
@@ -47,6 +51,11 @@ Route::get('/queue/{id}', [AntrianController::class, "show"])->name('queue.show'
 
 // routes/web.php
 
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register']);
 
 Route::get('/login', function () {
     return view('login'); // login.blade.php
@@ -56,11 +65,6 @@ Route::get('/register', function () {
     return view('register'); // register.blade.php
 })->name('register');
 
-// Route untuk menampilkan form registrasi
-Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-
-// Route untuk menangani pengiriman form registrasi
-Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
 
 Route::post('/register', 'Auth\RegisterController@register')->name('register');
 Route::post('/login', 'Auth\LoginController@login')->name('login');
@@ -90,4 +94,21 @@ Route::get('/FasilitiasRumahSakit', function () {
     return view('FasilitiasRumahSakit');
 });
 
+
 Route::get('/fasilitas', [FasilitasController::class, 'index']);
+=======
+Route::get('/MenerimaReservasi', [ReservasiController::class, 'index']);
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
+Route::post('/feedback', [FeedbackController::class, 'submit'])->name('feedback.submit');
+
+//Reservasi Obat
+Route::get('/reservasi-obat', [ObatController::class, 'showReservasiObat']);
+Route::put('/reservasi-obat/{id}', [ObatController::class, 'updateStatusReservasi'])->name('reservasi-obat.update');
+Route::get('/reservasi-obat/{id}', [ObatController::class, 'deleteReservasi'])->name('reservasi-obat.delete');
+// End Reservasi Obat
