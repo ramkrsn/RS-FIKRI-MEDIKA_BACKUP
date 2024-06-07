@@ -107,3 +107,16 @@ Route::get('/reservasi-obat', [ObatController::class, 'showReservasiObat']);
 Route::put('/reservasi-obat/{id}', [ObatController::class, 'updateStatusReservasi'])->name('reservasi-obat.update');
 Route::get('/reservasi-obat/{id}', [ObatController::class, 'deleteReservasi'])->name('reservasi-obat.delete');
 // End Reservasi Obat
+
+//manage obat//
+Route::get('/', function () {
+    return view('profil');
+})->name('profil');
+Route::get('/manage-obat', [ObatController::class, 'showManageObat']);
+Route::post('/manage-obat', [ObatController::class, 'addObat'])->name('obat.add');
+Route::delete('/delete-obat/{id}', [ObatController::class, 'deleteObat'])->name('data-obat.delete');
+
+Route::get('/queue', [AntrianController::class, "index"])->name('queue.index');
+Route::get('/queue/{id}', [AntrianController::class, "show"])->name('queue.show');
+//end manage obat//
+
