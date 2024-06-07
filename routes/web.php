@@ -10,12 +10,10 @@ use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KunjunganPasienController;
-use App\Http\Controllers\FasilitasController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\FeedbackController;
-
-
-
+use App\Http\Controllers\FasilitasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,9 +92,8 @@ Route::get('/FasilitiasRumahSakit', function () {
     return view('FasilitiasRumahSakit');
 });
 
-
 Route::get('/fasilitas', [FasilitasController::class, 'index']);
-=======
+
 Route::get('/MenerimaReservasi', [ReservasiController::class, 'index']);
 
 
@@ -125,4 +122,6 @@ Route::delete('/delete-obat/{id}', [ObatController::class, 'deleteObat'])->name(
 Route::get('/queue', [AntrianController::class, "index"])->name('queue.index');
 Route::get('/queue/{id}', [AntrianController::class, "show"])->name('queue.show');
 //end manage obat//
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

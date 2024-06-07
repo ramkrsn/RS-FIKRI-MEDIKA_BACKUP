@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="5.23.1@8471a896ccea3526b26d082f4461eeea467f10a4">
+<files psalm-version="5.24.0@462c80e31c34e58cc4f750c656be3927e80e550e">
   <file src="src/Event/Dispatcher/DirectDispatcher.php">
     <UndefinedInterfaceMethod>
       <code><![CDATA[notify]]></code>
@@ -255,7 +255,6 @@
       <code><![CDATA[testDouble]]></code>
       <code><![CDATA[testDouble]]></code>
       <code><![CDATA[testDouble]]></code>
-      <code><![CDATA[testDouble]]></code>
     </MissingThrowsDocblock>
     <PossiblyNullArgument>
       <code><![CDATA[$client->__getFunctions()]]></code>
@@ -379,17 +378,19 @@
       <code><![CDATA[$groups]]></code>
     </PropertyTypeCoercion>
   </file>
-  <file src="src/Framework/TestRunner.php">
-    <ArgumentTypeCoercion>
-      <code><![CDATA[$cce->getMessage()]]></code>
-      <code><![CDATA[$test->output()]]></code>
-    </ArgumentTypeCoercion>
+  <file src="src/Framework/TestRunner/SeparateProcessTestRunner.php">
     <InvalidArgument>
       <code><![CDATA[$var]]></code>
     </InvalidArgument>
     <MissingThrowsDocblock>
       <code><![CDATA[bootstrap]]></code>
     </MissingThrowsDocblock>
+  </file>
+  <file src="src/Framework/TestRunner/TestRunner.php">
+    <ArgumentTypeCoercion>
+      <code><![CDATA[$cce->getMessage()]]></code>
+      <code><![CDATA[$test->output()]]></code>
+    </ArgumentTypeCoercion>
   </file>
   <file src="src/Framework/TestSuite.php">
     <ArgumentTypeCoercion>
@@ -534,6 +535,8 @@
      * >]]></code>
     </InvalidReturnType>
     <RiskyTruthyFalsyComparison>
+      <code><![CDATA[empty($matches['version'])]]></code>
+      <code><![CDATA[empty($requires[$matches['name']])]]></code>
       <code><![CDATA[preg_match_all('/@(?P<name>[A-Za-z_-]+)(?:[ \t]+(?P<value>.*?))?[ \t]*\r?$/m', $docBlock, $matches)]]></code>
     </RiskyTruthyFalsyComparison>
   </file>
@@ -563,6 +566,9 @@
     <ArgumentTypeCoercion>
       <code><![CDATA[!empty($matches['operator']) ? $matches['operator'] : '>=']]></code>
     </ArgumentTypeCoercion>
+    <RiskyTruthyFalsyComparison>
+      <code><![CDATA[empty($matches['operator'])]]></code>
+    </RiskyTruthyFalsyComparison>
   </file>
   <file src="src/Runner/Baseline/RelativePathCalculator.php">
     <LessSpecificReturnStatement>
@@ -657,8 +663,9 @@
       <code><![CDATA[TestIdFilterIterator]]></code>
     </MissingTemplateParam>
   </file>
-  <file src="src/Runner/PhptTestCase.php">
+  <file src="src/Runner/PHPT/PhptTestCase.php">
     <ArgumentTypeCoercion>
+      <code><![CDATA[$arguments]]></code>
       <code><![CDATA[$message]]></code>
     </ArgumentTypeCoercion>
     <InternalClass>
@@ -669,9 +676,25 @@
       <code><![CDATA[RawCodeCoverageData::fromXdebugWithoutPathCoverage([])]]></code>
       <code><![CDATA[RawCodeCoverageData::fromXdebugWithoutPathCoverage([])]]></code>
     </InternalMethod>
+    <LessSpecificReturnStatement>
+      <code><![CDATA[str_replace(
+            [
+                '__DIR__',
+                '__FILE__',
+            ],
+            [
+                "'" . dirname($this->filename) . "'",
+                "'" . $this->filename . "'",
+            ],
+            $code,
+        )]]></code>
+    </LessSpecificReturnStatement>
     <MissingThrowsDocblock>
       <code><![CDATA[bootstrap]]></code>
     </MissingThrowsDocblock>
+    <MoreSpecificReturnType>
+      <code><![CDATA[non-empty-string]]></code>
+    </MoreSpecificReturnType>
     <PossiblyInvalidArgument>
       <code><![CDATA[$sections['FILEEOF']]]></code>
     </PossiblyInvalidArgument>
@@ -710,12 +733,8 @@
     </InternalMethod>
     <MissingThrowsDocblock>
       <code><![CDATA[DefaultPrinter::from(
-                    $configuration->logfileTeamcity(),
-                )]]></code>
-      <code><![CDATA[DefaultPrinter::from(
-                    $configuration->logfileTeamcity(),
-                )]]></code>
-      <code><![CDATA[OutputFacade::printerFor($configuration->logfileJunit())]]></code>
+                        $configuration->logfileTeamcity(),
+                    )]]></code>
       <code><![CDATA[OutputFacade::printerFor($configuration->logfileJunit())]]></code>
       <code><![CDATA[atLeastVersion]]></code>
       <code><![CDATA[build]]></code>
@@ -728,6 +747,8 @@
       <code><![CDATA[logEventsVerboseText]]></code>
       <code><![CDATA[logEventsVerboseText]]></code>
       <code><![CDATA[logfileJunit]]></code>
+      <code><![CDATA[logfileJunit]]></code>
+      <code><![CDATA[logfileTeamcity]]></code>
       <code><![CDATA[logfileTeamcity]]></code>
       <code><![CDATA[process]]></code>
       <code><![CDATA[process]]></code>
@@ -951,6 +972,9 @@
     <MissingThrowsDocblock>
       <code><![CDATA[DefaultPrinter::standardError()]]></code>
       <code><![CDATA[DefaultPrinter::standardError()]]></code>
+      <code><![CDATA[DefaultPrinter::standardError()]]></code>
+      <code><![CDATA[DefaultPrinter::standardOutput()]]></code>
+      <code><![CDATA[DefaultPrinter::standardOutput()]]></code>
       <code><![CDATA[DefaultPrinter::standardOutput()]]></code>
       <code><![CDATA[DefaultPrinter::standardOutput()]]></code>
       <code><![CDATA[DefaultPrinter::standardOutput()]]></code>
@@ -995,24 +1019,13 @@
       <code><![CDATA[self::$directories]]></code>
     </InvalidPropertyAssignmentValue>
   </file>
-  <file src="src/Util/PHP/AbstractPhpProcess.php">
-    <RiskyTruthyFalsyComparison>
-      <code><![CDATA[!$file]]></code>
-      <code><![CDATA[!$file]]></code>
-      <code><![CDATA[$file]]></code>
-    </RiskyTruthyFalsyComparison>
-  </file>
-  <file src="src/Util/PHP/DefaultPhpProcess.php">
+  <file src="src/Util/PHP/DefaultJobRunner.php">
     <DocblockTypeContradiction>
-      <code><![CDATA[is_array($envVar)]]></code>
+      <code><![CDATA[is_array($value)]]></code>
     </DocblockTypeContradiction>
     <RedundantCondition>
       <code><![CDATA[$_SERVER]]></code>
     </RedundantCondition>
-    <RiskyTruthyFalsyComparison>
-      <code><![CDATA[!($this->tempFile = tempnam(sys_get_temp_dir(), 'phpunit_'))]]></code>
-      <code><![CDATA[$this->tempFile]]></code>
-    </RiskyTruthyFalsyComparison>
     <TypeDoesNotContainNull>
       <code><![CDATA[[]]]></code>
     </TypeDoesNotContainNull>
