@@ -13,4 +13,9 @@ class MelihatJadwalController extends Controller
         $doctors = Doctor::all();
         return view('Melihat_Jadwal_Dokter', ['doctors' => $doctors]);
     }
+
+    public function doctor()
+    {
+        return view("Melihat_Jadwal_Dokter");
+    }
 }
