@@ -1,20 +1,5 @@
 <?php
 
-<<<<<<< HEAD
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
-class Feedback extends Model
-{
-    use HasFactory;
-    protected $fillable = ['name', 'email', 'message'];
-
-    protected $primaryKey = "idfeedback";
-    protected $guarded="idfeedback";
-
-=======
 namespace App\Http\Controllers;
 
 use App\Models\Feedback;
@@ -47,5 +32,4 @@ class FeedbackController extends Controller
 
         return redirect()->route('feedback')->with('success', 'Thank you for your feedback!');
     }
->>>>>>> 700c57d34432be0c020c6fd752b62dad45873037
 }
