@@ -16,13 +16,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-    <!-- Styles -->
+
     <style>
         .hidden {
             transform: translateX(-16rem);
@@ -39,6 +38,32 @@
             top: 0;
         }
 
+        .menu {
+            width: 32px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: #21BF73;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 480px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
         .menu-sidebar {
             padding: 4px 6px;
             border-radius: 0.5rem;
@@ -52,32 +77,7 @@
             transition-duration: 150ms;
         }
 
-        .shadow {
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-        }
-
-        .menu {
-            width: 32px;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .wrapper {
-            width: 100%;
-            max-width: 480px;
-            margin: 0 auto;
-            /* padding: 0px 0px 20px 0px; */
-        }
-
         .header {
-            font-family: 'Poppins', sans-serif;
-            font-size: 20px;
-            font-weight: bold;
-            color: #21BF73;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -89,7 +89,7 @@
                 0px 88px 80px rgba(0, 0, 0, 0.07);
         }
 
-        .title-container {
+        .title-wrapper {
             background: white;
             padding: 5px 0px 5px 0px;
         }
@@ -256,21 +256,17 @@
             font-style: italic;
         }
 
-        a {
-            text-decoration: none;
-        }
-
     </style>
 </head>
 
-<body class="poppins-regular" style="display: flex; min-height: 100vh">
-    <div style="width: 100%; height: full; background-color: #F8FAFD; z-index: 2000"></div>
+<body style="display: flex; min-height: 100vh">
+    <div style="width: 100%; height: full; background-color: #F8FAFD;"></div>
     <div class="wrapper">
         <header class="header h1">
             <div class="logo">
                 <img src="{{ asset('assets/logo.png') }}" alt="RSU Fikri Medika Logo">
             </div>
-            <button id="openToggle" style="background-color: transparent; border: none; cursor: pointer">
+            <button id="openToggle" style="background-color: transparent; border: none; cursor:pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                     stroke="#21BF73" class="menu">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -278,22 +274,28 @@
                 </svg>
             </button>
         </header>
+        <div class="d-flex position-relative justify-content-between align-items-center pt-3">
+            <a href="{{ route('artikel.index') }}" style="width:33.3%">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="#21BF73" class="w-6 h-6" style="width: 2.5rem; height: 2.5rem">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+    </svg>
+            </a>
+            <div class="header-title poppins-bold" style="width:33.3%">Artikel</div>
+            <div style="width:33.3%"class=""></div>
+        </div>
 
-        <p class="header-title poppins-bold">PENGAMBILAN OBAT</p>
-
-        <section id="content" style="padding: 16px; min-height: 100%">
-        @foreach ($obats as $obat)
-            <ul>
-                <ui>{{$obat->id}}</ui>
-                <li>{{$obat->name}}</li>
-                <li>{{$obat->description}}</li>
-                <li>{{$obat->price}}</li>
-            </ul>
-        @endforeach
+        <section id="content" style="min-height: 80vh">
+            <div class="w-100 mt-4" style="height: 25vh;background-size: cover; backgrounf-repeat; no-repeat; background-position: center; background-image: url('{{asset('storage/artikelphoto/'. $artikel->image) }}');">
+            </div>
+            <div style="padding: 28px">
+                <h1>{{ $artikel->title }}</h1>
+                <p>{{ $artikel->description }}</p>
+            </div>
         </section>
     </div>
-    <div style="width: 100%; height: full; position: relative; background-color: #F8FAFD; z-index: 2000">
-        <div style="position: absolute;background-color: white ;width: 100%; height: 100%; z-index: 50"></div>
+    <div style="width: 100%; height: full; position: relative; background-color: #F8FAFD;">
+        <div style="position: absolute;background-color: #F8FAFD ;width: 100%; height: 100%; z-index: 50"></div>
         <div class="sidebar">
             <div style="width: 100%; display: flex; justify-content: flex-end; padding: 4px;">
                 <button id="closeToggle" style="background-color: transparent; border: none; cursor:pointer ">
@@ -304,14 +306,14 @@
                 </button>
             </div>
             <div
-                style="display: flex; 	flex-direction: column; align-items: flex-end;  justify-content: flex-end; padding-right: 10px; row-gap: 0.5rem;">
+                style="display: flex; flex-direction: column; align-items: flex-end;  justify-content: flex-end; padding-right: 10px; row-gap: 0.5rem;">
                 <a href="#" class="w3-bar-item w3-button"
                     style="text-align: end; width: fit-content; padding: 4px 8px; background-color: #21BF73; color: white; border-radius: 0.375rem;">Masuk</a>
                 <a href="#" class="w3-bar-item w3-button"
                     style="text-align: end; width: fit-content; padding: 4px 8px; background-color: #21BF73; color: white; border-radius: 0.375rem;">Daftar</a>
             </div>
             <ul
-                style=" margin-top: 8px;text-decoration: none; text-align: end;  list-style-type: none; display: flex; flex-direction: column; row-gap: 0.75rem; ">
+                style="margin-top: 8px;text-decoration: none; text-align: end;  list-style-type: none; display: flex; flex-direction: column; row-gap: 0.75rem; ">
                 <li>
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Beranda</a>
                 </li>
@@ -326,15 +328,15 @@
                         Pasien</a>
                 </li>
                 <li>
-                    <a href="{{url('/pengambilan-obat')}}" class="menu-sidebar" style="text-align: end; color: #21BF73">Pengambilan
+                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Pengambilan
                         Obat</a>
                 </li>
                 <li>
-                    <a href="{{ route('queue.index') }}" class="menu-sidebar"
+                    <a href="{{ route('artikel.index') }}" class="menu-sidebar"
                         style="text-align: end; color: #21BF73">Jadwalkan Pertemuan</a>
                 </li>
                 <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Artikel Online</a>
+                    <a href="{{ route('artikel.index') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Artikel Online</a>
                 </li>
                 <li>
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
@@ -346,8 +348,6 @@
             </ul>
         </div>
     </div>
-
-
     <script>
         window.addEventListener("DOMContentLoaded", () => {
             document.getElementById("openToggle").addEventListener("click", () => {
