@@ -10,15 +10,10 @@ use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KunjunganPasienController;
-<<<<<<< HEAD
 use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\FeedbackController;
 
 
-=======
-use App\Http\Controllers\FeedbackController;
-use App\Http\Controllers\AuthController;
->>>>>>> 700c57d34432be0c020c6fd752b62dad45873037
 
 /*
 |--------------------------------------------------------------------------
@@ -97,7 +92,6 @@ Route::get('/FasilitiasRumahSakit', function () {
     return view('FasilitiasRumahSakit');
 });
 
-<<<<<<< HEAD
 Route::get('/MenerimaReservasi', [ReservasiController::class, 'index']);
 
 
@@ -107,14 +101,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
 Route::post('/feedback', [FeedbackController::class, 'submit'])->name('feedback.submit');
-=======
-Route::post('/KunjunganPasien', [KunjunganPasienController::class, 'index']);
-Route::get('/KunjunganPasienCek', [KunjunganPasienController::class, 'showScheduleForm']);
-Route::post('/KunjunganPasienCek', [KunjunganPasienController::class, 'JadwalKunjungan']);
 
-Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
-Route::post('/feedback', [FeedbackController::class, 'submit'])->name('feedback.submit');
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
->>>>>>> 700c57d34432be0c020c6fd752b62dad45873037
+//Reservasi Obat
+Route::get('/reservasi-obat', [ObatController::class, 'showReservasiObat']);
+Route::put('/reservasi-obat/{id}', [ObatController::class, 'updateStatusReservasi'])->name('reservasi-obat.update');
+Route::get('/reservasi-obat/{id}', [ObatController::class, 'deleteReservasi'])->name('reservasi-obat.delete');
+// End Reservasi Obat
