@@ -10,8 +10,10 @@ use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KunjunganPasienController;
+use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\FeedbackController;
+
 
 
 
@@ -92,6 +94,9 @@ Route::get('/FasilitiasRumahSakit', function () {
     return view('FasilitiasRumahSakit');
 });
 
+
+Route::get('/fasilitas', [FasilitasController::class, 'index']);
+=======
 Route::get('/MenerimaReservasi', [ReservasiController::class, 'index']);
 
 
