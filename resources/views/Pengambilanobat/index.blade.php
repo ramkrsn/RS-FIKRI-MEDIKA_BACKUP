@@ -13,15 +13,11 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
     <!-- Styles -->
     <style>
         .hidden {
@@ -70,7 +66,6 @@
             width: 100%;
             max-width: 480px;
             margin: 0 auto;
-            /* padding: 0px 0px 20px 0px; */
         }
 
         .header {
@@ -137,11 +132,9 @@
         .section p {
             line-height: 1.5;
             margin-bottom: 20px;
-            /* Add spacing between sections */
             align-items: center;
         }
 
-        /* Mobile Responsive Styles */
         @media only screen and (max-width: 768px) {
             .main-content {
                 flex-direction: column;
@@ -259,7 +252,6 @@
         a {
             text-decoration: none;
         }
-
     </style>
 </head>
 
@@ -271,166 +263,60 @@
                 <img src="{{ asset('assets/logo.png') }}" alt="RSU Fikri Medika Logo">
             </div>
             <button id="openToggle" style="background-color: transparent; border: none; cursor: pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="#21BF73" class="menu">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#21BF73" class="menu">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
             </button>
         </header>
 
-        <p class="header-title poppins-bold">PENGAMBILAN OBAT</p>
+        <p class="header-title title-container">Profil RSU Fikri Medika</p>
+        <img src="{{ asset('assets/image.png') }}" class="image">
 
-        <section id="content" style="padding: 16px; min-height: 100%">
-            <div>
-             
-            </div>
-            <hr style="border: 1px solid black; margin: 10px 0px">
-            <div style="display: flex; flex-direction: column; gap: 0.5rem">
-                @foreach($queues as $data)
-                <div data-bs-toggle="modal" data-bs-target="#exampleModal{{ $data->id_antrian }}">
-                    <div class="shadow"
-                        style="background-color: white; display: flex; gap: 1rem; 	border-radius: 0.5rem;">
-                        <div
-                            style="background-image: url('{{ asset('./assets/doctor.png') }}'); width: 100px; height: 100px; background-color: white; border-radius: 0.5rem">
-                        </div>
-                        <div style="display: flex; flex-direction: column; justify-content: center; row-gap: 0.5rem;">
-                            <div style="font-size: 1.2rem; font-weight: 500">{{ $data->dokter }}</div>
-                            <div style="font-size: 0.8rem">{{ $data->tanggal }}, {{ $data->no_antrian }}</div>
-                        </div>
-                    </div>
+        <main class="main">
+            <div id="content">
+                <div class="section">
+                    <h3>Visi</h3>
+                    <p>Menjadi rumah sakit unggulan yang mengutamakan pelayanan prima dan keselamatan pasien.</p>
                 </div>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal{{ $data->id_antrian }}" tabindex="-1"
-                    aria-labelledby="exampleModal{{ $data->id_antrian }}Label" aria-hidden="true">
-                    <div class="modal-dialog" style=" max-width: 440px;">
-                        <div class="modal-content">
-                            <div class="" style="background-color: #F1F864; border-radius: 0.5rem;">
-                                <div class=""
-                                    style="display: flex; padding: 12px; align-items: center; justify-content: space-between;">
-                                    <img src="{{ asset('assets/logo.png') }}" alt="">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <p style=" color: #21BF73; font-size: 20px; font-weight: bold; text-align: center;">
-                                    Jadwalkan Pertemuan</p>
-                            </div>
-                            <div class="modal-body" style="padding: 28px">
-                                <div style="display: flex; gap: 1rem">
-                                    <div
-                                        style="background-image: url('{{ asset('./assets/doctor.png') }}'); width: 80px; height: 80px; background-color: white; border-radius: 0.5rem">
-                                    </div>
-                                    <div
-                                        style="display: flex; flex-direction: column; justify-content: center; row-gap: 0.5rem;">
-                                        <div style="font-size: 1rem; font-weight: 500">{{ $data->dokter }}</div>
-                                        <div style="font-size: 0.8rem">{{ $data->tanggal }}, {{ $data->no_antrian }}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mt-3">
-                                    <div>
-                                        <div class="fw-semibold">Pasien</div>
-                                        <div>{{ $data->nama_pasien }}</div>
-                                    </div>
-                                    <div class="mt-2">
-                                        <div class="fw-semibold">Keluhan</div>
-                                        <div>{{ $data->keluhan }}</div>
-                                    </div>
-                                    <div class="mt-2">
-                                        <div class="fw-semibold">Tanggal Pertemuan</div>
-                                        <div>{{ $data->tanggal }}</div>
-                                    </div>
-                                    <div class="mt-2">
-                                        <div class="fw-semibold">Antrian Anda</div>
-                                        <div>{{ $data->no_antrian }}</div>
-                                    </div>
-                                    <div class="mt-2">
-                                        <div class="fw-semibold">Estimasi Jadwal</div>
-                                        <div>{{ $data->est_jadwal }}</div>
-                                    </div>
-                                </div>
-                                <div class="mt-5 d-flex" style="flex-direction: column;">
-                                    <img src="{{ asset('assets/barcode.png') }}" alt="Barcode" style="width: 300px;"
-                                        class="mx-auto">
-                                    <p class="fs-6 text-center">Scan barcode ini di loket</p>
-                                </div>
-                                <p style="text-align: center">*Anda akan mendapatkan notifikasi Whatsapp konfirmasi jika
-                                    jadwal pertemuan Anda telah tiba</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="section">
+                    <h3>Misi</h3>
+                    <p>Menyediakan layanan kesehatan berkualitas tinggi dengan pendekatan profesional dan empati.</p>
                 </div>
-                @endforeach
+                <div class="section">
+                    <h3>Nilai-Nilai</h3>
+                    <p>Integritas, Inovasi, Kolaborasi, dan Keunggulan.</p>
+                </div>
+                <div class="section">
+                    <h3>Sejarah</h3>
+                    <p>RSU Fikri Medika didirikan pada tahun 2000 dengan komitmen untuk memberikan pelayanan kesehatan yang terbaik bagi masyarakat.</p>
+                </div>
             </div>
-        </section>
+        </main>
     </div>
-    <div style="width: 100%; height: full; position: relative; background-color: #F8FAFD; z-index: 2000">
-        <div style="position: absolute;background-color: white ;width: 100%; height: 100%; z-index: 50"></div>
-        <div class="sidebar">
-            <div style="width: 100%; display: flex; justify-content: flex-end; padding: 4px;">
-                <button id="closeToggle" style="background-color: transparent; border: none; cursor:pointer ">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                        stroke="#21BF73" class="menu">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            <div
-                style="display: flex; 	flex-direction: column; align-items: flex-end;  justify-content: flex-end; padding-right: 10px; row-gap: 0.5rem;">
-                <a href="#" class="w3-bar-item w3-button"
-                    style="text-align: end; width: fit-content; padding: 4px 8px; background-color: #21BF73; color: white; border-radius: 0.375rem;">Masuk</a>
-                <a href="#" class="w3-bar-item w3-button"
-                    style="text-align: end; width: fit-content; padding: 4px 8px; background-color: #21BF73; color: white; border-radius: 0.375rem;">Daftar</a>
-            </div>
-            <ul
-                style=" margin-top: 8px;text-decoration: none; text-align: end;  list-style-type: none; display: flex; flex-direction: column; row-gap: 0.75rem; ">
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Beranda</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Profil</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Jadwal Dokter</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Kunjungan
-                        Pasien</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Pengambilan
-                        Obat</a>
-                </li>
-                <li>
-                    <a href="{{ route('queue.index') }}" class="menu-sidebar"
-                        style="text-align: end; color: #21BF73">Jadwalkan Pertemuan</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Artikel Online</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Riwayat
-                        Pembayaran</a>
-                </li>
+
+    <div id="mySidebar" class="sidebar hidden shadow">
+        <nav>
+            <ul>
+                <li><a href="#visi" class="menu-sidebar">Visi</a></li>
+                <li><a href="#misi" class="menu-sidebar">Misi</a></li>
+                <li><a href="#nilai" class="menu-sidebar">Nilai-Nilai</a></li>
+                <li><a href="#sejarah" class="menu-sidebar">Sejarah</a></li>
             </ul>
-        </div>
+        </nav>
     </div>
-    <script>
-        window.addEventListener("DOMContentLoaded", () => {
-            document.getElementById("openToggle").addEventListener("click", () => {
-                const sidebarEl = document.getElementsByClassName("sidebar")[0];
-                sidebarEl.classList.toggle("hidden");
-            });
-            document.getElementById("closeToggle").addEventListener("click", () => {
-                const sidebarEl = document.getElementsByClassName("sidebar")[0];
-                sidebarEl.classList.toggle("hidden");
-            });
-        });
 
+    <div id="myOverlay" class="hidden" style="position: fixed; width: 100%; height: 100vh; z-index: 1000; top: 0; background-color: rgba(0, 0, 0, 0.7); transition: opacity 300ms ease-in"></div>
+
+    <script>
+        document.getElementById("openToggle").onclick = function () {
+            document.getElementById("mySidebar").classList.remove('hidden');
+            document.getElementById("myOverlay").classList.remove('hidden');
+        }
+
+        document.getElementById("myOverlay").onclick = function () {
+            document.getElementById("mySidebar").classList.add('hidden');
+            document.getElementById("myOverlay").classList.add('hidden');
+        }
     </script>
 </body>
 
