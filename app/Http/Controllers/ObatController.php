@@ -49,4 +49,34 @@ class ObatController extends Controller
             return redirect('manage-obat');
         } 
     }
+
+    public function showReservasiObat()
+    {
+        $data_obat = Obat::all();
+        return view('admin.reservasi-obat', compact('data_obat'));
+    }
+
+    public function updateStatusReservasi(Request $request, $id)
+    {
+        $statusReservasi = Obat::find($id);
+        $statusReservasi->status = $request->input('status');
+        $statusReservasi->save();
+
+        Session::flash('success',"Data berhasil diubah menjadi $statusReservasi->status");
+        return redirect('reservasi-obat');
+    }
+
+    public function deleteReservasi($id)
+    {
+        $deleteReservasi = Obat::find($id);        
+        $deleteReservasi->delete();
+        
+        if($deleteReservasi) {
+            Session::flash('success','Data berhasil dihapus');
+            return redirect('reservasi-obat');
+        } else {
+            Session::flash('fail','Data gagal dihapus');
+            return redirect('reservasi-obat');
+        }
+    }
 }

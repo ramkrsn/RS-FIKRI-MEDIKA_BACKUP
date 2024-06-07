@@ -19,27 +19,28 @@
             @endif
             <!-- Content -->
             <div class="col">
-                <table class="table my-4">
+                <table class="table table-bordered my-4">
                     <thead class="table-light">
                         <tr>
-                            <th>Nomor</th>
-                            <th>Nomor Resep</th>
-                            <th>Resep Obat</th>
-                            <th>Nomor Antrian</th>
-                            <th>Aksi</th>
+                            <th class="text-center align-middle">Nomor</th>
+                            <th class="text-center align-middle">Nomor Resep</th>
+                            <th class="text-center align-middle">Resep Obat</th>
+                            <th class="text-center align-middle">Nomor Antrian</th>
+                            <th class="text-center align-middle">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($data_obat as $data)
-                            <tr>
-                                <td scope="row">{{ $loop -> iteration }}</td>
-                                <td scope="row">{{ $data -> nomor_resep }}</td>
-                                <td scope="row">{{ $data -> resep_obat }}</td>
-                                <td scope="row">{{ $data -> nomor_antrian }}</td>
-                                <td scope="row">
-                                    <button class="btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDelete{{$data->id}}">Delete</button>
-                                </td>
-                            </tr>
+                    @foreach ($data_obat as $data)
+            <tr>
+                <td class="text-center align-middle">{{ $loop->iteration }}</td>
+                <td class="text-center align-middle">{{ $data->nomor_resep }}</td>
+                <td class="text-center align-middle">{{ $data->resep_obat }}</td>
+                <td class="text-center align-middle">{{ $data->nomor_antrian }}</td>
+                <td class="text-center align-middle">
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDelete{{$data->id}}">Delete</button>
+                </td>
+            </tr>
+        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -70,7 +71,7 @@
                 </div>
             </div>
             <!-- Modal Delete -->
-            @endforeach
+            
 
             <!-- Modal Store -->
             <div class="modal fade" id="modalStore" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -111,7 +112,7 @@
                 </div>
             </div>
             <!-- Modal Store -->
-
+           
             
         </div>
     </div>

@@ -14,5 +14,6 @@ class Obat extends Model
         'nomor_resep',
         'resep_obat',
         'nomor_antrian',
+        'status'
     ];
 }

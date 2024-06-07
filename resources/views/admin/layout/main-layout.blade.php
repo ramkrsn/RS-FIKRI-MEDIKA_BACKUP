@@ -137,6 +137,10 @@
         font-size: 22px;
     }
 
+    .wide-column {
+        width: 200px;
+    }
+
 </style>
 
 <body class="min-vh-100 d-flex poppins-regular">
@@ -171,11 +175,11 @@
                 <span class="m-0">Manajemen Artikel</span>
             </a>
         </div>
-        <div class="d-flex align-items-center">
-            <div style="width: 16%">
-                <img src="{{ asset('assets/reservasi.png') }}" alt="Reservasi">
-            </div>
-            Reservasi
+        <div>
+            <a class="nav-link d-flex align-items-center" href="{{url('/reservasi-obat')}}">
+                <i class="bi bi-bookmark-check-fill"></i>
+                <span class="m-0">Reservasi Obat</span>
+            </a>
         </div>
     </div>
 
