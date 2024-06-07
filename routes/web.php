@@ -10,6 +10,7 @@ use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KunjunganPasienController;
+use App\Http\Controllers\FasilitasController;
 
 
 /*
@@ -89,3 +90,4 @@ Route::get('/FasilitiasRumahSakit', function () {
     return view('FasilitiasRumahSakit');
 });
 
+Route::get('/fasilitas', [FasilitasController::class, 'index']);
