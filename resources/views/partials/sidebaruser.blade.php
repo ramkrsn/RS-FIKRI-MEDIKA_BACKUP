@@ -34,7 +34,7 @@
                 <a href="{{url('Melihat_Jadwal_Dokter')}}" class="menu-sidebar" style="text-align: end; color: #21BF73">Jadwal Dokter</a>
             </li>
             <li>
-                <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Kunjungan Pasien</a>
+                <a href="{{url('KunjunganPasien')}}" class="menu-sidebar" style="text-align: end; color: #21BF73">Kunjungan Pasien</a>
             </li>
             <li>
                 <a href="{{ url('pengambilan-obat') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Pengambilan Obat</a>
