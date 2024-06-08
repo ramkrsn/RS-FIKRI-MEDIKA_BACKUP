@@ -353,12 +353,12 @@
                                         <div>{{ $data->est_jadwal }}</div>
                                     </div>
                                 </div>
-                                <div class="mt-5 d-flex" style="flex-direction: column;">
+                                <!-- <div class="mt-5 d-flex" style="flex-direction: column;">
                                     <img src="{{ asset('assets/barcode.png') }}" alt="Barcode" style="width: 300px;"
                                         class="mx-auto">
                                     <p class="fs-6 text-center">Scan barcode ini di loket</p>
-                                </div>
-                                <p style="text-align: center">*Anda akan mendapatkan notifikasi Whatsapp konfirmasi jika
+                                </div> -->
+                                <p style="text-align: center"><br>*Anda akan mendapatkan notifikasi Whatsapp konfirmasi jika
                                     jadwal pertemuan Anda telah tiba</p>
                             </div>
                         </div>
