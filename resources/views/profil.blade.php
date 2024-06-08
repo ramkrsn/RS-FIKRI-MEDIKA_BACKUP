@@ -317,7 +317,8 @@
                     </svg>
                 </button>
             </div>
-            <div
+            @include('partials.sidebaruser')
+            <!-- <div
                 style="display: flex; flex-direction: column; align-items: flex-end;  justify-content: flex-end; padding-right: 10px; row-gap: 0.5rem;">
                 <a href="{{ route('login') }}" class="w3-bar-item w3-button"
    style="text-align: end; width: fit-content; padding: 4px 8px; background-color: #21BF73; color: white; border-radius: 0.375rem;">Masuk</a>
@@ -358,22 +359,6 @@
                 <li>
                 <a href="{{ route('feedback') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
                 </li>
-<<<<<<< HEAD
-=======
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Riwayat
-                        Pembayaran</a>
-                </li>
-                <li>
-               
-
-<!-- Form untuk logout -->
-<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-    @csrf
-</form>
-    
-    </li>
->>>>>>> 700c57d34432be0c020c6fd752b62dad45873037
             </ul>
         </div>
     </div>
@@ -388,7 +373,7 @@
                 sidebarEl.classList.toggle("hidden");
             });
         });
-    </script>
+    </script> -->
     <style>
     /* CSS umum untuk desktop */
     #crisp-chatbox {
