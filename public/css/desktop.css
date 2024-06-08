@@ -171,4 +171,12 @@
     font-size: 24px;
 }
 
+.antrian-text {
+    color: black;
+    font-size: 14px; 
+    font-family: Poppins;
+    margin: 0; 
+    margin-top: 5px; 
+}
+
 

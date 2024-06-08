@@ -14,6 +14,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\FasilitasController;
+use App\Http\Controllers\ManajemenAntrianController;
 
 /*
 |--------------------------------------------------------------------------
@@ -88,16 +89,14 @@ Route::delete('/deletekamar/{idkamar}/delete', [KamarController::class, 'destroy
 Route::get('/KunjunganPasien', [KunjunganPasienController::class, 'index']);
 Route::post('/KunjunganPasien', [KunjunganPasienController::class, 'Store'])->name('KunjunganPasien'); 
 
-Route::get('/FasilitiasRumahSakit', function () {
-    return view('FasilitiasRumahSakit');
-});
+
 
 Route::get('/fasilitas', [FasilitasController::class, 'index']);
 
 Route::get('/MenerimaReservasi', [ReservasiController::class, 'index']);
 
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -138,3 +137,6 @@ Route::delete('/admin/artikel/{id}', [ArtikelController::class, 'destroy'])->nam
 //end artikel
 
 Route::get('/antrianhome', [AntrianController::class, "home"]);
+
+Route::get('/manage-antrian', [ManajemenAntrianController::class, "index"]);
+Route::delete('/deleteantrian/{idjadwalpertemuan}/delete', [ManajemenAntrianController::class, 'destroyantrian']);
