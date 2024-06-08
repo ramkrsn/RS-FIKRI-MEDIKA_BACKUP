@@ -3,24 +3,9 @@
 <head>
     <title>Kunjungan Pasien</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/styleJadwal.css') }}">
     <style>
-        body {
-            background-color: #f7f7f7;
-        }
-        .container {
-            max-width: 600px;
-            margin-top: 50px;
-        }
-        .card-header {
-            background-color: #ffeb3b;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .image-container {
-            position: relative;
-            background-color: #ffeb3b;
-        }
+       
     </style>
 </head>
 <body>

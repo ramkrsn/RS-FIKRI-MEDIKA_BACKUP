@@ -44,7 +44,8 @@
                             </div>
                             @endforeach
             <div class="container text-left">
-            <div class="row-row-cols-auto">   
+            <div class="row-row-cols-auto"> 
+            @include('partials.sidebaruser')  
         </ul>   
     </div>
 </div>
