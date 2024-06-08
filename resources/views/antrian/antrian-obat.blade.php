@@ -283,32 +283,32 @@
 
         <section id="content" style="padding: 16px; min-height: 100%">
             <div>
-                <button class=""
-                    style="background-color: #21BF73; color: white; padding: 5px 10px; border: 1px solid #21BF73; border-radius: 0.5rem; cursor: pointer">Pertemuan</button>
-                <a href="{{ url('/antrian-obat') }}">
+                <a href="{{url('/queue')}}">
                     <button
-                        style="background-color: white; color: #21BF73; padding: 5px 10px; border: 1px solid white; border-radius: 0.5rem; cursor: pointer">Obat</button>
+                        style="background-color: white; color: #21BF73; padding: 5px 10px; border: 1px solid white; border-radius: 0.5rem; cursor: pointer">Pertemuan</button>
+                </a>
+                <a href="{{url('/antrian-obat')}}">
+                    <button 
+                    style="background-color: #21BF73; color: white; padding: 5px 10px; border: 1px solid #21BF73; border-radius: 0.5rem; cursor: pointer">Obat</button>
                 </a>
             </div>
             <hr style="border: 1px solid black; margin: 10px 0px">
             <div style="display: flex; flex-direction: column; gap: 0.5rem">
-                @foreach($queues as $data)
-                <div data-bs-toggle="modal" data-bs-target="#exampleModal{{ $data->idjadwalpertemuan }}">
-                    <div class="shadow"
-                        style="background-color: white; display: flex; gap: 1rem; 	border-radius: 0.5rem;">
-                        <div
-                            style="background-image: url('{{ asset('./assets/doctor.png') }}'); width: 100px; height: 100px; background-color: white; border-radius: 0.5rem">
-                        </div>
-                        <div style="display: flex; flex-direction: column; justify-content: center; row-gap: 0.5rem;">
-                            <div style="font-size: 1.2rem; font-weight: 500">{{ $data->dokter }}</div>
-                            <div style="font-size: 0.8rem">{{ $data->tanggal }}, {{ $data->no_antrian }}</div>
+                @foreach($data_antrian_obat as $data)
+                    <div data-bs-toggle="modal" data-bs-target="#exampleModal{{ $data->id }}">
+                        <div class="shadow" 
+                            style="background-color: white; display: flex; gap: 1rem; border-radius: 0.5rem;">
+                            <div style="background-image: url('{{ asset('./assets/obat-image.png') }}'); width: 100px; height: 100px; background-color: white; border-radius: 0.5rem"></div>
+                            <div style="display: flex; flex-direction: column; justify-content: center; row-gap: 0.5rem;">
+                                <div style="font-size: 1.2rem; font-weight: 500;">{{ $data->nama_obat }}</div>
+                                <div style="font-size: 0.8rem;">{{ $data->resep_obat }}</div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal{{ $data->idjadwalpertemuan }}" tabindex="-1"
-                    aria-labelledby="exampleModal{{ $data->idjadwalpertemuan }}" aria-hidden="true">
+                <div class="modal fade" id="exampleModal{{ $data->id }}" tabindex="-1"
+                    aria-labelledby="exampleModal{{ $data->id }}Label" aria-hidden="true">
                     <div class="modal-dialog" style=" max-width: 440px;">
                         <div class="modal-content">
                             <div class="" style="background-color: #F1F864; border-radius: 0.5rem;">
@@ -322,46 +322,23 @@
                                     Jadwalkan Pertemuan</p>
                             </div>
                             <div class="modal-body" style="padding: 28px">
-                                <div style="display: flex; gap: 1rem">
-                                    <div
-                                        style="background-image: url('{{ asset('./assets/doctor.png') }}'); width: 80px; height: 80px; background-color: white; border-radius: 0.5rem">
-                                    </div>
-                                    <div
-                                        style="display: flex; flex-direction: column; justify-content: center; row-gap: 0.5rem;">
-                                        <div style="font-size: 1rem; font-weight: 500">{{ $data->dokter }}</div>
-                                        <div style="font-size: 0.8rem">{{ $data->tanggal }}, {{ $data->no_antrian }}
-                                        </div>
+                                <div class="my-4" style="display: flex; align-items: center; justify-content: center;">
+                                    <div style="text-align: center;">
+                                        <h3 style="margin: 0;">Nama Obat</h3>
+                                        <span style="font-size: 1.8rem; font-weight: 600;">{{ $data->nama_obat }}</span>
                                     </div>
                                 </div>
-                                <div class="mt-3">
-                                    <div>
-                                        <div class="fw-semibold">Pasien</div>
-                                        <div>{{ $data->nama_pasien }}</div>
-                                    </div>
-                                    <div class="mt-2">
-                                        <div class="fw-semibold">Keluhan</div>
-                                        <div>{{ $data->keluhan }}</div>
-                                    </div>
-                                    <div class="mt-2">
-                                        <div class="fw-semibold">Tanggal Pertemuan</div>
-                                        <div>{{ $data->tanggal }}</div>
-                                    </div>
-                                    <div class="mt-2">
-                                        <div class="fw-semibold">Antrian Anda</div>
-                                        <div>{{ $data->no_antrian }}</div>
-                                    </div>
-                                    <div class="mt-2">
-                                        <div class="fw-semibold">Estimasi Jadwal</div>
-                                        <div>{{ $data->est_jadwal }}</div>
+                                <div class="my-4" style="my-5 display: flex; align-items: center; justify-content: center;">
+                                    <div style="text-align: center;">
+                                        <h3 style="margin: 0;">Nomor Antrian</h3>
+                                        <span style="font-size: 1.8rem; font-weight: 600;">{{ $data->nomor_antrian }}</span>
                                     </div>
                                 </div>
-                                <div class="mt-5 d-flex" style="flex-direction: column;">
+                                <div class="my-4 d-flex" style="flex-direction: column;">
                                     <img src="{{ asset('assets/barcode.png') }}" alt="Barcode" style="width: 300px;"
                                         class="mx-auto">
                                     <p class="fs-6 text-center">Scan barcode ini di loket</p>
                                 </div>
-                                <p style="text-align: center">*Anda akan mendapatkan notifikasi Whatsapp konfirmasi jika
-                                    jadwal pertemuan Anda telah tiba</p>
                             </div>
                         </div>
                     </div>
@@ -394,7 +371,7 @@
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Beranda</a>
                 </li>
                 <li>
-                    <a href="{{ route('profil') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Profil</a>
+                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Profil</a>
                 </li>
                 <li>
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Jadwal Dokter</a>
@@ -408,8 +385,7 @@
                         Obat</a>
                 </li>
                 <li>
-
-                    <a href="{{ route('queue.index') }}" class="menu-sidebar"
+                    <a href="#" class="menu-sidebar"
                         style="text-align: end; color: #21BF73">Jadwalkan Pertemuan</a>
                 </li>
                 <li>
@@ -421,6 +397,10 @@
                 </li>
                 <li>
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
+                </li>
+                <li>
+                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Riwayat
+                        Pembayaran</a>
                 </li>
             </ul>
         </div>
