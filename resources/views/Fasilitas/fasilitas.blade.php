@@ -148,6 +148,7 @@
 <body class="poppins-regular" style="display: flex; min-height: 100vh">
     <div style="width: 100%; height: full; background-color: #F8FAFD; z-index: 2000"></div>
     <div class="wrapper">
+    
         <header class="header h1">
             <div class="logo">
                 <img src="logo.png" alt="RSU Fikri Medika Logo">
@@ -181,6 +182,7 @@
                 </div>
             </div>
         </section>
+        
     </div>
 
     <div style="width: 100%; height: full; position: relative; background-color: #F8FAFD; z-index: 2000">
@@ -198,4 +200,4 @@
                 <a href="#" class="w3-bar-item w3-button" style="text-align: end; width: fit-content; padding: 4px 8px; background-color: #21BF73; color: white; border-radius: 0.375rem;">Daftar</a>
             </div>
             <ul style="margin-top: 8px; text-decoration: none; text-align: end; list-style-type: none; display: flex; flex-direction: column; row-gap: 0.75rem;">
-               
+            @include('partials.sidebaruser')               
