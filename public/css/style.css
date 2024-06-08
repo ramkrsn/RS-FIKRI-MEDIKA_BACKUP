@@ -2,37 +2,42 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 h1 {
-    font-family: 'Poppins', sans-serif; 
-    font-size: 20px;
+    font-size: 2rem; /* Adjusted to rem for better scaling */
     font-weight: bold;
     text-align: center;
+    margin: 0.5em 0;
 }
 
 h2 {
-    font-family: 'Poppins', sans-serif; 
-    font-size: 17px;
+    font-size: 1.5rem; /* Adjusted to rem for better scaling */
     text-align: center;
+    margin: 0.5em 0;
 }
 
 .container {
     width: 100%;
-    max-width: 480px; 
-    min-height: 95%; 
-    margin: 0 auto;     
-    padding: 20px;
+    max-width: 480px;
+    min-height: 95%;
+    margin: 0 auto;
+    padding: 10px;
     background-color: #FAF8ED;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
 .top-section {
-    position: relative; 
-    background-color: #F1F864; 
+    position: relative;
+    background-color: #F1F864;
     min-height: 100px;
     border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .x-button {
@@ -43,8 +48,8 @@ h2 {
 }
 
 .x-button img {
-    width: 15px; 
-    height: auto; 
+    width: 15px;
+    height: auto;
 }
 
 .image-container {
@@ -60,36 +65,72 @@ h2 {
     transform: translateX(-50%);
     width: 100%;
     text-align: center;
-    color:#21BF73;
+    color: #21BF73;
 }
 
 .section {
-    flex-grow: 1; 
-    background-color: #FFFFFF; 
-    border-radius: 0 0 10px 10px; 
-    padding: 20px;
+    flex-grow: 1;
+    background-color: #FFFFFF;
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
     overflow: auto;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
 .dropdown-container {
-    text-align: center; 
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-.dropdown {
+.dropdown, .input-choice, .input-choice-keluhan {
     width: 100%;
     max-width: 300px;
-    background-color:#EFEFEF;
-    border-radius:10px;
-    border:none;
-    margin: 0 auto;
-    padding: 5px;
+    background-color: #EFEFEF;
+    border-radius: 10px;
+    border: none;
+    margin: 10px auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.input-choice {
+    margin-bottom: 10px;
+}
+
+.input-choice-keluhan {
+    min-height: 100px;
+    margin-bottom: 10px;
+}
+
+.spacing {
+    margin-top: 50px;
+}
+
+.input-choice::-webkit-input-placeholder,
+.input-choice-keluhan::-webkit-input-placeholder {
+    text-align: left;
+}
+
+.input-choice:-moz-placeholder,
+.input-choice-keluhan:-moz-placeholder {
+    text-align: left;
+}
+
+.input-choice::-moz-placeholder,
+.input-choice-keluhan::-moz-placeholder {
+    text-align: left;
+}
+
+.input-choice:-ms-input-placeholder,
+.input-choice-keluhan:-ms-input-placeholder {
+    text-align: left;
 }
 
 .next-container {
     text-align: center;
-    margin-top:auto;
+    margin-top: auto;
 }
 
 .next {
@@ -99,53 +140,34 @@ h2 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.input-choice {
-    width: 100%;
+    width: 100%; /* Full width on small screens */
     max-width: 300px;
-    background-color:#EFEFEF;
-    border-radius:10px;
-    border:none;
     margin: 0 auto;
-    padding: 5px;
-    text-align: left;
-    display: block; 
-    margin-bottom: 10px; 
 }
 
-.input-choice-keluhan {
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 4vw; /* Slightly smaller than before */
+    }
+
+    h2 {
+        font-size: 3.5vw; /* Slightly smaller than before */
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .section {
+        padding: 10px;
+    }
+}
+
+.data-pasien {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    max-width: 300px;
-    min-height: 100px;
-    background-color:#EFEFEF;
-    border-radius:10px;
-    border:none;
-    margin: 0 auto;
-    padding: 5px;
-    text-align: left;
-    display: block; 
-    margin-bottom: 10px; 
+    padding: 10px 0;
 }
-
-.spacing{
-    margin-top: 50px;
-}
-
-.input-choice::-webkit-input-placeholder {
-    text-align: left;
-}
-
-.input-choice:-moz-placeholder {
-    text-align: left;
-}
-
-.input-choice::-moz-placeholder {
-    text-align: left;
-}
-
-.input-choice:-ms-input-placeholder {
-    text-align: left;
-}
-
-

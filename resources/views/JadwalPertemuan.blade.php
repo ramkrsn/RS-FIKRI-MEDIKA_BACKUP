@@ -28,26 +28,15 @@
             </div>
 
             <div class="data-pasien">
-                <div>
-                    <h2 class="spacing">Data Pasien</h2>
-                    <input type="text" name="namadepan" placeholder="Nama Depan" class="input-choice" required>
-                </div>
-                <div>
-                    <input type="text" name="namabelakang" placeholder="Nama Belakang" class="input-choice" required>
-                </div>
-                <div>
-                    <input type="text" name="NIK" placeholder="NIK" class="input-choice" required>
-                </div>
-                <div>
-                    <input name="keluhanpasien" placeholder="Keluhan Pasien" class="input-choice-keluhan" required></input>
-                </div>
-                <div>
-                    <input type="date" name="tanggalpertemuan" placeholder="Tanggal pertemuan" class="input-choice" required>
-                </div>
-                <div>
-                    <input type="time" name="jampertemuan" placeholder="Jam pertemuan" class="input-choice" required>
-                </div>
+                <h2 class="spacing">Data Pasien</h2>
+                <input type="text" name="namadepan" placeholder="Nama Depan" class="input-choice" required>
+                <input type="text" name="namabelakang" placeholder="Nama Belakang" class="input-choice" required>
+                <input type="text" name="NIK" placeholder="NIK" class="input-choice" required>
+                <textarea name="keluhanpasien" placeholder="Keluhan Pasien" class="input-choice-keluhan" required></textarea>
+                <input type="date" name="tanggalpertemuan" placeholder="Tanggal pertemuan" class="input-choice" required>
+                <input type="time" name="jampertemuan" placeholder="Jam pertemuan" class="input-choice" required>
             </div>
+
             <div class="dropdown-container">
                 <div class="nama-dokter-container">
                     <h2 class="spacing">Pilih Dokter</h2>
