@@ -4,7 +4,7 @@
     padding: 5px 10px; 
     color: white;
     margin-right: 10px; 
-    width: 100px;
+    width: auto;
 }
 
 .img-logo {
@@ -35,13 +35,13 @@
 
 .title-text {
     font-weight: bold;
-    font-size: 36px; 
+    font-size: 2.25rem; 
     font-family: Poppins;
 }
 
 .black-title {
     font-weight: bold;
-    font-size: 36px; 
+    font-size: 2.25rem; 
     font-family: Poppins;
     color: black;
 }
@@ -49,8 +49,8 @@
 .container-inner {
     background-color: white;
     border-radius: 10px;
-    margin: 20px;
-    width: 100%; 
+    margin: 20px auto;
+    width: 95%; 
     max-width: 1350px; 
     min-height: 600px;
     height: auto;
@@ -130,21 +130,14 @@
 }
 
 @media (max-width: 1200px) {
-    .container-inner {
-        width: 95%; 
-        margin: 10px auto; 
-    }
     .title-text, .black-title {
-        font-size: 30px; 
+        font-size: 2rem; 
     }
 }
 
 @media (max-width: 992px) {
-    .container-inner {
-        width: 90%;
-    }
     .title-text, .black-title {
-        font-size: 28px; 
+        font-size: 1.75rem; 
     }
     .btn-green {
         width: auto; 
@@ -153,11 +146,8 @@
 }
 
 @media (max-width: 768px) {
-    .container-inner {
-        width: 85%; 
-    }
     .title-text, .black-title {
-        font-size: 24px; 
+        font-size: 1.5rem; 
     }
     .btn-green {
         width: auto; 
@@ -166,12 +156,8 @@
 }
 
 @media (max-width: 576px) {
-    .container-inner {
-        width: 100%; 
-        margin: 5px auto; 
-    }
     .title-text, .black-title {
-        font-size: 20px; 
+        font-size: 1.25rem;
     }
     .btn-green {
         width: auto;
