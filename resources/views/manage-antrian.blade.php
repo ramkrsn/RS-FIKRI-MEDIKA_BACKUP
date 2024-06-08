@@ -10,6 +10,20 @@
         .details {
             padding: 10px; /* Add padding to the details container */
         }
+        .queue-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            background-color: #fff;
+            color: #000;
+        }
+        .button-wrapper {
+            display: flex;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
@@ -40,7 +54,7 @@
                                 <p class="antrian-text"><strong>Keluhan:</strong> {{ $jadwal->keluhanpasien }}</p>
                             </div>
                             <div class="button-wrapper">
-                                <form action="{{ url('/deleteantrian/{idjadwalpertemuan}/delete')}}" method="POST">
+                                <form action="{{ url('/deleteantrian/'.$jadwal->idjadwalpertemuan.'/delete') }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger right-spacing">Delete</button>

@@ -54,10 +54,4 @@ class AntrianController extends Controller
         return $queueMap[$jampertemuan] ?? 'N/A';
     }
 
-    public function showManageAntrian()
-    {
-        $data_obat = Obat::all();
-        return view('admin.manage-antrian', compact('data_obat'));
-    }
-
 }

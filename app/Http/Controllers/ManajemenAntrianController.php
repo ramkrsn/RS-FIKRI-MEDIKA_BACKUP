@@ -1,20 +1,27 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\JadwalPertemuan;
-
-
 use Illuminate\Http\Request;
 
 class ManajemenAntrianController extends Controller
 {
-    //
     public function index()
     {
-        $jadwalpertemuan = JadwalPertemuan::all(); // Fetch the data from your model
-        return view('manage-antrian', compact('jadwalpertemuan')); // Pass the variable to the view
+        $jadwalpertemuan = JadwalPertemuan::all();
+        return view('manage-antrian', compact('jadwalpertemuan')); 
+        $jadwalpertemuan->no_antrian = $this->generateQueueNumber($jadwalpertemuan->jampertemuan);
     }
-    
+
+    public function destroyantrian($idjadwalpertemuan)
+    {
+        $jadwalpertemuan = JadwalPertemuan::find($idjadwalpertemuan);
+        if ($jadwalpertemuan) {
+            $jadwalpertemuan->delete();
+        }
+        return redirect(url('/manage-antrian'));
+    }
 
     private function generateQueueNumber($jampertemuan)
     {
@@ -38,12 +45,4 @@ class ManajemenAntrianController extends Controller
         \Log::info('jampertemuan: ' . $jampertemuan);
         return $queueMap[$jampertemuan] ?? 'N/A';
     }
-
-    public function destroyantrina(Request $request)
-    {
-        $jadwalpertemuan = JadwalPertemuan::find($request->idjadwalpertemuan);
-        $jadwalpertemuan->delete();
-        return redirect(url('/manage-antrian'));
-    }
-
-};
+}
