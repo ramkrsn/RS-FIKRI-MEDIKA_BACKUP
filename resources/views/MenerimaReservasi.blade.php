@@ -37,26 +37,30 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>No Antrian</th>
-                            <th>Nama Pasien</th>
+                            <th>Nama Depan</th>
+                            <th>Nama Belakang</th>
+                            <th>NIK</th>
                             <th>Keluhan</th>
-                            <th>Dokter</th>
-                            <th>Poli</th>
-                            <th>Tanggal</th>
-                            <th>Jadwal</th>
+                            <th>Tanggal Pertemuan</th>
+                            <th>Jam Pertemuan</th>
+                            <th>Poli Dokter</th>
+                            <th>Nama Dokter</th>
+                            <th>Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($queues as $antrian)
+                        @foreach($doctors as $jadwal)
                             <tr>
-                                <td>{{ $antrian->id_antrian }}</td>
-                                <td>{{ $antrian->no_antrian }}</td>
-                                <td>{{ $antrian->nama_pasien }}</td>
-                                <td>{{ $antrian->keluhan }}</td>
-                                <td>{{ $antrian->dokter }}</td>
-                                <td>{{ $antrian->poli }}</td>
-                                <td>{{ $antrian->tanggal }}</td>
-                                <td>{{ $antrian->est_jadwal }}</td>
+                                <td>{{ $jadwal->idjadwalpertemuan }}</td>
+                                <td>{{ $jadwal->namadepan }}</td>
+                                <td>{{ $jadwal->namabelakang }}</td>
+                                <td>{{ $jadwal->NIK }}</td>
+                                <td>{{ $jadwal->keluhanpasien }}</td>
+                                <td>{{ $jadwal->tanggalpertemuan }}</td>
+                                <td>{{ $jadwal->jampertemuan }}</td>
+                                <td>{{ $jadwal->polidokter }}</td>
+                                <td>{{ $jadwal->namadokter }}</td>
+                                <td>{{ $jadwal->opsi }}</td>
                             </tr>
                         @endforeach
                     </tbody>
