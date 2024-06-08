@@ -32,7 +32,7 @@
                     </li>
                     <li class="nav-item d-flex align-items-center">
                         <i class="bi bi-people-fill"></i>
-                        <a class="nav-link black-text" href="#">Menerima Reservasi</a>
+                        <a class="nav-link black-text" href="{{url('/MenerimaReservasi')}}">Menerima Reservasi</a>
                     </li>
                     <li class="nav-item d-flex align-items-center">
                         <img src="/img/2.png" alt="" class="mr-2">

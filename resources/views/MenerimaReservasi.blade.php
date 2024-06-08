@@ -9,19 +9,7 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
-            <div class="col-2 sidebar min-vh-100">
-                <img src="/img/Logo.png" alt="" class="img-logo">
-                <ul class="nav flex-column">
-                    <li class="nav-item d-flex align-items-center">
-                        <img src="/img/1.png" alt="" class="mr-2">
-                        <a class="nav-link black-text" href="#">Dashboard</a>
-                    </li>
-                    <li class="nav-item d-flex align-items-center">
-                        <img src="/img/2.png" alt="" class="mr-2">
-                        <a class="nav-link black-text" href="#">Reservasi Dokter</a>
-                    </li>
-                </ul>
-            </div>
+            @include('partials.sidebar')
 
             <!-- main code -->
             <div class="col-10 green-background text-white">
