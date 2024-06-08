@@ -557,6 +557,7 @@ class ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DoctorController' => __DIR__ . '/../..' . '/app/Http/Controllers/DoctorController.php',
         'App\\Http\\Controllers\\FasilitasController' => __DIR__ . '/../..' . '/app/Http/Controllers/FasilitasController.php',
+        'App\\Http\\Controllers\\FeedbackController' => __DIR__ . '/../..' . '/app/Http/Controllers/FeedbackController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\JadwalController' => __DIR__ . '/../..' . '/app/Http/Controllers/JadwalController.php',
         'App\\Http\\Controllers\\KamarController' => __DIR__ . '/../..' . '/app/Http/Controllers/KamarController.php',
