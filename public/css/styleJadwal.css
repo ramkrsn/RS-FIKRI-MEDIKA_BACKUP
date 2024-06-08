@@ -2,6 +2,7 @@
     font-family: sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f7f7f7;
 }
 
 .container_header {
@@ -110,7 +111,17 @@ ul {
 .day, .time {
     flex: 1;
 }
+.card-header {
+    background-color: #ffeb3b;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
 
+.image-container {
+    position: relative;
+    background-color: #ffeb3b;
+}
 
 
 
