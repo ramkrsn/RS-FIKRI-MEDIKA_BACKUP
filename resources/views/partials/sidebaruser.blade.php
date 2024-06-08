@@ -37,7 +37,7 @@
                 <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Kunjungan Pasien</a>
             </li>
             <li>
-                <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Pengambilan Obat</a>
+                <a href="{{ url('pengambilan-obat') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Pengambilan Obat</a>
             </li>
             <li>
                 <a href="{{ route('jadwalpertemuan') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Jadwalkan Pertemuan</a>
@@ -49,7 +49,7 @@
                 <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Artikel Online</a>
             </li>
             <li>
-                <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Fasilitas</a>
+                <a href="{{ url('fasilitas') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Fasilitas</a>
             </li>
             <li>
                 <a href="{{ route('feedback') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
