@@ -73,7 +73,7 @@ Route::resource('obat', ObatController::class);
 Route::get('/pengambilan-obat', [PengambilanObatController::class, 'pengambilan_obat']);
 
 
-Route::get('/Melihat_Jadwal_Dokter',[ MelihatJadwalController::class, 'index']);
+Route::get('/Melihat_Jadwal_Dokter', [ MelihatJadwalController::class, 'index']);
 
 Route::get('/kamar', [KamarController::class, 'index']);
 
