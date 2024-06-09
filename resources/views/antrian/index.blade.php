@@ -340,10 +340,10 @@
                                         <div class="fw-semibold">Pasien</div>
                                         <div>{{ $data->nama_pasien }}</div>
                                     </div>
-                                    <div class="mt-2">
+                                    <!-- <div class="mt-2">
                                         <div class="fw-semibold">Keluhan</div>
                                         <div>{{ $data->keluhan }}</div>
-                                    </div>
+                                    </div> -->
                                     <div class="mt-2">
                                         <div class="fw-semibold">Tanggal Pertemuan</div>
                                         <div>{{ $data->tanggal }}</div>
