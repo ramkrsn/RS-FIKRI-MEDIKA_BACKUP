@@ -32,6 +32,7 @@ class AntrianController extends Controller
                 'est_jadwal' => $jadwal->jampertemuan,
                 'dokter' => $jadwal->namadokter,
                 'poli' => $jadwal->polidokter,
+
             ]
         );
     }
