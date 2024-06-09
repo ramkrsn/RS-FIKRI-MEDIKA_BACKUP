@@ -19,7 +19,6 @@ use App\Http\Controllers\MenerimaKunjunganController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\AdminFeedbackController;
 use App\Http\Controllers\InformasiObatController;
-use App\Http\Controllers\DetailResepController;
 
 
 /*
@@ -79,8 +78,6 @@ Route::resource('obat', ObatController::class);
 Route::resource('informasiobat', InformasiObatController::class);
     
 Route::get('/pengambilan-obat', [PengambilanObatController::class, 'pengambilan_obat']);
-Route::get('/detairesep', [DetailResepController::class, 'detailresep']);
-Route::get('/resep', [DetailResepController::class, 'detailresep']);
 
 
 Route::get('/Melihat_Jadwal_Dokter', [ MelihatJadwalController::class, 'index']);
@@ -156,7 +153,6 @@ Route::delete('/deleteantrian/{idjadwalpertemuan}/delete', [ManajemenAntrianCont
 
 route::get('/menerimakunjungan', [MenerimaKunjunganController::class, "index"]);
 Route::delete('/deletekunjungan/{idkunjungan}', [MenerimaKunjunganController::class, 'deletekunjungan']);
-
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
 Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
@@ -169,8 +165,4 @@ Route::get('/informasiobat/{informasiobat}', [InformasiObatController::class, 's
 Route::get('/informasiobat/{informasiobat}/edit', [InformasiObatController::class, 'edit'])->name('informasiobat.edit');
 Route::put('/informasiobat/{informasiobat}', [InformasiObatController::class, 'update'])->name('informasiobat.update');
 Route::delete('/informasiobat/{informasiobat}', [InformasiObatController::class, 'destroy'])->name('informasiobat.destroy');
-
-Route::get('/article/{id}', [InformasiObatController::class, 'showArticle'])->name('article.show');
-Route::get('/article', [InformasiObatController::class, 'index'])->name('article.index');
-
 
