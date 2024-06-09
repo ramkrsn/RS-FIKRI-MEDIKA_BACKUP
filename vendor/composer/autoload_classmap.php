@@ -27,6 +27,7 @@ return array(
     'App\\Http\\Controllers\\MelihatJadwalController' => $baseDir . '/app/Http/Controllers/MelihatJadwalController.php',
     'App\\Http\\Controllers\\ObatController' => $baseDir . '/app/Http/Controllers/ObatController.php',
     'App\\Http\\Controllers\\PengambilanObatController' => $baseDir . '/app/Http/Controllers/PengambilanObatController.php',
+    'App\\Http\\Controllers\\ProfileController' => $baseDir . '/app/Http/Controllers/ProfileController.php',
     'App\\Http\\Controllers\\RegisterController' => $baseDir . '/app/Http/Controllers/RegisterController.php',
     'App\\Http\\Controllers\\ReservasiController' => $baseDir . '/app/Http/Controllers/ReservasiController.php',
     'App\\Models\\Antrian' => $baseDir . '/app/Models/Antrian.php',

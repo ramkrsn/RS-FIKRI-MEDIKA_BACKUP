@@ -577,6 +577,7 @@ class ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d
         'App\\Http\\Controllers\\MelihatJadwalController' => __DIR__ . '/../..' . '/app/Http/Controllers/MelihatJadwalController.php',
         'App\\Http\\Controllers\\ObatController' => __DIR__ . '/../..' . '/app/Http/Controllers/ObatController.php',
         'App\\Http\\Controllers\\PengambilanObatController' => __DIR__ . '/../..' . '/app/Http/Controllers/PengambilanObatController.php',
+        'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegisterController.php',
         'App\\Http\\Controllers\\ReservasiController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReservasiController.php',
         'App\\Models\\Antrian' => __DIR__ . '/../..' . '/app/Models/Antrian.php',
