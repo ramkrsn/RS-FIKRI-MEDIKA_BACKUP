@@ -67,8 +67,10 @@
                                 <td>{{ $feedback->message }}</td>
                                 <td>{{ $feedback->created_at }}</td>
                             </tr>
+                            
                             @endforeach
                         </tbody>
+
                     </table>
                 </div>
             </div>
