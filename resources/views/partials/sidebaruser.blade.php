@@ -31,19 +31,21 @@
                 <a href="{{ route('profil') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Profil</a>
             </li>
             <li>
-                <a href="{{url('Melihat_Jadwal_Dokter')}}" class="menu-sidebar" style="text-align: end; color: #21BF73">Jadwal Dokter</a>
+                <a href="{{ auth()->check() ? url('Melihat_Jadwal_Dokter') : '#' }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Jadwal Dokter</a>
             </li>
             <li>
-                <a href="{{url('KunjunganPasien')}}" class="menu-sidebar" style="text-align: end; color: #21BF73">Kunjungan Pasien</a>
+                <a href="{{ auth()->check() ? url('KunjunganPasien') : '#' }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Kunjungan Pasien</a>
             </li>
             <li>
-                <a href="{{ url('pengambilan-obat') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Pengambilan Obat</a>
+                <a href="{{ auth()->check() ? url('pengambilan-obat') : '#' }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Pengambilan Obat</a>
             </li>
             <li>
-                <a href="{{ route('jadwalpertemuan') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Jadwalkan Pertemuan</a>
+                <a href="{{ auth()->check() ? route('jadwalpertemuan') : '#' }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Jadwalkan Pertemuan</a>
             </li>
             <li>
-                <a href="{{ route('queue.index') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Antrian</a>
+                <a href="{{ auth()->check() ? route('queue.index') : '#' }}" class="menu-sidebar" style="text-align: end; color: #21BF73">
+                    Antrian
+                </a>
             </li>
             <li>
                 <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Artikel Online</a>
