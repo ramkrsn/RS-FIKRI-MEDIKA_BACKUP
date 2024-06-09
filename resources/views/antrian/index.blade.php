@@ -293,6 +293,7 @@
             </div>
             <hr style="border: 1px solid black; margin: 10px 0px">
             <div style="display: flex; flex-direction: column; gap: 0.5rem">
+                @auth
                 @foreach($queues as $data)
                 <div data-bs-toggle="modal" data-bs-target="#exampleModal{{ $data->idjadwalpertemuan }}">
                     <div class="shadow"
@@ -368,6 +369,7 @@
                     </div>
                 </div>
                 @endforeach
+                @endauth
             </div>
         </section>
     </div>
