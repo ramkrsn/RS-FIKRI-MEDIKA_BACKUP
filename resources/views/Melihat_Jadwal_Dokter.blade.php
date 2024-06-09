@@ -380,10 +380,10 @@
     font-size: 30px;
 }
 
-ul {
+.ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 40px;
 }
     </style>
 </head>
@@ -403,7 +403,7 @@ ul {
         </header>
         <p class="header-title poppins-bold">Jadwal Dokter</p>
         
-        <ul>
+        <ul class="ul">
             @foreach ($doctors as $doctor)
             <img src="{{asset('storage/'.$doctor->wajahdokter)}}" alt="" width="100" height="100" class="rounded-circle spacing top-spacing" style="object-fit: cover;">
             <span class= name_doctor> <li>{{$doctor->namadokter }}</li></span>
