@@ -44,7 +44,7 @@
                 </div>
                 <div class="container-inner">
                     <h2 class="black-title spacing">Informasi Obat</h2>
-                    <a href="{{ route('informasiobat.create') }}" class="btn btn-success mb-3">Tambah Obat</a>
+                    <a href="{{ route('informasiobat.create') }}" class="btn btn-success mb-3 ml-2">Tambah Obat</a>
 
                     <table class="table table-bordered">
                         <thead>

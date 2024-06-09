@@ -16,15 +16,15 @@ class UpdateInformasiObatTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->visit('/informasiobat')
                     ->clickLink('Edit')
-                    ->assertPathIs('/informasiobat/3/edit')
-                    ->type('name', 'Paracetamol')
-                    ->type('description', 'Obat sakit kepala')
-                    ->type('price', '5000')
+                    ->assertPathIs('/informasiobat/5/edit')
+                    ->type('name', 'Paracetamoll')
+                    ->type('description', 'Obat sakit kepalaa')
+                    ->type('price', '50000')
                     ->press('Update')
                     ->assertPathIs('/informasiobat')
-                    ->assertSee('Paracetamol')
-                    ->assertSee('Obat sakit kepala')
-                    ->assertSee('5000');
+                    ->assertSee('Paracetamoll')
+                    ->assertSee('Obat sakit kepalaa')
+                    ->assertSee('50000');
         });
     }
 }
