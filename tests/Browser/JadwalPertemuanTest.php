@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class AntrianJadwalTestCase extends DuskTestCase
+class JadwalPertemuanTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
@@ -18,8 +18,8 @@ class AntrianJadwalTestCase extends DuskTestCase
                     ->press('#openToggle')
                     ->clickLink('Masuk')
                     ->assertPathIs('/login')
-                    ->type('email', 'jj@gmail.com')
-                    ->type('password', '12345678')
+                    ->type('email', 'user@gmail.com')
+                    ->type('password', '11111111')
                     ->press('Login')
                     ->assertPathIs('/home')
                     ->press('#openToggle')
@@ -35,7 +35,9 @@ class AntrianJadwalTestCase extends DuskTestCase
                     ->select('polidokter','jantung')
                     ->press('Jadwalkan Pertemuan')
                     ->assertPathIs('/jadwalpertemuan')
-                    ;
+                     ;
+
+
         });
     }
 }
