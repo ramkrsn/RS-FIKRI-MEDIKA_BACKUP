@@ -46,6 +46,10 @@
                         <img src="/img/4.png" alt="" class="mr-2">
                         <a class="nav-link black-text" href="{{ route('admin.feedback.index') }}">Feedback</a>
                         </li>
+                        <li class="nav-item d-flex align-items-center">
+                        <i class="bi bi-capsule"></i>
+                        <a class="nav-link black-text" href="{{ route('informasiobat.index') }}">Informasi Obat</a>
+                        </li>
                 </ul>
             </div>
 
