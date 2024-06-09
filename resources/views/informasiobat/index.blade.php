@@ -35,6 +35,7 @@
             <div class="col-10 green-background text-white">
                 <div class="d-flex justify-content-between align-items-center">
                     <h1 class="title-text">Informasi Obat</h1>
+                    
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Admin
@@ -43,6 +44,8 @@
                 </div>
                 <div class="container-inner">
                     <h2 class="black-title spacing">Informasi Obat</h2>
+                    <a href="{{ route('informasiobat.create') }}" class="btn btn-success mb-3">Tambah Obat</a>
+
                     <table class="table table-bordered">
                         <thead>
                             <tr>
