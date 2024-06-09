@@ -1,1 +1,11 @@
 {"version":1,"defects":{"Tests\\Browser\\ProfilRSTestCase::testExample":8,"Tests\\Browser\\ReadInformasiObatTest::testExample":7,"Tests\\Browser\\ReadInformasiObatTest::testInformasiObatPageDisplaysCorrectContent":7},"times":{"Tests\\Browser\\ProfilTestCase::testExample":3.053,"Tests\\Browser\\ProfilRSTestCase::testExample":68.669,"Tests\\Browser\\ReadInformasiObatTest::testExample":24.794,"Tests\\Browser\\ReadInformasiObatTest::testInformasiObatPageDisplaysCorrectContent":1.88}}
+
+
+{"version":1,"defects":{"Tests\\Browser\\FasilitasTest::testExample":8},"times":{"Tests\\Browser\\FasilitasTest::testExample":3.466}}
+
+
+{"version":1,"defects":{"Tests\\Browser\\ExampleTest::testBasicExample":8,"Tests\\Browser\\MelihatJadwal::testExample":8},"times":{"Tests\\Browser\\ExampleTest::testBasicExample":5.738,"Tests\\Browser\\MelihatJadwal::testExample":4.219}}
+
+{"version":1,"defects":{"Tests\\Browser\\ProfilRSTestCase::testExample":8},"times":{"Tests\\Browser\\ProfilTestCase::testExample":3.053,"Tests\\Browser\\ProfilRSTestCase::testExample":68.669}}
+
+
