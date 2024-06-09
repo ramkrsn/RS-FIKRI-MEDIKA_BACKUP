@@ -67,7 +67,7 @@ Route::get('/register', function () {
 
 Route::post('/register', 'Auth\RegisterController@register')->name('register');
 Route::post('/login', 'Auth\LoginController@login')->name('login');
-Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+Route::post('/logout', 'AuthLoginController@logout')->name('logout');
 
 Route::resource('obat', ObatController::class);
 
@@ -96,7 +96,7 @@ Route::get('/fasilitas', [FasilitasController::class, 'index']);
 Route::get('/MenerimaReservasi', [ReservasiController::class, 'index']);
 
 
-// Auth::routes();
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
