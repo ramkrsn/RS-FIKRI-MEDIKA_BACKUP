@@ -47,7 +47,7 @@
                 </div>
                 <div class="d-grid gap-2">
                     <button type="submit" class="btn btn-success" style="background-color: #21BF73; border-color: #21BF73;">Submit</button>
-                    <a href="{{ route('profile.edit') }}" class="btn btn-danger">Cancel</a>
+                    <a href="{{ route('home') }}" class="btn btn-danger">Cancel</a>
                 </div>
             </form>
         </div>
