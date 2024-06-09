@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+{"version":1,"defects":{"Tests\\Browser\\AntrianJadwalTestCase::testExample":7},"times":{"Tests\\Browser\\AntrianJadwalTestCase::testExample":5.592}}
+=======
 
 {"version":1,"defects":{"Tests\\Browser\\CreateKamarTest::testExample":7,"Tests\\Browser\\EditKamarTest::testExample":7},"times":{"Tests\\Browser\\JadwalPertemuanTest::testExample":3.081,"Tests\\Browser\\CreateKamarTest::testExample":1.997,"Tests\\Browser\\EditKamarTest::testExample":1.902,"Tests\\Browser\\DeleteKamarTest::testExample":1.521,"Tests\\Browser\\ReadKamarTest::testExample":1.109}}
 
@@ -5,3 +8,4 @@
 
 {"version":1,"defects":[],"times":{"Tests\\Browser\\JadwalPertemuanTest::testExample":3.081}}
 
+>>>>>>> 66988a81b46ca5cadbc77c909d63fc96491b7c2a
