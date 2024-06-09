@@ -16,6 +16,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\ManajemenAntrianController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\AdminFeedbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,7 +103,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
+Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');
+
 Route::post('/feedback', [FeedbackController::class, 'submit'])->name('feedback.submit');
+Route::get('/admin/feedback', [AdminFeedbackController::class, 'index'])->name('admin.feedback.index');
 
 //Reservasi Obat
 Route::get('/reservasi-obat', [ObatController::class, 'showReservasiObat']);
