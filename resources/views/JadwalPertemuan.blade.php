@@ -12,7 +12,7 @@
         <div class="image-container">
             <img src="img/Logo.png" alt="Image">
         </div>
-        <div class="x-button" href="{{ url('home') }}"><img src="img/X.png" alt="Image"></div>
+        <a class="x-button" href="{{ url('home') }}"><img src="img/X.png" alt="Image"></a>
         <h1 class="top-text">Jadwal Dokter</h1>
     </div>
 

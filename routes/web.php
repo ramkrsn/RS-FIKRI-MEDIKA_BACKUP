@@ -15,6 +15,7 @@ use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\ManajemenAntrianController;
+use App\Http\Controllers\MenerimaKunjunganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -140,3 +141,6 @@ Route::get('/antrianhome', [AntrianController::class, "home"]);
 
 Route::get('/manage-antrian', [ManajemenAntrianController::class, "index"]);
 Route::delete('/deleteantrian/{idjadwalpertemuan}/delete', [ManajemenAntrianController::class, 'destroyantrian']);
+
+route::get('/menerimakunjungan', [MenerimaKunjunganController::class, "index"]);
+Route::delete('/deletekunjungan/{idkunjungan}', [MenerimaKunjunganController::class, 'deletekunjungan']);
