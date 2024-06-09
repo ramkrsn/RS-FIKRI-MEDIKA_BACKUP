@@ -285,12 +285,16 @@
             <div style="width:33.3%"class=""></div>
         </div>
 
-        <section id="content" style="min-height: 80vh">
-            <div class="w-100 mt-4" style="height: 25vh;background-size: cover; backgrounf-repeat; no-repeat; background-position: center; background-image:url('{{ asset('storage/'. $artikel->image) }}');">
-            </div>
-            <div style="padding: 28px">
-                <h1>{{ $artikel->title }}</h1>
-                <p>{{ $artikel->description }}</p>
+        <section class="section" style="padding: 20px;">
+            <div class="card" >
+                <div class="card-body">
+                    <h5 class="card-title">{{ $artikel->title }}</h5>
+                    <hr>
+                    <img src="{{asset('storage/'. $artikel->image)}}" class="card-img-top my-4" alt="article-image" class="w-100" height="190" object-fit: cover;>
+
+                    <p class="text-muted mt-4 text-align-justify w-100">{{$artikel->description}}</p>
+                </div>
+
             </div>
         </section>
     </div>

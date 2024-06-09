@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
@@ -292,6 +293,7 @@
             </div>
             <hr style="border: 1px solid black; margin: 10px 0px">
             <div style="display: flex; flex-direction: column; gap: 0.5rem">
+                @auth
                 @foreach($queues as $data)
                 <div data-bs-toggle="modal" data-bs-target="#exampleModal{{ $data->idjadwalpertemuan }}">
                     <div class="shadow"
@@ -355,89 +357,24 @@
                                         <div>{{ $data->est_jadwal }}</div>
                                     </div>
                                 </div>
-                                <div class="mt-5 d-flex" style="flex-direction: column;">
+                                <!-- <div class="mt-5 d-flex" style="flex-direction: column;">
                                     <img src="{{ asset('assets/barcode.png') }}" alt="Barcode" style="width: 300px;"
                                         class="mx-auto">
                                     <p class="fs-6 text-center">Scan barcode ini di loket</p>
-                                </div>
-                                <p style="text-align: center">*Anda akan mendapatkan notifikasi Whatsapp konfirmasi jika
+                                </div> -->
+                                <p style="text-align: center"><br>*Anda akan mendapatkan notifikasi Whatsapp konfirmasi jika
                                     jadwal pertemuan Anda telah tiba</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 @endforeach
+                @endauth
             </div>
         </section>
     </div>
-    <div style="width: 100%; height: full; position: relative; background-color: #F8FAFD; z-index: 2000">
-        <div style="position: absolute;background-color: white ;width: 100%; height: 100%; z-index: 50"></div>
-        <div class="sidebar">
-            <div style="width: 100%; display: flex; justify-content: flex-end; padding: 4px;">
-                <button id="closeToggle" style="background-color: transparent; border: none; cursor:pointer ">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                        stroke="#21BF73" class="menu">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            <div
-                style="display: flex; 	flex-direction: column; align-items: flex-end;  justify-content: flex-end; padding-right: 10px; row-gap: 0.5rem;">
-                <a href="#" class="w3-bar-item w3-button"
-                    style="text-align: end; width: fit-content; padding: 4px 8px; background-color: #21BF73; color: white; border-radius: 0.375rem;">Masuk</a>
-                <a href="#" class="w3-bar-item w3-button"
-                    style="text-align: end; width: fit-content; padding: 4px 8px; background-color: #21BF73; color: white; border-radius: 0.375rem;">Daftar</a>
-            </div>
-            <ul
-                style=" margin-top: 8px;text-decoration: none; text-align: end;  list-style-type: none; display: flex; flex-direction: column; row-gap: 0.75rem; ">
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Beranda</a>
-                </li>
-                <li>
-                    <a href="{{ route('profil') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Profil</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Jadwal Dokter</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Kunjungan
-                        Pasien</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Pengambilan
-                        Obat</a>
-                </li>
-                <li>
-
-                    <a href="{{ route('queue.index') }}" class="menu-sidebar"
-                        style="text-align: end; color: #21BF73">Jadwalkan Pertemuan</a>
-                </li>
-                <li>
-                    <a href="{{ route('queue.index') }}" class="menu-sidebar"
-                        style="text-align: end; color: #21BF73">Antrian</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Artikel Online</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <script>
-        window.addEventListener("DOMContentLoaded", () => {
-            document.getElementById("openToggle").addEventListener("click", () => {
-                const sidebarEl = document.getElementsByClassName("sidebar")[0];
-                sidebarEl.classList.toggle("hidden");
-            });
-            document.getElementById("closeToggle").addEventListener("click", () => {
-                const sidebarEl = document.getElementsByClassName("sidebar")[0];
-                sidebarEl.classList.toggle("hidden");
-            });
-        });
-
-    </script>
+    @include('partials.sidebaruser')
+    
 </body>
 
 </html>

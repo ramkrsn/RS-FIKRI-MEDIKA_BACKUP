@@ -17,7 +17,10 @@
                 <h1 class="fw-bold" style="color: white">Manajemen Artikel</h1>
                 <div style="background-color: white; color: black;" class="rounded-3 w-full p-3">
                     <h3 class="fw-bold">Daftar Artikel</h3>
-                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalStore">Tambah</button>
+                    <button class="btn btn-success my-2" data-bs-toggle="modal" data-bs-target="#modalStore">Tambah</button>
+                    @if (Session::has('success'))
+                        <div class="alert alert-success alert-lg"> {{ Session::get('success') }}</div>
+                    @endif
 
                     <!-- Modal Store -->
                     <div class="modal fade" id="modalStore" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -88,8 +91,7 @@
                                                 <textarea name="description" class="form-control" aria-label="With textarea" rows="10" required>{{ $data->description }}</textarea>
                                             </div>
                                             <div class="input-group input-group-sm mb-3">
-                                                <input name="image" type="file" class="form-control" id="inputGroupFile02">
-                                                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                                <input name="image" type="file" class="form-control" id="inputGroupFile02" value="{{ $data->title }}">
                                             </div>
                                         </div>
                                         <div class="modal-footer">

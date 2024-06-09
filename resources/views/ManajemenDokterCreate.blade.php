@@ -34,43 +34,43 @@
                             <div class="form-group">
                                 <p class="black-text">Senin:</p>
                                 <div class="d-flex">
-                                    <input type="time" class="form-control mr-2" name="seninstart" id="senin-start" placeholder="Mulai Senin" required>
-                                    <input type="time" class="form-control" name="seninend" id="senin-end" placeholder="Akhir Senin" required>
+                                    <input type="time" class="form-control mr-2" name="seninstart" id="senin-start" placeholder="Mulai Senin">
+                                    <input type="time" class="form-control" name="seninend" id="senin-end" placeholder="Akhir Senin">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <p class="black-text">Selasa:</p>
                                 <div class="d-flex">
-                                    <input type="time" class="form-control mr-2" name="selasastart" id="selasa-start" placeholder="Mulai Selasa" required>
-                                    <input type="time" class="form-control" name="selasaend" id="selasa-end" placeholder="Akhir Selasa" required>
+                                    <input type="time" class="form-control mr-2" name="selasastart" id="selasa-start" placeholder="Mulai Selasa">
+                                    <input type="time" class="form-control" name="selasaend" id="selasa-end" placeholder="Akhir Selasa">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <p class="black-text">Rabu:</p>
                                 <div class="d-flex">
-                                    <input type="time" class="form-control mr-2" name="rabustart" id="rabu-start" placeholder="Mulai Rabu" required>
-                                    <input type="time" class="form-control" name="rabuend" id="rabu-end" placeholder="Akhir Rabu" required>
+                                    <input type="time" class="form-control mr-2" name="rabustart" id="rabu-start" placeholder="Mulai Rabu">
+                                    <input type="time" class="form-control" name="rabuend" id="rabu-end" placeholder="Akhir Rabu">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <p class="black-text">Kamis:</p>
                                 <div class="d-flex">
-                                    <input type="time" class="form-control mr-2" name="kamisstart" id="kamis-start" placeholder="Mulai Kamis" required>
-                                    <input type="time" class="form-control" name="kamisend" id="kamis-end" placeholder="Akhir Kamis" required>
+                                    <input type="time" class="form-control mr-2" name="kamisstart" id="kamis-start" placeholder="Mulai Kamis">
+                                    <input type="time" class="form-control" name="kamisend" id="kamis-end" placeholder="Akhir Kamis">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <p class="black-text">Jumat:</p>
                                 <div class="d-flex">
-                                    <input type="time" class="form-control mr-2" name="jumatstart" id="jumat-start" placeholder="Mulai Jumat" required>
-                                    <input type="time" class="form-control" name="jumatend" id="jumat-end" placeholder="Akhir Jumat" required>
+                                    <input type="time" class="form-control mr-2" name="jumatstart" id="jumat-start" placeholder="Mulai Jumat">
+                                    <input type="time" class="form-control" name="jumatend" id="jumat-end" placeholder="Akhir Jumat">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <p class="black-text">Sabtu:</p>
                                 <div class="d-flex">
-                                    <input type="time" class="form-control mr-2" name="sabtustart" id="sabtu-start" placeholder="Mulai Sabtu" required>
-                                    <input type="time" class="form-control" name="sabtuend" id="sabtu-end" placeholder="Akhir Sabtu" required>
+                                    <input type="time" class="form-control mr-2" name="sabtustart" id="sabtu-start" placeholder="Mulai Sabtu">
+                                    <input type="time" class="form-control" name="sabtuend" id="sabtu-end" placeholder="Akhir Sabtu">
                                 </div>
                             </div>
                             <div class="form-group">

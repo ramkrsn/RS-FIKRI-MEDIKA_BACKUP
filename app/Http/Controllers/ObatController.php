@@ -106,3 +106,4 @@ class ObatController extends Controller
     }
     
 }
+

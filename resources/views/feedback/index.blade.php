@@ -313,13 +313,13 @@
                 @csrf
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
-                </div>
+                    <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}" required>
+                    </div>
                 <br>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
+                    <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}" required>
+                    </div>
                 <br>
                 <div class="form-group">
                     <label for="message">Message</label>
@@ -393,7 +393,7 @@
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Artikel Online</a>
                 </li>
                 <li>
-                    <a href="{{ route('feedback') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
+                    <a href="# class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
                 </li>
                 <li>
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Riwayat

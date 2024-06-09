@@ -16,7 +16,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -39,23 +38,6 @@
             top: 0;
         }
 
-        .menu-sidebar {
-            padding: 4px 6px;
-            border-radius: 0.5rem;
-        }
-
-        .menu-sidebar:hover {
-            color: #F1F864;
-            background-color: #F1F864;
-            transition-property: all;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 150ms;
-        }
-
-        .shadow {
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-        }
-
         .menu {
             width: 32px;
         }
@@ -66,18 +48,34 @@
             padding: 0;
         }
 
-        .wrapper {
-            width: 100%;
-            max-width: 480px;
-            margin: 0 auto;
-            /* padding: 0px 0px 20px 0px; */
-        }
-
-        .header {
+        h1 {
             font-family: 'Poppins', sans-serif;
             font-size: 20px;
             font-weight: bold;
             color: #21BF73;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+        .menu-sidebar{
+            padding: 4px 6px;
+            border-radius: 0.5rem;
+        }
+        .menu-sidebar:hover {
+            color: #F1F864;
+            background-color: #F1F864;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -256,16 +254,12 @@
             font-style: italic;
         }
 
-        a {
-            text-decoration: none;
-        }
-
     </style>
 </head>
 
-<body class="poppins-regular" style="display: flex; min-height: 100vh">
+<body class="poppins-regular" style="display: flex; min-height: h-screen">
     <div style="width: 100%; height: full; background-color: #F8FAFD; z-index: 2000"></div>
-    <div class="wrapper">
+    <div class="container">
         <header class="header h1">
             <div class="logo">
                 <img src="{{ asset('assets/logo.png') }}" alt="RSU Fikri Medika Logo">
@@ -281,7 +275,7 @@
 
         <p class="header-title poppins-bold">Antrian</p>
 
-        <section id="content" style="padding: 16px; min-height: 100%">
+        <section id="content">
             <div>
                 <a href="{{url('/queue')}}">
                     <button
@@ -336,7 +330,7 @@
                                 </div>
                                 <div class="my-4" style="display: flex; align-items: center; justify-content: center;">
                                     <div style="text-align: center;">
-                                        <h4 style="margin: 0;"><a href="">Detail Obat</a></h4>
+                                        <h4 style="margin: 0;"><a href="{{ url('/informasiobat') }}">Detail Obat</a></h4>
                                     </div>
                                 </div>
                             </div>
@@ -348,6 +342,46 @@
         </section>
     </div>
     @include('partials.sidebaruser')
+    <style>
+    /* CSS umum untuk desktop */
+    #crisp-chatbox {
+        bottom: 20px !important; 
+        right: 20px !important;
+        left: auto !important; 
+    }
+
+    .crisp-client .cc-widget {
+        right: 20px !important; 
+        left: auto !important; 
+    }
+
+    /* Media query untuk perangkat mobile dengan mode potret */
+    @media only screen and (max-width: 600px) and (orientation: portrait) {
+        #crisp-chatbox {
+            bottom: 20px !important; 
+            left: 20px !important; 
+            right: auto !important; 
+        }
+
+        .crisp-client .cc-widget {
+            left: 20px !important; 
+            right: auto !important; 
+        }
+    }
+</style>
+
+<!-- Script Crisp -->
+<script type="text/javascript">
+    window.$crisp=[];window.CRISP_WEBSITE_ID="b64fab3e-fe60-40a4-bf30-fc3bd2f60504";
+    (function(){
+        d=document;
+        s=d.createElement("script");
+        s.src="https://client.crisp.chat/l.js";
+        s.async=1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+</script>
+
 </body>
 
 </html>

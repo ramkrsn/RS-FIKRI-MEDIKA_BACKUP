@@ -297,11 +297,7 @@
             <input type="checkbox" class="form-check-input" id="remember" name="remember">
             <label class="form-check-label" for="remember">Remember me</label>
         </div>
-<<<<<<< HEAD
         <button type="submit" class="btn btn-success btn-block">Login</button>
-=======
-        <button type="submit" class="btn btn-primary btn-block">Login</button>
->>>>>>> 700c57d34432be0c020c6fd752b62dad45873037
     </form>
     <p class="mt-3">Belum memiliki akun? <a href="{{ route('register') }}">Daftar</a></p>
 </div>
@@ -314,7 +310,7 @@
 
         </section>
     </div>
-    <div style="width: 100%; height: full; position: relative; background-color: #F8FAFD;">
+    <!-- <div style="width: 100%; height: full; position: relative; background-color: #F8FAFD;">
         <div style="position: absolute;background-color: white ;width: 100%; height: 100%; z-index: 50"></div>
         <div class="sidebar">
             <div style="width: 100%; display: flex; justify-content: flex-end; padding: 4px;">
@@ -324,8 +320,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                     </svg>
                 </button>
-            </div>
-            <div
+            </div> -->
+            <!-- <div
                 style="display: flex; flex-direction: column; align-items: flex-end;  justify-content: flex-end; padding-right: 10px; row-gap: 0.5rem;">
                 <a href="{{ route('login') }}" class="w3-bar-item w3-button"
    style="text-align: end; width: fit-content; padding: 4px 8px; background-color: #21BF73; color: white; border-radius: 0.375rem;">Masuk</a>
@@ -379,8 +375,9 @@
                 sidebarEl.classList.toggle("hidden");
             });
         });
-    </script>
-     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    </script> -->
+    @include('partials.sidebaruser')
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>

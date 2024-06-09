@@ -4,24 +4,19 @@
     <title>Manajemen Dokter</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/desktop.css">
+    </head>
+    <style>
+        .table{
+            background-color: white;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
-            <div class="col-2 sidebar min-vh-100">
-                <img src="/img/Logo.png" alt="" class="img-logo">
-                <ul class="nav flex-column">
-                    <li class="nav-item d-flex align-items-center">
-                        <img src="/img/1.png" alt="" class="mr-2">
-                        <a class="nav-link black-text" href="#">Dashboard</a>
-                    </li>
-                    <li class="nav-item d-flex align-items-center">
-                        <img src="/img/2.png" alt="" class="mr-2">
-                        <a class="nav-link black-text" href="#">Reservasi Dokter</a>
-                    </li>
-                </ul>
-            </div>
+            @include('partials.sidebar')
 
             <!-- main code -->
             <div class="col-10 green-background text-white">
@@ -33,30 +28,34 @@
                         </button>
                     </div>
                 </div>
-                <table class="table table-striped">
+                <table class="table">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>No Antrian</th>
-                            <th>Nama Pasien</th>
+                            <th>Nama Depan</th>
+                            <th>Nama Belakang</th>
+                            <th>NIK</th>
                             <th>Keluhan</th>
-                            <th>Dokter</th>
-                            <th>Poli</th>
-                            <th>Tanggal</th>
-                            <th>Jadwal</th>
+                            <th>Tanggal Pertemuan</th>
+                            <th>Jam Pertemuan</th>
+                            <th>Poli Dokter</th>
+                            <th>Nama Dokter</th>
+                            <th>Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($queues as $antrian)
+                        @foreach($doctors as $jadwal)
                             <tr>
-                                <td>{{ $antrian->id_antrian }}</td>
-                                <td>{{ $antrian->no_antrian }}</td>
-                                <td>{{ $antrian->nama_pasien }}</td>
-                                <td>{{ $antrian->keluhan }}</td>
-                                <td>{{ $antrian->dokter }}</td>
-                                <td>{{ $antrian->poli }}</td>
-                                <td>{{ $antrian->tanggal }}</td>
-                                <td>{{ $antrian->est_jadwal }}</td>
+                                <td>{{ $jadwal->idjadwalpertemuan }}</td>
+                                <td>{{ $jadwal->namadepan }}</td>
+                                <td>{{ $jadwal->namabelakang }}</td>
+                                <td>{{ $jadwal->NIK }}</td>
+                                <td>{{ $jadwal->keluhanpasien }}</td>
+                                <td>{{ $jadwal->tanggalpertemuan }}</td>
+                                <td>{{ $jadwal->jampertemuan }}</td>
+                                <td>{{ $jadwal->polidokter }}</td>
+                                <td>{{ $jadwal->namadokter }}</td>
+                                <td>{{ $jadwal->opsi }}</td>
                             </tr>
                         @endforeach
                     </tbody>

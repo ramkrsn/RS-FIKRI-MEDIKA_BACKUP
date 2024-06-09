@@ -139,11 +139,10 @@
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
-                    </div>
-                    <div class="form-group">
+                        <div class="form-group">
                         <label for="no">No Telepon</label>
-                        <input type="text" class="form-control @error('no') is-invalid @enderror" id="no" name="no" value="{{ old('no') }}" required>
-                        @error('no')
+                        <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" value="{{ old('phone') }}" required>
+                        @error('phone')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -167,8 +166,9 @@
                 <p class="mt-3">Sudah memiliki akun ? <a href="{{ route('login') }}">Masuk</a></p>
             </div>
         </main>
+        
     </div>
-
+    @include('partials.sidebaruser')
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
