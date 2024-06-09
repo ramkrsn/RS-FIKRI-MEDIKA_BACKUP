@@ -15,8 +15,10 @@ use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\ManajemenAntrianController;
+use App\Http\Controllers\MenerimaKunjunganController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\AdminFeedbackController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -146,6 +148,10 @@ Route::get('/antrianhome', [AntrianController::class, "home"]);
 Route::get('/manage-antrian', [ManajemenAntrianController::class, "index"]);
 Route::delete('/deleteantrian/{idjadwalpertemuan}/delete', [ManajemenAntrianController::class, 'destroyantrian']);
 
+
+route::get('/menerimakunjungan', [MenerimaKunjunganController::class, "index"]);
+Route::delete('/deletekunjungan/{idkunjungan}', [MenerimaKunjunganController::class, 'deletekunjungan']);
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
 Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
+

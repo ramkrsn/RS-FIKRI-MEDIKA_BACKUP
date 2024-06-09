@@ -391,10 +391,6 @@
                             <input type="text" class="form-control" id="nama_pasien" name="nama_pasien" required>
                         </div>
                         <div class="form-group">
-                            <label for="id_pasien">No. ID Pasien</label>
-                            <input type="text" class="form-control" id="id_pasien" name="id_pasien" required>
-                        </div>
-                        <div class="form-group">
                             <label for="tanggal">Tanggal</label>
                             <input type="date" class="form-control" id="tanggal" name="tanggal" required>
                         </div>
