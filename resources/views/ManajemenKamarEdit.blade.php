@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="container-inner">
-                    <h1 class="black-title spacing">Kamar List</h1>
+                    <h1 class="black-title spacing">Edit Kamar</h1>
                     <div class="container form-container">
                         <form action="{{url('updatekamar/'.$kamar->idkamar.'/update')}}" method="POST">
                             @csrf
