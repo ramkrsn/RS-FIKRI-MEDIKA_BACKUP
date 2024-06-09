@@ -1,10 +1,8 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+{"version":1,"defects":{"Tests\\Browser\\KunjunganDeleteTest::testExample":7,"Tests\\Browser\\MenerimaReservasiTest::testExample":7},"times":{"Tests\\Browser\\KunjunganDeleteTest::testExample":2.351,"Tests\\Browser\\MenerimaReservasiTest::testExample":3.077}}
+
 {"version":1,"defects":[],"times":{"Tests\\Browser\\DeleteInformasiObatTest::testExample":3.113}}
-=======
 {"version":1,"defects":{"Tests\\Browser\\AntrianJadwalTestCase::testExample":7},"times":{"Tests\\Browser\\AntrianJadwalTestCase::testExample":5.592}}
->>>>>>> 0e6a84070c65c7dd39cab43e8a07f5d5c126cab7
-=======
 
 {"version":1,"defects":{"Tests\\Browser\\CreateKamarTest::testExample":7,"Tests\\Browser\\EditKamarTest::testExample":7},"times":{"Tests\\Browser\\JadwalPertemuanTest::testExample":3.081,"Tests\\Browser\\CreateKamarTest::testExample":1.997,"Tests\\Browser\\EditKamarTest::testExample":1.902,"Tests\\Browser\\DeleteKamarTest::testExample":1.521,"Tests\\Browser\\ReadKamarTest::testExample":1.109}}
 
@@ -12,8 +10,4 @@
 
 {"version":1,"defects":[],"times":{"Tests\\Browser\\JadwalPertemuanTest::testExample":3.081}}
 
-<<<<<<< HEAD
->>>>>>> b73ab9ff758f17b41067ea73b67f729a9df85ce5
-=======
->>>>>>> 66988a81b46ca5cadbc77c909d63fc96491b7c2a
->>>>>>> 0e6a84070c65c7dd39cab43e8a07f5d5c126cab7
+
