@@ -313,13 +313,13 @@
                 @csrf
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
-                </div>
+                    <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}" required>
+                    </div>
                 <br>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
+                    <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}" required>
+                    </div>
                 <br>
                 <div class="form-group">
                     <label for="message">Message</label>
@@ -344,7 +344,7 @@
 
         </section>
     </div>
-    <!-- <div style="width: 100%; height: full; position: relative; background-color: #F8FAFD;">
+    <div style="width: 100%; height: full; position: relative; background-color: #F8FAFD;">
         <div style="position: absolute;background-color: white ;width: 100%; height: 100%; z-index: 50"></div>
         <div class="sidebar">
             <div style="width: 100%; display: flex; justify-content: flex-end; padding: 4px;">
@@ -393,15 +393,14 @@
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Artikel Online</a>
                 </li>
                 <li>
-                    <a href="{{ route('feedback') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
+                    <a href="# class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
                 </li>
                 <li>
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Riwayat
                         Pembayaran</a>
                 </li>   
             </ul>
-        </div> -->
-        @include('partials.sidebaruser')
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>

@@ -21,8 +21,7 @@ class KunjunganPasienController extends Controller
         $kunjungan->nik = $request->nik;
         $kunjungan->email = $request->email;
         $kunjungan->no_hp = $request->no_hp;
-        $kunjungan->nama_pasien = $request->nama_pasien;
-        $kunjungan->id_pasien = $request->id_pasien;
+        $kunjungan->nama_pasien = $request->nama_pasien;   
         $kunjungan->tanggal = $request->tanggal;
         $kunjungan->waktu= $request->waktu;
 
