@@ -1,4 +1,1 @@
-
-{"version":1,"defects":{"Tests\\Browser\\ExampleTest::testBasicExample":8,"Tests\\Browser\\MelihatJadwal::testExample":8},"times":{"Tests\\Browser\\ExampleTest::testBasicExample":5.738,"Tests\\Browser\\MelihatJadwal::testExample":4.219}}
-
-{"version":1,"defects":{"Tests\\Browser\\ProfilRSTestCase::testExample":8},"times":{"Tests\\Browser\\ProfilTestCase::testExample":3.053,"Tests\\Browser\\ProfilRSTestCase::testExample":68.669}}
+{"version":1,"defects":{"Tests\\Browser\\AdminKunjunganTest::testExample":7},"times":{"Tests\\Browser\\MelihatJadwal::testExample":4.936,"Tests\\Browser\\KunjunganTest::testExample":6.583,"Tests\\Browser\\AdminKunjunganTest::testExample":3.456}}
