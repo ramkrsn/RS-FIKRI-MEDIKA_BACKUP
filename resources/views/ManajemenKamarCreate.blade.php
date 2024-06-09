@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="container-inner">
-                    <h1 class="black-title spacing">Kamar List</h1>
+                    <h1 class="black-title spacing">Create Kamar</h1>
                     <div class="container form-container">
                         <form action="{{url('createkamar')}}" method="POST">
                             <div class="form-group">
