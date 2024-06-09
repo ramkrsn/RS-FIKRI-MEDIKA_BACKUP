@@ -22,6 +22,7 @@ return array(
     'App\\Http\\Controllers\\JadwalController' => $baseDir . '/app/Http/Controllers/JadwalController.php',
     'App\\Http\\Controllers\\KamarController' => $baseDir . '/app/Http/Controllers/KamarController.php',
     'App\\Http\\Controllers\\KunjunganPasienController' => $baseDir . '/app/Http/Controllers/KunjunganPasienController.php',
+    'App\\Http\\Controllers\\ManajemenAntrianController' => $baseDir . '/app/Http/Controllers/ManajemenAntrianController.php',
     'App\\Http\\Controllers\\MelihatJadwalController' => $baseDir . '/app/Http/Controllers/MelihatJadwalController.php',
     'App\\Http\\Controllers\\ObatController' => $baseDir . '/app/Http/Controllers/ObatController.php',
     'App\\Http\\Controllers\\PengambilanObatController' => $baseDir . '/app/Http/Controllers/PengambilanObatController.php',

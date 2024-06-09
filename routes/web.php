@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AntrianController;
+use App\Http\Controllers\AntrianObatController;
 use App\Http\Controllers\ObatController;
 use App\Http\Controllers\PengambilanObatController;
 use App\Http\Controllers\MelihatJadwalController;
@@ -107,3 +108,40 @@ Route::get('/reservasi-obat', [ObatController::class, 'showReservasiObat']);
 Route::put('/reservasi-obat/{id}', [ObatController::class, 'updateStatusReservasi'])->name('reservasi-obat.update');
 Route::get('/reservasi-obat/{id}', [ObatController::class, 'deleteReservasi'])->name('reservasi-obat.delete');
 // End Reservasi Obat
+
+
+//manage obat//
+Route::get('/', function () {
+    return view('profil');
+})->name('profil');
+
+Route::get('/manage-obat', [ObatController::class, 'showManageObat']);
+Route::post('/manage-obat', [ObatController::class, 'addObat'])->name('obat.add');
+Route::patch('/manage-obat/{id}', [ObatController::class, 'editObat'])->name('obat.update');
+Route::delete('/delete-obat/{id}', [ObatController::class, 'deleteObat'])->name('data-obat.delete');
+
+Route::get('/queue', [AntrianController::class, "index"])->name('queue.index');
+Route::get('/queue/{id}', [AntrianController::class, "show"])->name('queue.show');
+
+Route::get('/homeAntrianObat', [AntrianObatController::class, "home"]);
+Route::get('/antrianObat', [AntrianObatController::class, 'index']);
+
+Route::get('/antrian-obat', [AntrianObatController::class, "getAntrianObat"]);
+//end manage obat//
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//artikel
+Route::get('/artikel', [ArtikelController::class, 'showArticle'])->name('artikel.index');
+
+Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.show');
+Route::get('/admin/artikel', [ArtikelController::class, 'admin'])->name('artikel.admin');
+Route::post('/admin/artikel', [ArtikelController::class, 'store'])->name('artikel.store');
+Route::patch('/admin/artikel/{id}', [ArtikelController::class, 'update'])->name('artikel.update');
+Route::delete('/admin/artikel/{id}', [ArtikelController::class, 'destroy'])->name('artikel.destroy');
+//end artikel
+
+Route::get('/antrianhome', [AntrianController::class, "home"]);
+
+Route::get('/manage-antrian', [ManajemenAntrianController::class, "index"]);
+Route::delete('/deleteantrian/{idjadwalpertemuan}/delete', [ManajemenAntrianController::class, 'destroyantrian']);

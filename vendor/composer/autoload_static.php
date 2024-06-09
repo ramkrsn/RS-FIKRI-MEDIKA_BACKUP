@@ -561,6 +561,7 @@ class ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d
         'App\\Http\\Controllers\\JadwalController' => __DIR__ . '/../..' . '/app/Http/Controllers/JadwalController.php',
         'App\\Http\\Controllers\\KamarController' => __DIR__ . '/../..' . '/app/Http/Controllers/KamarController.php',
         'App\\Http\\Controllers\\KunjunganPasienController' => __DIR__ . '/../..' . '/app/Http/Controllers/KunjunganPasienController.php',
+        'App\\Http\\Controllers\\ManajemenAntrianController' => __DIR__ . '/../..' . '/app/Http/Controllers/ManajemenAntrianController.php',
         'App\\Http\\Controllers\\MelihatJadwalController' => __DIR__ . '/../..' . '/app/Http/Controllers/MelihatJadwalController.php',
         'App\\Http\\Controllers\\ObatController' => __DIR__ . '/../..' . '/app/Http/Controllers/ObatController.php',
         'App\\Http\\Controllers\\PengambilanObatController' => __DIR__ . '/../..' . '/app/Http/Controllers/PengambilanObatController.php',
