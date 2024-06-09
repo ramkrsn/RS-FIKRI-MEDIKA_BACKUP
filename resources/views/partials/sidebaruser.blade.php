@@ -54,7 +54,7 @@
                 <a href="{{ url('fasilitas') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Fasilitas</a>
             </li>
             <li>
-                <a href="{{ auth()->check() ? route('feedback') : '#' }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
+            <a href="{{ route('feedback') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
             </li>
             @auth
             <li>
