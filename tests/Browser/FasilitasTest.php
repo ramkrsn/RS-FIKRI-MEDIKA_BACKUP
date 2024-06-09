@@ -15,7 +15,10 @@ class FasilitasTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
+                    ->press('#openToggle')
+                    ->press('Fasilitas'); 
                     ->press('#openToggle'); 
+
 });
 }
 }
