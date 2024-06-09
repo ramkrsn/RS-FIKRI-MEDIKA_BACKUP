@@ -28,7 +28,7 @@
                 <a href="{{ route('home') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Beranda</a>
             </li>
             <li>
-                <a href="{{ route('profil') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Profil</a>
+                <a href="{{ route('profile.edit') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Profil</a>
             </li>
             <li>
                 <a href="{{ auth()->check() ? url('Melihat_Jadwal_Dokter') : '#' }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Jadwal Dokter</a>
