@@ -4,6 +4,13 @@
     <title>Manajemen Dokter</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/desktop.css">
+    </head>
+    <style>
+        .table{
+            background-color: white;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid">
@@ -21,7 +28,7 @@
                         </button>
                     </div>
                 </div>
-                <table class="table table-striped">
+                <table class="table">
                     <thead>
                         <tr>
                             <th>ID</th>

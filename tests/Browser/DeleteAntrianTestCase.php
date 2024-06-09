@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class FasilitasTest extends DuskTestCase
+class DeleteAntrianTestCase extends DuskTestCase
 {
     /**
      * A Dusk test example.
@@ -14,10 +14,11 @@ class FasilitasTest extends DuskTestCase
     public function testExample(): void
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                    ->press('#openToggle')
-                    ->press('Fasilitas');
-
-});
-}
+            $browser->visit('/manage-antrian')
+                    ->assertSee('Manajemen Antrian')
+                    ->assertSee('Dr. Ade Hafni')
+                    ->press('Delete')
+                    ;
+        });
+    }
 }
