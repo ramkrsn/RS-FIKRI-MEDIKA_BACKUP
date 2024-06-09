@@ -56,8 +56,8 @@
             <li>
 
             <a href="{{ route('feedback.index') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
-            <a href="{{ url('feedback.indexw') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
             </li>
+      
             @auth
             <li>
                 <a href="{{ route('logout') }}" class="w3-bar-item w3-button" style="text-align: end; width: fit-content; padding: 4px 8px; background-color: #21BF73; color: white; border-radius: 0.375rem;"

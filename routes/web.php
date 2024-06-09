@@ -19,6 +19,7 @@ use App\Http\Controllers\MenerimaKunjunganController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\AdminFeedbackController;
 use App\Http\Controllers\InformasiObatController;
+use App\Http\Controllers\DetailResepController;
 
 
 /*
@@ -78,6 +79,8 @@ Route::resource('obat', ObatController::class);
 Route::resource('informasiobat', InformasiObatController::class);
     
 Route::get('/pengambilan-obat', [PengambilanObatController::class, 'pengambilan_obat']);
+Route::get('/detairesep', [DetailResepController::class, 'detailresep']);
+Route::get('/resep', [DetailResepController::class, 'detailresep']);
 
 
 Route::get('/Melihat_Jadwal_Dokter', [ MelihatJadwalController::class, 'index']);
@@ -165,4 +168,8 @@ Route::get('/informasiobat/{informasiobat}', [InformasiObatController::class, 's
 Route::get('/informasiobat/{informasiobat}/edit', [InformasiObatController::class, 'edit'])->name('informasiobat.edit');
 Route::put('/informasiobat/{informasiobat}', [InformasiObatController::class, 'update'])->name('informasiobat.update');
 Route::delete('/informasiobat/{informasiobat}', [InformasiObatController::class, 'destroy'])->name('informasiobat.destroy');
+
+Route::get('/article/{id}', [InformasiObatController::class, 'showArticle'])->name('article.show');
+Route::get('/article', [InformasiObatController::class, 'index'])->name('article.index');
+
 
