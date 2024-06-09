@@ -294,7 +294,7 @@
             <hr style="border: 1px solid black; margin: 10px 0px">
             <div style="display: flex; flex-direction: column; gap: 0.5rem">
                 @auth
-                @foreach($queues as $data)
+                @foreach($antrians as $data)
                 <div data-bs-toggle="modal" data-bs-target="#exampleModal{{ $data->idjadwalpertemuan }}">
                     <div class="shadow"
                         style="background-color: white; display: flex; gap: 1rem; 	border-radius: 0.5rem;">
