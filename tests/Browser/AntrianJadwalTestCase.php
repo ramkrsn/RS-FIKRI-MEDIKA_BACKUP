@@ -31,11 +31,17 @@ class AntrianJadwalTestCase extends DuskTestCase
                     ->type('NIK','1202210212')
                     ->type('keluhanpasien','sakit perut')
                     ->type('tanggalpertemuan','09/06/2024')
-                    ->select('namadokter','Alif')
-                    ->select('polidokter','jantung')
+                    ->type('jampertemuan','10:00')
+                    ->select('namadokter','daulay')
+                    ->select('polidokter','dokter')
                     ->press('Jadwalkan Pertemuan')
                     ->assertPathIs('/jadwalpertemuan')
-                    ;
+                    ->press('.x-button')
+                    ->assertPathIs('/home')
+                    ->press('#openToggle')
+                    ->clickLink('Antrian')
+                    ->assertSee('P007')
+                     ;
         });
     }
 }
