@@ -153,6 +153,7 @@ Route::delete('/deleteantrian/{idjadwalpertemuan}/delete', [ManajemenAntrianCont
 
 route::get('/menerimakunjungan', [MenerimaKunjunganController::class, "index"]);
 Route::delete('/deletekunjungan/{idkunjungan}', [MenerimaKunjunganController::class, 'deletekunjungan']);
+
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
 Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');

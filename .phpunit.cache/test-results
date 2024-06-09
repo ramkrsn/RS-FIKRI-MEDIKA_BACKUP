@@ -1,4 +1,1 @@
-
-{"version":1,"defects":{"Tests\\Browser\\AdminKunjunganTest::testExample":7},"times":{"Tests\\Browser\\MelihatJadwal::testExample":4.936,"Tests\\Browser\\KunjunganTest::testExample":6.583,"Tests\\Browser\\AdminKunjunganTest::testExample":3.456}}
-
-{"version":1,"defects":[],"times":{"Tests\\Browser\\JadwalPertemuanTest::testExample":3.081}}
+{"version":1,"defects":{"Tests\\Browser\\KunjunganDeleteTest::testExample":7,"Tests\\Browser\\MenerimaReservasiTest::testExample":7},"times":{"Tests\\Browser\\KunjunganDeleteTest::testExample":2.351,"Tests\\Browser\\MenerimaReservasiTest::testExample":3.077}}
