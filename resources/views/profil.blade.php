@@ -360,7 +360,6 @@
 
 <a href="{{ route('feedback.index') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
 
-                <a href="{{ route('feedback.index') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
 
                 </li>
             </ul>

@@ -17,6 +17,13 @@ class InformasiObatController extends Controller
         return view('informasiobat.index', ['informasiobat' => $informasiobat]);
     }
 
+    public function showArticle($id)
+    {
+    $informasiObat = InformasiObat::findOrFail($id); // Pastikan Anda mengganti InformasiObat dengan nama model Anda
+    return view('article', ['informasiObat' => $informasiObat]);
+    }
+
+
     // Menampilkan form untuk membuat informasi obat baru
     public function create()
     {

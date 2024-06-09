@@ -1,1 +1,13 @@
+
 {"version":1,"defects":{"Tests\\Browser\\KunjunganDeleteTest::testExample":7,"Tests\\Browser\\MenerimaReservasiTest::testExample":7},"times":{"Tests\\Browser\\KunjunganDeleteTest::testExample":2.351,"Tests\\Browser\\MenerimaReservasiTest::testExample":3.077}}
+
+{"version":1,"defects":[],"times":{"Tests\\Browser\\DeleteInformasiObatTest::testExample":3.113}}
+{"version":1,"defects":{"Tests\\Browser\\AntrianJadwalTestCase::testExample":7},"times":{"Tests\\Browser\\AntrianJadwalTestCase::testExample":5.592}}
+
+{"version":1,"defects":{"Tests\\Browser\\CreateKamarTest::testExample":7,"Tests\\Browser\\EditKamarTest::testExample":7},"times":{"Tests\\Browser\\JadwalPertemuanTest::testExample":3.081,"Tests\\Browser\\CreateKamarTest::testExample":1.997,"Tests\\Browser\\EditKamarTest::testExample":1.902,"Tests\\Browser\\DeleteKamarTest::testExample":1.521,"Tests\\Browser\\ReadKamarTest::testExample":1.109}}
+
+{"version":1,"defects":{"Tests\\Browser\\AdminKunjunganTest::testExample":7},"times":{"Tests\\Browser\\MelihatJadwal::testExample":4.936,"Tests\\Browser\\KunjunganTest::testExample":6.583,"Tests\\Browser\\AdminKunjunganTest::testExample":3.456}}
+
+{"version":1,"defects":[],"times":{"Tests\\Browser\\JadwalPertemuanTest::testExample":3.081}}
+
+
