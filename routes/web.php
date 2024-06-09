@@ -15,9 +15,11 @@ use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\ManajemenAntrianController;
+use App\Http\Controllers\MenerimaKunjunganController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\AdminFeedbackController;
 use App\Http\Controllers\InformasiObatController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -148,9 +150,13 @@ Route::get('/antrianhome', [AntrianController::class, "home"]);
 Route::get('/manage-antrian', [ManajemenAntrianController::class, "index"]);
 Route::delete('/deleteantrian/{idjadwalpertemuan}/delete', [ManajemenAntrianController::class, 'destroyantrian']);
 
+
+route::get('/menerimakunjungan', [MenerimaKunjunganController::class, "index"]);
+Route::delete('/deletekunjungan/{idkunjungan}', [MenerimaKunjunganController::class, 'deletekunjungan']);
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
 Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
+
 
 Route::get('/informasiobat', [InformasiObatController::class, 'index'])->name('informasiobat.index');
 Route::get('/informasiobat/create', [InformasiObatController::class, 'create'])->name('informasiobat.create');
@@ -159,3 +165,4 @@ Route::get('/informasiobat/{informasiobat}', [InformasiObatController::class, 's
 Route::get('/informasiobat/{informasiobat}/edit', [InformasiObatController::class, 'edit'])->name('informasiobat.edit');
 Route::put('/informasiobat/{informasiobat}', [InformasiObatController::class, 'update'])->name('informasiobat.update');
 Route::delete('/informasiobat/{informasiobat}', [InformasiObatController::class, 'destroy'])->name('informasiobat.destroy');
+

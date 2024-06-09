@@ -357,7 +357,11 @@
                     <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Artikel Online</a>
                 </li>
                 <li>
+
 <a href="{{ route('feedback.index') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
+
+                <a href="{{ route('feedback.index') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
+
                 </li>
             </ul>
         </div>

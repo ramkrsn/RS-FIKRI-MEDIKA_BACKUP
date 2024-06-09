@@ -43,6 +43,11 @@
                         <a class="nav-link black-text" href="{{url('/kamar')}}">Manajemen Kamar</a>
                     </li>
                     <li class="nav-item d-flex align-items-center">
+
+                        <i class="bi bi-people-fill"></i>
+                        <a class="nav-link black-text" href="{{url('/menerimakunjungan')}}">Menerima Kunjungan Pasien</a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
                         <img src="/img/4.png" alt="" class="mr-2">
                         <a class="nav-link black-text" href="{{ route('admin.feedback.index') }}">Feedback</a>
                         </li>
@@ -50,6 +55,7 @@
                         <i class="bi bi-capsule"></i>
                         <a class="nav-link black-text" href="{{ route('informasiobat.index') }}">Informasi Obat</a>
                         </li>
+                    </li>
                 </ul>
             </div>
 
