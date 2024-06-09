@@ -31,6 +31,7 @@ class JadwalPertemuanTest extends DuskTestCase
                     ->type('NIK','1202210212')
                     ->type('keluhanpasien','sakit perut')
                     ->type('tanggalpertemuan','09/06/2024')
+                    ->type('jampertemuan','10:00')
                     ->select('namadokter','Alif')
                     ->select('polidokter','jantung')
                     ->press('Jadwalkan Pertemuan')
