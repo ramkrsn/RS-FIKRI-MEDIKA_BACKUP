@@ -48,8 +48,9 @@
                                 <p class="antrian-text"><strong>Dokter:</strong> {{ $jadwal->namadokter }}</p>
                                 <p class="antrian-text"><strong>Poli:</strong> {{ $jadwal->polidokter }}</p>
                                 <p class="antrian-text"><strong>Waktu:</strong> {{ $jadwal->tanggalpertemuan }}, {{ $jadwal->jampertemuan }}</p>
-                                <p class="antrian-text"><strong>Nomor Antrian:</strong> {{ $jadwal->nomor_antrian }}</p>
-                                <p class="antrian-text"><strong>Keluhan:</strong> {{ $jadwal->keluhanpasien }}</p>
+                                <!-- <p class="antrian-text"><strong>Nomor Antrian:</strong> {{ $jadwal->nomor_antrian }}</p> -->
+                                <p class="antrian-text"><strong>Keluhan:</strong> {{ $jadwal->keluhanpasien }}</p>                                <p class="antrian-text"><strong>Keluhan:</strong> {{ $jadwal->keluhanpasien }}</p>
+
                             </div>
                             <div class="button-wrapper">
                                 <form action="{{ url('/deleteantrian/'.$jadwal->idjadwalpertemuan.'/delete') }}" method="POST">
