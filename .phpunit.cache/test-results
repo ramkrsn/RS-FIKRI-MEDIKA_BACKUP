@@ -1,1 +1,1 @@
-{"version":1,"defects":{"Tests\\Browser\\FasilitasTest::testExample":8},"times":{"Tests\\Browser\\FasilitasTest::testExample":3.466}}
+{"version":1,"defects":{"Tests\\Browser\\FasilitasTest::testExample":8},"times":{"Tests\\Browser\\FasilitasTest::testExample":3.466,"Tests\\Browser\\PengambilanobatTest::testExample":7.061}}
