@@ -406,6 +406,7 @@
 </style>
 
 <!-- Script Crisp -->
+<div id="chat" class="chat" name="chat">
 <script type="text/javascript">
     window.$crisp=[];window.CRISP_WEBSITE_ID="b64fab3e-fe60-40a4-bf30-fc3bd2f60504";
     (function(){
@@ -416,7 +417,7 @@
         d.getElementsByTagName("head")[0].appendChild(s);
     })();
 </script>
-
+</div>
 </body>
 
 </html>

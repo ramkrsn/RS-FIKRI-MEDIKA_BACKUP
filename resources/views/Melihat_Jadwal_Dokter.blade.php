@@ -374,15 +374,16 @@
 }
 .day, .time {
     flex: 1;
+    margin-top: 5px;
 }
 .name_doctor{
     font-size: 30px;
 }
 
-ul {
+.ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 40px;
 }
     </style>
 </head>
@@ -402,7 +403,7 @@ ul {
         </header>
         <p class="header-title poppins-bold">Jadwal Dokter</p>
         
-        <ul>
+        <ul class="ul">
             @foreach ($doctors as $doctor)
             <img src="{{asset('storage/'.$doctor->wajahdokter)}}" alt="" width="100" height="100" class="rounded-circle spacing top-spacing" style="object-fit: cover;">
             <span class= name_doctor> <li>{{$doctor->namadokter }}</li></span>
@@ -419,13 +420,26 @@ ul {
                                 <div class="day">Sabtu</div>
                             </div>
                             <div class="times">
-                                <div class="time">{{ \Carbon\Carbon::parse($doctor->seninstart)->format('H:i') }} - {{ \Carbon\Carbon::parse($doctor->seninend)->format('H:i') }}</div>
-                                <div class="time">{{ \Carbon\Carbon::parse($doctor->selasastart)->format('H:i') }} - {{ \Carbon\Carbon::parse($doctor->selasaend)->format('H:i') }}</div>
-                                <div class="time">{{ \Carbon\Carbon::parse($doctor->rabustart)->format('H:i') }} - {{ \Carbon\Carbon::parse($doctor->rabuend)->format('H:i') }}</div>
-                                <div class="time">{{ \Carbon\Carbon::parse($doctor->kamisstart)->format('H:i') }} - {{ \Carbon\Carbon::parse($doctor->kamisend)->format('H:i') }}</div>
-                                <div class="time">{{ \Carbon\Carbon::parse($doctor->jumatstart)->format('H:i') }} - {{ \Carbon\Carbon::parse($doctor->jumatend)->format('H:i') }}</div>
-                                <div class="time">{{ \Carbon\Carbon::parse($doctor->sabtustart)->format('H:i') }} - {{ \Carbon\Carbon::parse($doctor->sabtuend)->format('H:i') }}</div>
+                                @if($doctor->seninstart && $doctor->seninend)
+                                    <div class="time">{{ \Carbon\Carbon::parse($doctor->seninstart)->format('H:i') }} - {{ \Carbon\Carbon::parse($doctor->seninend)->format('H:i') }}</div>
+                                @endif
+                                @if($doctor->selasastart && $doctor->selasaend)
+                                    <div class="time">{{ \Carbon\Carbon::parse($doctor->selasastart)->format('H:i') }} - {{ \Carbon\Carbon::parse($doctor->selasaend)->format('H:i') }}</div>
+                                @endif
+                                @if($doctor->rabustart && $doctor->rabuend)
+                                    <div class="time">{{ \Carbon\Carbon::parse($doctor->rabustart)->format('H:i') }} - {{ \Carbon\Carbon::parse($doctor->rabuend)->format('H:i') }}</div>
+                                @endif
+                                @if($doctor->kamisstart && $doctor->kamisend)
+                                    <div class="time">{{ \Carbon\Carbon::parse($doctor->kamisstart)->format('H:i') }} - {{ \Carbon\Carbon::parse($doctor->kamisend)->format('H:i') }}</div>
+                                @endif
+                                @if($doctor->jumatstart && $doctor->jumatend)
+                                    <div class="time">{{ \Carbon\Carbon::parse($doctor->jumatstart)->format('H:i') }} - {{ \Carbon\Carbon::parse($doctor->jumatend)->format('H:i') }}</div>
+                                @endif
+                                @if($doctor->sabtustart && $doctor->sabtuend)
+                                    <div class="time">{{ \Carbon\Carbon::parse($doctor->sabtustart)->format('H:i') }} - {{ \Carbon\Carbon::parse($doctor->sabtuend)->format('H:i') }}</div>
+                                @endif
                             </div>
+
                             @endforeach
             <div class="container text-left">
             <div class="row-row-cols-auto">   
