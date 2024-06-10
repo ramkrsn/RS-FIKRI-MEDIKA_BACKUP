@@ -31,7 +31,7 @@
                 <h2 class="spacing">Data Pasien</h2>
                 <input type="text" name="namadepan" placeholder="Nama Depan" class="input-choice" required>
                 <input type="text" name="namabelakang" placeholder="Nama Belakang" class="input-choice" required>
-                <input type="text" name="NIK" placeholder="NIK" class="input-choice" required>
+                <input type="number" name="NIK" placeholder="NIK" class="input-choice" required>
                 <textarea name="keluhanpasien" placeholder="Keluhan Pasien" class="input-choice-keluhan" required></textarea>
                 <input type="date" name="tanggalpertemuan" placeholder="Tanggal pertemuan" class="input-choice" required>
                 <input type="time" name="jampertemuan" placeholder="Jam pertemuan" class="input-choice" required>
@@ -60,6 +60,18 @@
         </form>
     </div>
 </div>
+
+@if (session('error'))
+    <script>
+        alert("{{ session('error') }}");
+    </script>
+@endif
+
+@if (session('success'))
+    <script>
+        alert("{{ session('success') }}");
+    </script>
+@endif
 
 </body>
 </html>
