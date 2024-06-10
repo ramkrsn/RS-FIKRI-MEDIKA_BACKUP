@@ -17,6 +17,31 @@ class JadwalController extends Controller
 
     public function store(Request $request)
     {
+        // Validate the incoming request data
+        $request->validate([
+            'namadepan' => 'required|string|max:255',
+            'namabelakang' => 'required|string|max:255',
+            'NIK' => 'required|string|max:255',
+            'keluhanpasien' => 'required|string',
+            'tanggalpertemuan' => 'required|date',
+            'jampertemuan' => 'required|date_format:H:i',
+            'namadokter' => 'required|string|max:255',
+            'polidokter' => 'required|string|max:255',
+            'opsi' => 'required|string'
+        ]);
+
+        // Check if an appointment already exists for the given date and time
+        $existingAppointment = JadwalPertemuan::where('tanggalpertemuan', $request->tanggalpertemuan)
+            ->where('jampertemuan', $request->jampertemuan)
+            ->where('namadokter', $request->namadokter)
+            ->first();
+
+        if ($existingAppointment) {
+            // Redirect back with an error message
+            return redirect()->back()->with('error', 'The selected doctor is already booked for the given date and time.');
+        }
+
+        // Create a new appointment
         $jadwalpertemuan = new Jadwalpertemuan;
         $jadwalpertemuan->namadepan = $request->namadepan;
         $jadwalpertemuan->namabelakang = $request->namabelakang;
@@ -29,6 +54,9 @@ class JadwalController extends Controller
         $jadwalpertemuan->opsi = $request->opsi;
 
         $jadwalpertemuan->save();
-        return redirect(url('/jadwalpertemuan'));
+
+        // Flash success message
+        return redirect(url('/jadwalpertemuan'))->with('success', 'Appointment scheduled successfully.');
     }
 }
+

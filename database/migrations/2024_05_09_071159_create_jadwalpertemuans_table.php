@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('polidokter'); 
             $table->string('namadokter'); 
             $table->string("opsi");
+            $table->string("status")->default("pending");
             $table->timestamps();
 
         });
