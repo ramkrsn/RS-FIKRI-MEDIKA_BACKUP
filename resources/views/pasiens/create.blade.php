@@ -55,6 +55,7 @@
                             <div class="form-group">
                                 <p class="black-text">Dokter:</p>
                                 <select class="form-control" name="namadokter">
+                                    <option value="" selected></option>
                                     @foreach($dokters as $dokter)
                                         <option value="{{ $dokter->namadokter }}">{{ $dokter->namadokter }}</option>
                                     @endforeach
@@ -62,7 +63,7 @@
                             </div>
                             <div class="form-group">
                                 <p class="black-text">Tanggal Masuk:</p>
-                                <input type="date" class="form-control" name="tanggal_masuk" required>
+                                <input type="date" class="form-control" name="tanggal_masuk">
                             </div>
                             <div class="form-group">
                                 <p class="black-text">Tanggal Keluar:</p>
@@ -71,6 +72,7 @@
                             <div class="form-group">
                                 <p class="black-text">Status:</p>
                                 <select class="form-control" name="status">
+                                    <option value="" selected></option>
                                     @foreach($statusEnum as $value)
                                         <option value="{{ $value }}">{{ ucfirst($value) }}</option>
                                     @endforeach
