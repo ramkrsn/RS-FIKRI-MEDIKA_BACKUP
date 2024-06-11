@@ -6,9 +6,9 @@
 
 @section('content')
 <div class="h-vh-100 p-5" style="background-color: #21BF73; width: 83vw">
-        <h1 class="fw-bold" style="color: white">Reservasi Obat</h1>
+        <h1 class="fw-bold" style="color: white">Manajemen Antrian</h1>
         <div style="background-color: white; color: black;" class="rounded-3 w-full p-3">
-            <h3 class="fw-bold">Daftar Reservasi Obat</h3>
+            <h3 class="fw-bold">Daftar Antrian Pertemuan</h3>
             @if (Session::has('success'))
                 <div class="alert alert-success alert-lg"> {{ Session::get('success') }}</div>
             @elseif (Session::has('fail'))
