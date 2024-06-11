@@ -255,7 +255,14 @@
             font-weight: 900;
             font-style: italic;
         }
-
+        .nama_fasilitas {
+            font-weight: bold;
+            font-size: 1.5em;
+            text-align: center;
+        }
+        .deskripsi {
+            text-align: center;
+        }
         a {
             text-decoration: none;
         }
@@ -281,24 +288,13 @@
         <p class="header-title poppins-bold">Fasilitas Rumah Sakit</p>
 
         <section id="content" style="padding: 16px; min-height: 100%">
-            <div class="main">
-                <div class="section">
-                    <h3>Kamar Rawat Inap</h3>
-                    <p>Rumah sakit kami menyediakan kamar rawat inap dengan berbagai fasilitas yang nyaman.</p>
-                </div>
-                <div class="section">
-                    <h3>Ruang Operasi</h3>
-                    <p>Ruang operasi kami dilengkapi dengan peralatan medis modern untuk memastikan keselamatan dan kenyamanan pasien.</p>
-                </div>
-                <div class="section">
-                    <h3>IGD</h3>
-                    <p>Unit Gawat Darurat (IGD) siap melayani pasien darurat 24 jam sehari.</p>
-                </div>
-                <div class="section">
-                    <h3>Poliklinik</h3>
-                    <p>Kami memiliki berbagai poliklinik spesialis dengan dokter-dokter ahli di bidangnya.</p>
-                </div>
-            </div>
+        @foreach($fasilitas as $item)
+                <tr>
+                <td> <div class="nama_fasilitas">{{ $item->nama_fasilitas }} </div></td>
+                <br>
+                    <td><div class="deskripsi">{{ $item->deskripsi }}</div></td>
+                </tr>
+            @endforeach
         </section>
         
     </div>
