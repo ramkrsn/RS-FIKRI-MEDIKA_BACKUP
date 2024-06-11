@@ -17,8 +17,7 @@ return new class extends Migration
             $table->bigInteger("nik")->unique();
             $table->integer("nomerkamar");
             $table->bigInteger("no_hp");
-            $table->string("lantaikamar");
-            $table->text("infokamar");
+            $table->integer("lantaikamar");
             $table->string("penyakit");
             $table->string("dokter");
             $table->date("tanggal_masuk");
