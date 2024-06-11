@@ -275,7 +275,7 @@
 
         <p class="header-title poppins-bold">Antrian</p>
 
-        <section id="content">
+        <section id="content" style="padding: 16px; min-height: 100%">
             <div>
                 <a href="{{url('/queue')}}">
                     <button
@@ -325,14 +325,14 @@
                                 <div class="my-4" style="my-5 display: flex; align-items: center; justify-content: center;">
                                     <div style="text-align: center;">
                                         <h3 style="margin: 0;">Nomor Antrian</h3>
-                                        <span style="font-size: 1.8rem; font-weight: 600;">{{ $data->idjadwalpertemuan }}</span>
+                                        <span style="font-size: 1.8rem; font-weight: 600;">{{ $data->nomor_antrian }}</span>
                                     </div>
                                 </div>
-                                <div class="my-4" style="display: flex; align-items: center; justify-content: center;">
+                                <!-- <div class="my-4" style="display: flex; align-items: center; justify-content: center;">
                                     <div style="text-align: center;">
-                                        <h4 style="margin: 0;"><a href="{{ url('/informasiobat') }}">Detail Obat</a></h4>
+                                        <h4 style="margin: 0;"><a href="{{ url('/article/1') }}">Detail Obat</a></h4>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

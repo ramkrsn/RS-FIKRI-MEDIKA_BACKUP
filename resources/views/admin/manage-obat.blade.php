@@ -7,7 +7,7 @@
         <h1 class="fw-bold" style="color: white">Manajemen Obat</h1>
         <div style="background-color: white; color: black;" class="rounded-3 w-full p-3">
             <h3 class="fw-bold">Daftar Obat</h3>
-            <button class="btn btn-success my-2" data-bs-toggle="modal" data-bs-target="#modalStore">Tambah</button>
+            <button class="btn add-medicine btn-success my-2" data-bs-toggle="modal" data-bs-target="#modalStore">Tambah</button>
             @if (Session::has('success'))
                 <div class="alert alert-success alert-lg"> {{ Session::get('success') }}</div>
             @elseif (Session::has('fail'))
@@ -72,7 +72,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                        <button type="submit" class="submit-buton btn btn-primary">Simpan</button>
                                                     </div>
                                                 </form>
                                             </div>

@@ -175,4 +175,6 @@ Route::delete('/informasiobat/{informasiobat}', [InformasiObatController::class,
 Route::get('/article/{id}', [InformasiObatController::class, 'showArticle'])->name('article.show');
 Route::get('/article', [InformasiObatController::class, 'index'])->name('article.index');
 
+Route::get('/article/{id}/', [InformasiObatController::class, 'showArticle']);
+
 

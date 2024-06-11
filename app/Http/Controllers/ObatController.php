@@ -41,26 +41,28 @@ class ObatController extends Controller
     }
 
     public function editObat(Request $request, string $id){
-        $artikel = Obat::find($id);
-
-        $request->validate([
-            'nama_obat' => 'required',
-            'resep_obat' => 'required',
-            'idjadwalpertemuan' => 'required',
-        ]);
-
-        $artikel->nama_obat = $request->input('nama_obat');
-        $artikel->resep_obat = $request->input('resep_obat');
-        $artikel->idjadwalpertemuan = $request->input('idjadwalpertemuan');
-
-        $artikel->save();
-
-        if($artikel) {
+        try{
+            $artikel = Obat::findOrFail($id);
+            
+            $request->validate([
+                'nama_obat' => 'required',
+                'resep_obat' => 'required',
+                'idjadwalpertemuan' => 'required',
+            ]);
+    
+            $data = $request->all();
+            
+            $artikel->update([
+                'nama_obat' => $data['nama_obat'],
+                'resep_obat' => $data['resep_obat'],
+                'nomor_antrian' => $data['idjadwalpertemuan'],
+                'idjadwalpertemuan' => $data['idjadwalpertemuan']
+                ]);
             return redirect()->back()->with('success', 'Data Berhasil Diubah');
-
-        } else {
-            dd('asdas');
+        }catch(\Exception $e){
+            dd($e->getMessage());
         }
+    
 
     }
 

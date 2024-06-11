@@ -290,7 +290,7 @@
                             <div style="font-size: 1rem; font-weight: 500">
                                 {{ Illuminate\Support\Str::limit($data->title, 50) }}</div>
                             <div style="font-size: 0.7rem">
-                                {{ Illuminate\Support\Str::limit($data->description, 120)    }}</div>
+                                {{ Illuminate\Support\Str::limit($data->description, 10)    }}</div>
                         </div>
                     </div>
                 </a>
