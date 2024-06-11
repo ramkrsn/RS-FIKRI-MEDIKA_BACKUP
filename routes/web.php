@@ -148,7 +148,8 @@ Route::delete('/admin/artikel/{id}', [ArtikelController::class, 'destroy'])->nam
 Route::get('/antrianhome', [AntrianController::class, "home"]);
 
 Route::get('/manage-antrian', [ManajemenAntrianController::class, "index"]);
-Route::delete('/deleteantrian/{idjadwalpertemuan}/delete', [ManajemenAntrianController::class, 'destroyantrian']);
+Route::put('/manage-antrian/{id}', [ManajemenAntrianController::class, 'updateStatusAntrian'])->name('manage-antrian.update');
+// Route::delete('/deleteantrian/{idjadwalpertemuan}/delete', [ManajemenAntrianController::class, 'destroyantrian']);
 
 
 route::get('/menerimakunjungan', [MenerimaKunjunganController::class, "index"]);

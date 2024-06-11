@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Profil RSU Fikri Medika</title>
+    <title>Antrian Jadwal Pertemuan</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -25,6 +25,18 @@
     </script>
     <!-- Styles -->
     <style>
+        .status-pending {
+            color: orange;
+        }
+
+        .status-done {
+            color: green;
+        }
+
+        .status-cancel {
+            color: red;
+        }
+        
         .hidden {
             transform: translateX(-16rem);
             transition: transform 300ms ease-out;
@@ -355,6 +367,23 @@
                                     <div class="mt-2">
                                         <div class="fw-semibold">Estimasi Jadwal</div>
                                         <div>{{ $data->est_jadwal }}</div>
+                                    </div>
+                                    <?php
+                                        $statusClass = '';
+                                        if (trim($data->status) === 'pending') {
+                                            $statusClass = 'status-pending';
+                                        } elseif ($data->status === 'done') {
+                                            $statusClass = 'status-done';
+                                        } elseif ($data->status === 'cancel') {
+                                            $statusClass = 'status-cancel';
+                                        }
+                                    ?>
+
+                                    <div class="mt-2">
+                                        <div class="fw-semibold">Status</div>
+                                        <div class="<?php echo $statusClass; ?>">
+                                            <?php echo $data->status; ?>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- <div class="mt-5 d-flex" style="flex-direction: column;">

@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\JadwalPertemuan;
 use Illuminate\Http\Request;
+use Session;
 
 class ManajemenAntrianController extends Controller
 {
     public function index()
     {
         $jadwalpertemuan = JadwalPertemuan::all();
-        return view('manage-antrian', compact('jadwalpertemuan')); 
+        return view('admin.manage-antrian', compact('jadwalpertemuan')); 
         $jadwalpertemuan->no_antrian = $this->generateQueueNumber($jadwalpertemuan->jampertemuan);
     }
 
@@ -45,4 +46,16 @@ class ManajemenAntrianController extends Controller
         \Log::info('jampertemuan: ' . $jampertemuan);
         return $queueMap[$jampertemuan] ?? 'N/A';
     }
+
+    public function updateStatusAntrian(Request $request, $idjadwalpertemuan)
+    {
+        $statusAntrian = JadwalPertemuan::find($idjadwalpertemuan);
+        $statusAntrian->status = $request->input('status');
+        $statusAntrian->save();
+
+        Session::flash('success',"Status pasien dengan NIK $statusAntrian->NIK berhasil diubah menjadi $statusAntrian->status");
+        return redirect('manage-antrian');
+    }
+
+
 }
