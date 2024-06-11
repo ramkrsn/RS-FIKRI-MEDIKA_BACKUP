@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
+<title>Jadwalkan Pertemuan</title>
 </head>
 <body>
 
@@ -13,7 +14,7 @@
             <img src="img/Logo.png" alt="Image">
         </div>
         <a class="x-button" href="{{ url('home') }}"><img src="img/X.png" alt="Image"></a>
-        <h1 class="top-text">Jadwal Dokter</h1>
+        <h1 class="top-text">Jadwalkan Pertemuan</h1>
     </div>
 
     <div class="section">
