@@ -370,14 +370,15 @@
                                     </div>
                                     <?php
                                         $statusClass = '';
-                                        if ($data->status == 'pending                                                                                                              ') {
+                                        if (trim($data->status) === 'pending') {
                                             $statusClass = 'status-pending';
-                                        } elseif ($data->status == 'done') {
+                                        } elseif ($data->status === 'done') {
                                             $statusClass = 'status-done';
-                                        } elseif ($data->status == 'cancel') {
+                                        } elseif ($data->status === 'cancel') {
                                             $statusClass = 'status-cancel';
                                         }
                                     ?>
+
                                     <div class="mt-2">
                                         <div class="fw-semibold">Status</div>
                                         <div class="<?php echo $statusClass; ?>">
