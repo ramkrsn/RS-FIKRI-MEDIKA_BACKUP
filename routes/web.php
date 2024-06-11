@@ -19,6 +19,7 @@ use App\Http\Controllers\MenerimaKunjunganController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\AdminFeedbackController;
 use App\Http\Controllers\InformasiObatController;
+use App\Http\Controllers\PasienController;
 
 
 /*
@@ -166,3 +167,9 @@ Route::get('/informasiobat/{informasiobat}/edit', [InformasiObatController::clas
 Route::put('/informasiobat/{informasiobat}', [InformasiObatController::class, 'update'])->name('informasiobat.update');
 Route::delete('/informasiobat/{informasiobat}', [InformasiObatController::class, 'destroy'])->name('informasiobat.destroy');
 
+//pasien
+Route::get('/pasien', [PasienController::class, 'index'])->name('pasien.index');
+Route::get('/pasien/create', [PasienController::class, 'createpasien'])->name('pasien.create');
+Route::post('/pasien', [PasienController::class, 'store'])->name('pasien.store');
+Route::get('/pasien/{id}/edit', [PasienController::class, 'editpasien'])->name('pasien.edit');
+Route::patch('/pasien/{id}/edit', [PasienController::class, 'updatepasien'])->name('pasien.update');

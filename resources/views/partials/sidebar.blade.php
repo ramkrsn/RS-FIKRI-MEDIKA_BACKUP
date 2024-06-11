@@ -55,6 +55,10 @@
                         <i class="bi bi-capsule"></i>
                         <a class="nav-link black-text" href="{{ route('informasiobat.index') }}">Informasi Obat</a>
                         </li>
+                        <li class="nav-item d-flex align-items-center">
+                        <i class="bi bi-people-fill"></i>
+                        <a class="nav-link black-text" href="{{url('/pasien')}}">Manajemen Pasien</a>
+                    </li>
                     </li>
                 </ul>
             </div>
