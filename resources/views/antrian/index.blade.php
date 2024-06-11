@@ -25,12 +25,12 @@
     </script>
     <!-- Styles -->
     <style>
-        .status-sudah-diperiksa {
-            color: green;
-        }
-
         .status-pending {
             color: orange;
+        }
+
+        .status-done {
+            color: green;
         }
 
         .status-cancel {
@@ -370,10 +370,10 @@
                                     </div>
                                     <?php
                                         $statusClass = '';
-                                        if ($data->status == 'sudah diperiksa') {
-                                            $statusClass = 'status-sudah-diperiksa';
-                                        } elseif ($data->status == 'pending') {
+                                        if ($data->status == 'pending                                                                                                              ') {
                                             $statusClass = 'status-pending';
+                                        } elseif ($data->status == 'done') {
+                                            $statusClass = 'status-done';
                                         } elseif ($data->status == 'cancel') {
                                             $statusClass = 'status-cancel';
                                         }
