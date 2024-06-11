@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Models\JadwalPertemuan;
+use App\Models\pasien;
 
 class JadwalController extends Controller
 {
@@ -30,6 +31,14 @@ class JadwalController extends Controller
             'opsi' => 'required|string'
         ]);
 
+        // Check if the NIK exists in the pasien table
+        $existingPatient = pasien::where('nik', $request->NIK)->first();
+        
+        if (!$existingPatient) {
+            // Redirect back with an error message
+            return redirect()->back()->with('error', 'The NIK provided does not match any patient records.');
+        }
+
         // Check if an appointment already exists for the given date and time
         $existingAppointment = JadwalPertemuan::where('tanggalpertemuan', $request->tanggalpertemuan)
             ->where('jampertemuan', $request->jampertemuan)
@@ -42,7 +51,7 @@ class JadwalController extends Controller
         }
 
         // Create a new appointment
-        $jadwalpertemuan = new Jadwalpertemuan;
+        $jadwalpertemuan = new JadwalPertemuan;
         $jadwalpertemuan->namadepan = $request->namadepan;
         $jadwalpertemuan->namabelakang = $request->namabelakang;
         $jadwalpertemuan->NIK = $request->NIK;
@@ -59,4 +68,3 @@ class JadwalController extends Controller
         return redirect(url('/jadwalpertemuan'))->with('success', 'Appointment scheduled successfully.');
     }
 }
-
