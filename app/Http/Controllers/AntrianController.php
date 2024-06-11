@@ -54,4 +54,5 @@ class AntrianController extends Controller
         return $queueMap[$jampertemuan] ?? 'N/A';
     }
 
+
 }
