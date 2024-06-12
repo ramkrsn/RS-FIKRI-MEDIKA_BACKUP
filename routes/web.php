@@ -95,6 +95,7 @@ Route::get('/Melihat_Jadwal_Dokter', [ MelihatJadwalController::class, 'index'])
 
 Route::get('/KunjunganPasien', [KunjunganPasienController::class, 'index']);
 Route::post('/KunjunganPasien', [KunjunganPasienController::class, 'store']);
+route::get('/kunjunganpasienview', [MenerimaKunjunganController::class, "index"]);
 
 
 
@@ -154,7 +155,8 @@ Route::put('/manage-antrian/{id}', [ManajemenAntrianController::class, 'updateSt
 
 
 route::get('/menerimakunjungan', [MenerimaKunjunganController::class, "index"]);
-Route::delete('/deletekunjungan/{idkunjungan}', [MenerimaKunjunganController::class, 'deletekunjungan']);
+// Route::delete('/deletekunjungan/{idkunjungan}', [MenerimaKunjunganController::class, 'deletekunjungan']);
+
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
 Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');

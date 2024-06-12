@@ -46,17 +46,24 @@
                         <p class="antrian-text"><strong>NIK:</strong> {{ $kunjungan->nik }}</p>
                         <p class="antrian-text"><strong>Email:</strong> {{ $kunjungan->email }}</p>
                         <p class="antrian-text"><strong>Nomor HP:</strong> {{ $kunjungan->no_hp }}</p>
-                        <p class="antrian-text"><strong>Nama Pasien:</strong> {{ $kunjungan->nama_pasien }}</p>
+                        <p class="antrian-text"><strong>Nama Pasien:</strong> {{ $kunjungan->namapasien }} </p>
+                        @if($kunjungan->pasien)
+                            <p class="antrian-text"><strong>Nomor Kamar:</strong> {{ $kunjungan->pasien->nomerkamar }}</p>
+                            <p class="antrian-text"><strong>Lantai Kamar:</strong> {{ $kunjungan->pasien->lantaikamar }}</p>
+                        @else
+                            <p class="antrian-text"><strong>Nomor Kamar:</strong> Tidak ditemukan</p>
+                            <p class="antrian-text"><strong>Lantai Kamar:</strong> Tidak ditemukan</p>
+                        @endif
                         <p class="antrian-text"><strong>Tanggal:</strong> {{ $kunjungan->tanggal }}</p>
                         <p class="antrian-text"><strong>Waktu:</strong> {{ $kunjungan->waktu }}</p>
                     </div>
-                    <div class="button-wrapper">
+                    <!-- <div class="button-wrapper">
                         <form action="{{ url('/deletekunjungan/'.$kunjungan->idkunjungan) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger right-spacing" type="submit">Delete</button>
                         </form>
-                    </div>
+                    </div> -->
                 </div>
                 @endforeach
             </div>
