@@ -11,7 +11,7 @@ class pasien extends Model
     protected $table = 'pasiens';
     protected $primaryKey="idpasien";
     protected $fillable = ["namapasien", "nik", "nomerkamar", "no_hp", "lantaikamar", "penyakit", "dokter", "tanggal_masuk", "tanggal_keluar", "status"]; 
-    protected $guarded="idpasien";
+    // protected $guarded="idpasien";
 
 }
 

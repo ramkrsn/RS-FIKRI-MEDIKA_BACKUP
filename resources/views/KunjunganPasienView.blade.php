@@ -291,52 +291,34 @@
         </header>
         <p class="header-title poppins-bold">Kunjungan pasien</p>
         <div class="card-header">
-            <form action="{{ url('KunjunganPasien') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <h3>Data Pengunjung</h3>
-                <div class="form-group">
-                    <label for="nama_depan">Nama Depan</label>
-                    <input type="text" class="form-control" id="nama_depan" name="nama_depan" required>
+        @foreach($kunjungans as $kunjungan)
+                <div class="queue-wrapper">
+                    <div class="details">
+                        <p class="antrian-text"><strong>ID Kunjungan:</strong> {{ $kunjungan->idkunjungan }}</p>
+                        <p class="antrian-text"><strong>Nama:</strong> {{ $kunjungan->nama_depan }} {{ $kunjungan->nama_belakang }}</p>
+                        <p class="antrian-text"><strong>NIK:</strong> {{ $kunjungan->nik }}</p>
+                        <p class="antrian-text"><strong>Email:</strong> {{ $kunjungan->email }}</p>
+                        <p class="antrian-text"><strong>Nomor HP:</strong> {{ $kunjungan->no_hp }}</p>
+                        <p class="antrian-text"><strong>Nama Pasien:</strong> {{ $kunjungan->namapasien }} </p>
+                        @if($kunjungan->pasien)
+                            <p class="antrian-text"><strong>Nomor Kamar:</strong> {{ $kunjungan->pasien->nomerkamar }}</p>
+                            <p class="antrian-text"><strong>Lantai Kamar:</strong> {{ $kunjungan->pasien->lantaikamar }}</p>
+                        @else
+                            <p class="antrian-text"><strong>Nomor Kamar:</strong> Tidak ditemukan</p>
+                            <p class="antrian-text"><strong>Lantai Kamar:</strong> Tidak ditemukan</p>
+                        @endif
+                        <p class="antrian-text"><strong>Tanggal:</strong> {{ $kunjungan->tanggal }}</p>
+                        <p class="antrian-text"><strong>Waktu:</strong> {{ $kunjungan->waktu }}</p>
+                    </div>
+                    <!-- <div class="button-wrapper">
+                        <form action="{{ url('/deletekunjungan/'.$kunjungan->idkunjungan) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger right-spacing" type="submit">Delete</button>
+                        </form>
+                    </div> -->
                 </div>
-                <div class="form-group">
-                    <label for="nama_belakang">Nama Belakang</label>
-                    <input type="text" class="form-control" id="nama_belakang" name="nama_belakang" required>
-                </div>
-                <div class="form-group">
-                    <label for="nik">NIK / No KTP Pengunjung</label>
-                    <input type="text" class="form-control" id="nik" name="nik" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="no_hp">Nomor Handphone</label>
-                    <input type="text" class="form-control" id="no_hp" name="no_hp" required>
-                </div>
-                <h3>Data Pasien</h3>
-                <div class="form-group">
-                    <label for="namapasien">Nama Lengkap Pasien</label>
-                    <select class="form-control" id="namapasien" name="namapasien" required>
-                        <option value="" disabled selected>Pilih Pasien</option>
-                        @foreach($pasiens as $pasien)
-                            <option value="{{ $pasien->namapasien }}">{{ $pasien->namapasien }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="tanggal">Tanggal</label>
-                    <input type="date" class="form-control" id="tanggal" name="tanggal" required>
-                </div>
-                <div class="form-group">
-                    <label for="waktu">Waktu (10 AM - 10 PM)</label>
-                    <input type="time" class="form-control" id="waktu" name="waktu" required min="10:00" max="22:00">
-                </div>
-                <div>
-                    <button id="jadwalButton" type="submit" class="btn btn-success btn-block">Jadwalkan Kunjungan</button>
-                </div>
-            </div>
-            </form>
+                @endforeach
         </div>
         </div>     
     </div>

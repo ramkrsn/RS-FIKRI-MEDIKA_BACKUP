@@ -36,8 +36,8 @@ class KunjunganPasienController extends Controller
         $kunjungan->waktu = $request->waktu;
         $kunjungan->save();
 
-        // Mengambil detail pasien untuk ditampilkan dalam pop-up
-        $pasiens = Pasien::where('namapasien', $request->namapasien)->first();
+        // // Mengambil detail pasien untuk ditampilkan dalam pop-up
+        // $pasiens = Pasien::where('namapasien', $request->namapasien)->first();
 
 
         // // Menampilkan pop-up dengan detail kamar pasien
