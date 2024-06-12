@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Models\JadwalPertemuan;
-use App\Models\pasien;
+use App\Models\Pasien;
+use Illuminate\Support\Facades\Auth;
 
 class JadwalController extends Controller
 {
@@ -32,7 +33,7 @@ class JadwalController extends Controller
         ]);
 
         // Check if the NIK exists in the pasien table
-        $existingPatient = pasien::where('nik', $request->NIK)->first();
+        $existingPatient = Pasien::where('nik', $request->NIK)->first();
         
         if (!$existingPatient) {
             // Redirect back with an error message
@@ -42,12 +43,11 @@ class JadwalController extends Controller
         // Check if an appointment already exists for the given date and time
         $existingAppointment = JadwalPertemuan::where('tanggalpertemuan', $request->tanggalpertemuan)
             ->where('jampertemuan', $request->jampertemuan)
-            ->where('namadokter', $request->namadokter)
             ->first();
 
         if ($existingAppointment) {
             // Redirect back with an error message
-            return redirect()->back()->with('error', 'The selected doctor is already booked for the given date and time.');
+            return redirect()->back()->with('error', 'The selected time slot is already booked for the given date.');
         }
 
         // Create a new appointment
@@ -61,6 +61,7 @@ class JadwalController extends Controller
         $jadwalpertemuan->namadokter = $request->namadokter;
         $jadwalpertemuan->polidokter = $request->polidokter;
         $jadwalpertemuan->opsi = $request->opsi;
+        $jadwalpertemuan->id= Auth::id();
 
         $jadwalpertemuan->save();
 

@@ -19,7 +19,10 @@ use App\Http\Controllers\MenerimaKunjunganController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\AdminFeedbackController;
 use App\Http\Controllers\InformasiObatController;
+
 use App\Http\Controllers\AdminReservasiObatController;
+
+use App\Http\Controllers\PasienController;
 
 
 /*
@@ -83,18 +86,9 @@ Route::get('/pengambilan-obat', [PengambilanObatController::class, 'pengambilan_
 
 Route::get('/Melihat_Jadwal_Dokter', [ MelihatJadwalController::class, 'index']);
 
-Route::get('/kamar', [KamarController::class, 'index']);
-
-Route::get('createkamar', [KamarController::class, 'kamar']);
-Route::post('createkamar', [KamarController::class, 'createkamar']);
-
-Route::get('updatekamar/{idkamar}/update', [KamarController::class, 'editkamar']);
-Route::patch('updatekamar/{idkamar}/update', [KamarController::class, 'updatekamar']);
-
-Route::delete('/deletekamar/{idkamar}/delete', [KamarController::class, 'destroykamar']);
-
 Route::get('/KunjunganPasien', [KunjunganPasienController::class, 'index']);
-Route::post('/KunjunganPasien', [KunjunganPasienController::class, 'Store'])->name('KunjunganPasien'); 
+Route::post('/KunjunganPasien', [KunjunganPasienController::class, 'store']);
+Route::get('/KunjunganPasienView', [KunjunganPasienController::class, 'view']);
 
 
 
@@ -174,6 +168,7 @@ Route::get('/informasiobat/{informasiobat}/edit', [InformasiObatController::clas
 Route::put('/informasiobat/{informasiobat}', [InformasiObatController::class, 'update'])->name('informasiobat.update');
 Route::delete('/informasiobat/{informasiobat}', [InformasiObatController::class, 'destroy'])->name('informasiobat.destroy');
 
+
 //manage- antrian
 
 
@@ -184,4 +179,12 @@ Route::put('/manage-reservasi/{id}', [AdminReservasiObatController::class, 'upda
 Route::get('/status-reservasi', [AntrianController::class, "index"])->name('queue.index');
 Route::get('/status-reservasi/{id}', [AntrianController::class, "show"])->name('queue.show');
 Route::get('/status-reservasi', [AntrianController::class, "getAntrianObat"]);
+
+
+//pasien
+Route::get('/pasien', [PasienController::class, 'index'])->name('pasien.index');
+Route::get('/pasien/create', [PasienController::class, 'createpasien'])->name('pasien.create');
+Route::post('/pasien', [PasienController::class, 'store'])->name('pasien.store');
+Route::get('/pasien/{id}/edit', [PasienController::class, 'editpasien'])->name('pasien.edit');
+Route::patch('/pasien/{id}/edit', [PasienController::class, 'updatepasien'])->name('pasien.update');
 

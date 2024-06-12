@@ -15,18 +15,18 @@ return new class extends Migration
             $table->bigInteger("nik");
             $table->string("email");
             $table->bigInteger("no_hp");
-            $table->string("nama_pasien");
+            $table->unsignedBigInteger('idpasien')->nullable();
+            $table->foreign('idpasien')->references('idpasien')->on('pasiens')->onDelete('set null');
             $table->date('tanggal');
             $table->time('waktu');
+            $table->integer('id');
             $table->timestamps();
         }); 
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('kunjungans');
     }
 };
+

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -5,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Antrian Jadwal Pertemuan</title>
+    <title>Kunjungan Pasien</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -19,24 +20,11 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
     <!-- Styles -->
     <style>
-        .status-pending {
-            color: orange;
-        }
-
-        .status-done {
-            color: green;
-        }
-
-        .status-cancel {
-            color: red;
-        }
-        
         .hidden {
             transform: translateX(-16rem);
             transition: transform 300ms ease-out;
@@ -153,6 +141,10 @@
             /* Add spacing between sections */
             align-items: center;
         }
+        .card-header {
+    padding: 20px; /* Optional: Add padding around the card header */
+
+}
 
         /* Mobile Responsive Styles */
         @media only screen and (max-width: 768px) {
@@ -272,133 +264,58 @@
         a {
             text-decoration: none;
         }
+        .btn-block {
+    display: block;
+    width: 100%;
+}
+.form-group {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
 
+.details {
+        border: 1px solid #ccc; /* Warna dan ketebalan border */
+        border-radius: 8px; /* Sudut melengkung */
+        padding: 20px; /* Padding di dalam kotak */
+        margin-bottom: 20px; /* Spasi antar kotak */
+        background-color: #fff; /* Warna latar belakang */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan */
+    }
     </style>
 </head>
 
 <body class="poppins-regular" style="display: flex; min-height: 100vh">
     <div style="width: 100%; height: full; background-color: #F8FAFD; z-index: 2000"></div>
     <div class="wrapper">
+    
         <header class="header h1">
             <div class="logo">
                 <img src="{{ asset('assets/logo.png') }}" alt="RSU Fikri Medika Logo">
             </div>
             <button id="openToggle" style="background-color: transparent; border: none; cursor: pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="#21BF73" class="menu">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#21BF73" class="menu">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
             </button>
         </header>
-
-        <p class="header-title poppins-bold">Antrian</p>
-
-        <section id="content" style="padding: 16px; min-height: 100%">
-            <div>
-                <button class=""
-                    style="background-color: #21BF73; color: white; padding: 5px 10px; border: 1px solid #21BF73; border-radius: 0.5rem; cursor: pointer">Pertemuan</button>
-                <a href="{{ url('/antrian-obat') }}">
-                    <button
-                        style="background-color: white; color: #21BF73; padding: 5px 10px; border: 1px solid white; border-radius: 0.5rem; cursor: pointer">Obat</button>
-                </a>
-            </div>
-            <hr style="border: 1px solid black; margin: 10px 0px">
-            <div style="display: flex; flex-direction: column; gap: 0.5rem">
-                @auth
-                @foreach($queues->sortBy('tanggal') as $data)
-                <div data-bs-toggle="modal" data-bs-target="#exampleModal{{ $data->idjadwalpertemuan }}">
-                    <div class="shadow"
-                        style="background-color: white; display: flex; gap: 1rem; border-radius: 0.5rem;">
-                        <div
-                            style="background-image: url('{{ asset('./assets/doctor.png') }}'); width: 100px; height: 100px; background-color: white; border-radius: 0.5rem">
-                        </div>
-                        <div style="display: flex; flex-direction: column; justify-content: center; row-gap: 0.5rem;">
-                            <div style="font-size: 1.2rem; font-weight: 500">{{ $data->dokter }}</div>
-                            <div style="font-size: 0.8rem">{{ $data->tanggal }}, {{ $data->no_antrian }}, {{ $data->status }}</div>
-                        </div>
-                    </div>
+        <p class="header-title poppins-bold">Kunjungan pasien</p>
+        <div class="card-header">
+            @foreach($kunjungans as $kunjunganItem)
+            <div class="queue-wrapper">
+                <div class="details" >
+                    <p class="antrian-text"><strong>Nama:</strong> {{ $kunjunganItem->nama_depan }} {{ $kunjunganItem->nama_belakang }}</p>
+                    <p class="antrian-text"><strong>NIK:</strong> {{ $kunjunganItem->nik }}</p>
+                    <p class="antrian-text"><strong>Email:</strong> {{ $kunjunganItem->email }}</p>
+                    <p class="antrian-text"><strong>Nomor HP:</strong> {{ $kunjunganItem->no_hp }}</p>
+                    <p class="antrian-text"><strong>Nama Pasien:</strong> {{ $kunjunganItem->pasien->namapasien }}</p>
+                    <p class="antrian-text"><strong>Nomor Kamar:</strong> {{ $kunjunganItem->pasien->nomerkamar }}</p>
+                    <p class="antrian-text"><strong>Lantai Kamar:</strong> {{ $kunjunganItem->pasien->lantaikamar }}</p>
+                    <p class="antrian-text"><strong>Tanggal:</strong> {{ $kunjunganItem->tanggal }}</p>
+                    <p class="antrian-text"><strong>Waktu:</strong> {{ $kunjunganItem->waktu }}</p>
                 </div>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal{{ $data->idjadwalpertemuan }}" tabindex="-1"
-                    aria-labelledby="exampleModal{{ $data->idjadwalpertemuan }}" aria-hidden="true">
-                    <div class="modal-dialog" style=" max-width: 440px;">
-                        <div class="modal-content">
-                            <div class="" style="background-color: #F1F864; border-radius: 0.5rem;">
-                                <div class=""
-                                    style="display: flex; padding: 12px; align-items: center; justify-content: space-between;">
-                                    <img src="{{ asset('assets/logo.png') }}" alt="">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <p style=" color: #21BF73; font-size: 20px; font-weight: bold; text-align: center;">
-                                    Jadwalkan Pertemuan</p>
-                            </div>
-                            <div class="modal-body" style="padding: 28px">
-                                <div style="display: flex; gap: 1rem">
-                                    <div
-                                        style="background-image: url('{{ asset('./assets/doctor.png') }}'); width: 80px; height: 80px; background-color: white; border-radius: 0.5rem">
-                                    </div>
-                                    <div
-                                        style="display: flex; flex-direction: column; justify-content: center; row-gap: 0.5rem;">
-                                        <div style="font-size: 1rem; font-weight: 500">{{ $data->dokter }}</div>
-                                        <div style="font-size: 0.8rem">{{ $data->tanggal }}, {{ $data->no_antrian }}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mt-3">
-                                    <div>
-                                        <div class="fw-semibold">Pasien</div>
-                                        <div>{{ $data->nama_pasien }}</div>
-                                    </div>
-                                    <!-- <div class="mt-2">
-                                        <div class="fw-semibold">Keluhan</div>
-                                        <div>{{ $data->keluhan }}</div>
-                                    </div> -->
-                                    <div class="mt-2">
-                                        <div class="fw-semibold">Tanggal Pertemuan</div>
-                                        <div>{{ $data->tanggal }}</div>
-                                    </div>
-                                    <div class="mt-2">
-                                        <div class="fw-semibold">Antriannjsfsnj Anda</div>
-                                        <div>{{ $data->no_antrian }}</div>
-                                    </div>
-                                    <div class="mt-2">
-                                        <div class="fw-semibold">Estimasi Jadwal</div>
-                                        <div>{{ $data->est_jadwal }}</div>
-                                    </div>
-                                    <?php
-                                        $statusClass = '';
-                                        if (trim($data->status) === 'pending') {
-                                            $statusClass = 'status-pending';
-                                        } elseif ($data->status === 'done') {
-                                            $statusClass = 'status-done';
-                                        } elseif ($data->status === 'cancel') {
-                                            $statusClass = 'status-cancel';
-                                        }
-                                    ?>
-
-                                    <div class="mt-2">
-                                        <div class="fw-semibold">Status</div>
-                                        <div class="<?php echo $statusClass; ?>">
-                                            <?php echo $data->status; ?>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p style="text-align: center"><br>*Anda akan mendapatkan notifikasi Whatsapp konfirmasi jika
-                                    jadwal pertemuan Anda telah tiba</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-                @endauth
             </div>
-        </section>
+            @endforeach
+        </div>
     </div>
-    @include('partials.sidebaruser')
-    
+    @include('partials.sidebaruser') 
 </body>
 
-</html>
