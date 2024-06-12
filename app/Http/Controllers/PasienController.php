@@ -57,7 +57,9 @@ class PasienController extends Controller
             $pasien->nomerkamar = $request->nomerkamar;
             $pasien->no_hp = $request->no_hp;
             $pasien->lantaikamar = $request->lantaikamar;
+            $pasien->penyakit = $request->penyakit;
             $pasien->dokter = $request->namadokter;
+            $pasien->tanggal_masuk = $request->tanggal_masuk;
             $pasien->tanggal_keluar = $request->tanggal_keluar;
             $pasien->status = $request->status;
             $pasien->save();

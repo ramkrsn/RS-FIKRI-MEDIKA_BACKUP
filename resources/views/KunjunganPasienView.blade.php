@@ -272,6 +272,14 @@
     margin-bottom: 20px; /* Adjust the value as needed */
 }
 
+.details {
+        border: 1px solid #ccc; /* Warna dan ketebalan border */
+        border-radius: 8px; /* Sudut melengkung */
+        padding: 20px; /* Padding di dalam kotak */
+        margin-bottom: 20px; /* Spasi antar kotak */
+        background-color: #fff; /* Warna latar belakang */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan */
+    }
     </style>
 </head>
 
@@ -293,7 +301,7 @@
         <div class="card-header">
             @foreach($kunjungans as $kunjunganItem)
             <div class="queue-wrapper">
-                <div class="details">
+                <div class="details" >
                     <p class="antrian-text"><strong>Nama:</strong> {{ $kunjunganItem->nama_depan }} {{ $kunjunganItem->nama_belakang }}</p>
                     <p class="antrian-text"><strong>NIK:</strong> {{ $kunjunganItem->nik }}</p>
                     <p class="antrian-text"><strong>Email:</strong> {{ $kunjunganItem->email }}</p>

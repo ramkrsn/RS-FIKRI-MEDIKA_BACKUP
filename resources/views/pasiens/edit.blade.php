@@ -48,6 +48,9 @@
                             <div class="form-group">
                                 <p class="black-text">Lantai Kamar:</p>
                                 <input type="text" class="form-control" name="lantaikamar" placeholder="Lantai Kamar" value="{{ $pasien->lantaikamar }}">
+                            </div> <div class="form-group">
+                                <p class="black-text">Penyakit</p>
+                                <input type="text" class="form-control" name="penyakit" placeholder="Penyakit" value="{{ $pasien->penyakit }}">
                             </div>
                             <div class="form-group">
                                 <div class="nama-dokter-container">
@@ -58,6 +61,10 @@
                                         @endforeach
                                     </select>
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <p class="black-text">Tanggal Masuk:</p>
+                                <input type="date" class="form-control" name="tanggal_masuk" value="{{ $pasien->tanggal_masuk }}">
                             </div>
                             <div class="form-group">
                                 <p class="black-text">Tanggal Keluar:</p>
