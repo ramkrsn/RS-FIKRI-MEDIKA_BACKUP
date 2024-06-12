@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class KunjunganDeleteTest extends DuskTestCase
+class PasienTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
@@ -14,9 +14,12 @@ class KunjunganDeleteTest extends DuskTestCase
     public function testExample(): void
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/menerimakunjungan')
-                    ->press('Delete')
-                    ->assertPathIs('/menerimakunjungan');
+            $browser->visit('/pasien')
+            ->pause(1000)
+                    ->assertPathIs('/pasien')
+                    ->pause(1000)
+                    ->assertSee('List Pasien')
+                    ->pause(1000);
         });
     }
 }
