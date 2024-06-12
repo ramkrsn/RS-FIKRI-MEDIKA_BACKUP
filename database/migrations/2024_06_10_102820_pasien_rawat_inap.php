@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string("penyakit");
             $table->string("dokter");
             $table->date("tanggal_masuk");
-            $table->date("tanggal_keluar");
+            $table->date("tanggal_keluar")->nullable();
             $table->enum('status', ['rawat inap', 'rawat jalan', 'sudah pulang']);
             $table->timestamps();
         });
