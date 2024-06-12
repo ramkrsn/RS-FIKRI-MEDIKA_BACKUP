@@ -37,11 +37,11 @@
                             <td>
                                 <div>
                                     @if ($data->statusobat == 'pending')
-                                        <p class="fw-bolder text-status text-secondary m-0">Sedang Diproses</p>
+                                        <p class=class="fw-bolder text-status m-0" style="color: rgb(255, 0, 0); font-weight: bold;">Sedang Diproses</p>
                                     @elseif ($data->statusobat == 'Sudah Diambil')
-                                        <p class="fw-bolder text-status text-warning m-0">Sudah Diambil</p>
+                                        <p class="fw-bolder text-status text-warning m-0" style="color: rgb(91, 198, 91); font-weight: bold;">Sudah Diambil</p>
                                     @elseif ($data->statusobat == 'Siap Diambil')
-                                        <p class="fw-bolder text-status text-success m-0">Siap Diambil</p>
+                                        <p class="fw-bolder text-status text-success m-0" style="color: rgb(247, 255, 2); font-weight: bold;">Siap Diambil</p>
                                     @endif
                                 </div>
                             </td>
