@@ -34,6 +34,7 @@ return array(
     'App\\Models\\Antrian' => $baseDir . '/app/Models/Antrian.php',
     'App\\Models\\Artikel' => $baseDir . '/app/Models/Artikel.php',
     'App\\Models\\Doctor' => $baseDir . '/app/Models/Doctor.php',
+    'App\\Models\\Fasilitas' => $baseDir . '/app/Models/Fasilitas.php',
     'App\\Models\\Feedback' => $baseDir . '/app/Models/Feedback.php',
     'App\\Models\\InformasiObat' => $baseDir . '/app/Models/InformasiObat.php',
     'App\\Models\\Kunjungan' => $baseDir . '/app/Models/Kunjungan.php',
