@@ -280,7 +280,7 @@
     <div class="wrapper">
     
         <header class="header h1">
-        <div class="logo">
+            <div class="logo">
                 <img src="{{ asset('assets/logo.png') }}" alt="RSU Fikri Medika Logo">
             </div>
             <button id="openToggle" style="background-color: transparent; border: none; cursor: pointer">
@@ -291,35 +291,23 @@
         </header>
         <p class="header-title poppins-bold">Kunjungan pasien</p>
         <div class="card-header">
-        @foreach($kunjungans as $kunjungan)
-                <div class="queue-wrapper">
-                    <div class="details">
-                        <p class="antrian-text"><strong>ID Kunjungan:</strong> {{ $kunjungan->idkunjungan }}</p>
-                        <p class="antrian-text"><strong>Nama:</strong> {{ $kunjungan->nama_depan }} {{ $kunjungan->nama_belakang }}</p>
-                        <p class="antrian-text"><strong>NIK:</strong> {{ $kunjungan->nik }}</p>
-                        <p class="antrian-text"><strong>Email:</strong> {{ $kunjungan->email }}</p>
-                        <p class="antrian-text"><strong>Nomor HP:</strong> {{ $kunjungan->no_hp }}</p>
-                        <p class="antrian-text"><strong>Nama Pasien:</strong> {{ $kunjungan->namapasien }} </p>
-                        @if($kunjungan->pasien)
-                            <p class="antrian-text"><strong>Nomor Kamar:</strong> {{ $kunjungan->pasien->nomerkamar }}</p>
-                            <p class="antrian-text"><strong>Lantai Kamar:</strong> {{ $kunjungan->pasien->lantaikamar }}</p>
-                        @else
-                            <p class="antrian-text"><strong>Nomor Kamar:</strong> Tidak ditemukan</p>
-                            <p class="antrian-text"><strong>Lantai Kamar:</strong> Tidak ditemukan</p>
-                        @endif
-                        <p class="antrian-text"><strong>Tanggal:</strong> {{ $kunjungan->tanggal }}</p>
-                        <p class="antrian-text"><strong>Waktu:</strong> {{ $kunjungan->waktu }}</p>
-                    </div>
-                    <!-- <div class="button-wrapper">
-                        <form action="{{ url('/deletekunjungan/'.$kunjungan->idkunjungan) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger right-spacing" type="submit">Delete</button>
-                        </form>
-                    </div> -->
+            @foreach($kunjungans as $kunjunganItem)
+            <div class="queue-wrapper">
+                <div class="details">
+                    <p class="antrian-text"><strong>Nama:</strong> {{ $kunjunganItem->nama_depan }} {{ $kunjunganItem->nama_belakang }}</p>
+                    <p class="antrian-text"><strong>NIK:</strong> {{ $kunjunganItem->nik }}</p>
+                    <p class="antrian-text"><strong>Email:</strong> {{ $kunjunganItem->email }}</p>
+                    <p class="antrian-text"><strong>Nomor HP:</strong> {{ $kunjunganItem->no_hp }}</p>
+                    <p class="antrian-text"><strong>Nama Pasien:</strong> {{ $kunjunganItem->pasien->namapasien }}</p>
+                    <p class="antrian-text"><strong>Nomor Kamar:</strong> {{ $kunjunganItem->pasien->nomerkamar }}</p>
+                    <p class="antrian-text"><strong>Lantai Kamar:</strong> {{ $kunjunganItem->pasien->lantaikamar }}</p>
+                    <p class="antrian-text"><strong>Tanggal:</strong> {{ $kunjunganItem->tanggal }}</p>
+                    <p class="antrian-text"><strong>Waktu:</strong> {{ $kunjunganItem->waktu }}</p>
                 </div>
-                @endforeach
+            </div>
+            @endforeach
         </div>
-        </div>     
     </div>
     @include('partials.sidebaruser') 
+</body>
+

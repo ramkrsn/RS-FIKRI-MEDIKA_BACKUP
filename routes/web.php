@@ -83,19 +83,9 @@ Route::get('/pengambilan-obat', [PengambilanObatController::class, 'pengambilan_
 
 Route::get('/Melihat_Jadwal_Dokter', [ MelihatJadwalController::class, 'index']);
 
-// Route::get('/kamar', [KamarController::class, 'index']);
-
-// Route::get('createkamar', [KamarController::class, 'kamar']);
-// Route::post('createkamar', [KamarController::class, 'createkamar']);
-
-// Route::get('updatekamar/{idkamar}/update', [KamarController::class, 'editkamar']);
-// Route::patch('updatekamar/{idkamar}/update', [KamarController::class, 'updatekamar']);
-
-// Route::delete('/deletekamar/{idkamar}/delete', [KamarController::class, 'destroykamar']);
-
 Route::get('/KunjunganPasien', [KunjunganPasienController::class, 'index']);
 Route::post('/KunjunganPasien', [KunjunganPasienController::class, 'store']);
-route::get('/kunjunganpasienview', [MenerimaKunjunganController::class, "index"]);
+Route::get('/KunjunganPasienView', [KunjunganPasienController::class, 'view']);
 
 
 
@@ -155,8 +145,7 @@ Route::put('/manage-antrian/{id}', [ManajemenAntrianController::class, 'updateSt
 
 
 route::get('/menerimakunjungan', [MenerimaKunjunganController::class, "index"]);
-// Route::delete('/deletekunjungan/{idkunjungan}', [MenerimaKunjunganController::class, 'deletekunjungan']);
-
+Route::delete('/deletekunjungan/{idkunjungan}', [MenerimaKunjunganController::class, 'deletekunjungan']);
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
 Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');

@@ -11,10 +11,10 @@ class Kunjungan extends Model
 
     protected $table = 'kunjungans';
     protected $primaryKey = 'idkunjungan'; // Correct primary key
-    protected $fillable = ['nama_depan', 'nama_belakang', 'nik', 'email', 'no_hp', 'namapasien', 'tanggal', 'waktu'];
+    protected $fillable = ['nama_depan', 'nama_belakang', 'nik', 'email', 'no_hp', 'idpasien', 'tanggal', 'waktu','id'];
 
     public function pasien()
     {
-        return $this->belongsTo(Pasien::class, 'idpasien');
+        return $this->belongsTo(Pasien::class, 'idpasien', 'idpasien'); // Update the relationship
     }
 }
