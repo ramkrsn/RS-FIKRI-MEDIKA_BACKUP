@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class ManajemenAntrianTestCase extends DuskTestCase
+class EditManajemenAntrianTestCase extends DuskTestCase
 {
     /**
      * A Dusk test example.
@@ -16,7 +16,10 @@ class ManajemenAntrianTestCase extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->visit('/manage-antrian')
                     ->assertSee('Manajemen Antrian')
-                    ->assertSee('Status')
+                    ->press('.icon')
+                    ->waitFor('.dropdown-menu')
+                    ->press('Done')
+                    ->assertSee('Status pasien dengan NIK')
                     ;
         });
     }
