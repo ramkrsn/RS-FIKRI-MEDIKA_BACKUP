@@ -5,23 +5,20 @@ namespace Tests\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
+use App\Models\User;
+
 
 class JadwalPertemuanTest extends DuskTestCase
 {
     /**
-     * A Dusk test example.
+     * test
+     * @group antrian
      */
     public function testExample(): void
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                    ->press('#openToggle')
-                    ->clickLink('Masuk')
-                    ->assertPathIs('/login')
-                    ->type('email', 'user@gmail.com')
-                    ->type('password', '11111111')
-                    ->press('Login')
-                    ->assertPathIs('/home')
+            $browser->loginAs(User::find(1))
+                    ->visit('/home')
                     ->press('#openToggle')
                     ->clickLink('Jadwalkan Pertemuan')
                     ->assertPathIs('/jadwalpertemuan')
@@ -31,14 +28,14 @@ class JadwalPertemuanTest extends DuskTestCase
                     ->type('NIK','1202210212')
                     ->type('keluhanpasien','sakit perut')
                     ->type('tanggalpertemuan','09/06/2024')
-                    ->type('jampertemuan','10:00')
-                    ->select('namadokter','Alif')
-                    ->select('polidokter','jantung')
+                    ->type('jampertemuan','09:00')
+                    ->select('namadokter','bobi')
+                    ->select('polidokter','gigi')
                     ->press('Jadwalkan Pertemuan')
-                    ->assertPathIs('/jadwalpertemuan')
-                     ;
-
-
+                    ->waitForDialog()
+                    ->assertDialogOpened('Appointment scheduled successfully.')
+                    ->acceptDialog()
+                    ->assertPathIs('/jadwalpertemuan');
         });
     }
 }

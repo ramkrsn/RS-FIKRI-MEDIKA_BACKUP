@@ -307,7 +307,7 @@
             <div style="display: flex; flex-direction: column; gap: 0.5rem">
                 @auth
                 @foreach($queues->sortBy('tanggal') as $data)
-                <div data-bs-toggle="modal" data-bs-target="#exampleModal{{ $data->idjadwalpertemuan }}">
+                <div data-bs-toggle="modal" data-bs-target="#exampleModal{{ $data->idjadwalpertemuan }}" dusk="detailAntrian">
                     <div class="shadow"
                         style="background-color: white; display: flex; gap: 1rem; border-radius: 0.5rem;">
                         <div
