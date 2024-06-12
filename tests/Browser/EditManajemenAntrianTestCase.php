@@ -18,9 +18,13 @@ class EditManajemenAntrianTestCase extends DuskTestCase
                     ->assertSee('Manajemen Antrian')
                     ->press('.icon')
                     ->waitFor('.dropdown-menu')
+                    ->pause('1000')
                     ->press('Done')
-                    ->assertSee('Status pasien dengan NIK')
-                    ;
+                    ->acceptDialog(function ($dialog) {
+                        $alertMessage = $dialog->getMessage();
+                        // Assert the alert message
+                        $this->assertEquals('Status pasien', $alertMessage);
+                        });
         });
     }
 }
