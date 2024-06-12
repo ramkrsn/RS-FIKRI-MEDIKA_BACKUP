@@ -42,4 +42,24 @@ class AntrianController extends Controller
         // Generate the queue number based on the count
         return sprintf('P%03d', $count);
     }
+
+    public function getAntrianObat()
+    {
+        // Get the ID of the current user
+        $userId = Auth::id();
+    
+        // Fetch only the records associated with the current user where status is 'done'
+        $data_antrian_obat = JadwalPertemuan::where('id', $userId)
+            ->where('status', 'done')
+            ->orderBy('tanggalpertemuan') // Order by date
+            ->orderBy('jampertemuan') // Order by time
+            ->get();
+    
+        // Iterate over each item and compute the queue number
+        foreach ($data_antrian_obat as $data) {
+            $data->no_antrian = $this->generateQueueNumber($data->tanggalpertemuan, $data->jampertemuan);
+        }
+    
+        return view('antrian.antrian-obat', compact('data_antrian_obat'));
+    }
 }
