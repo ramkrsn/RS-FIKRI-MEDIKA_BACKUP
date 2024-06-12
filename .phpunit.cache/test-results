@@ -1,1 +1,1 @@
-{"version":1,"defects":[],"times":{"Tests\\Browser\\ManajemenAntrianTestCase::testExample":3.426,"Tests\\Browser\\EditManajemenAntrianTestCase::testExample":2.519}}
+{"version":1,"defects":{"Tests\\Browser\\EditManajemenAntrianTestCase::testExample":8},"times":{"Tests\\Browser\\ManajemenAntrianTestCase::testExample":3.426,"Tests\\Browser\\EditManajemenAntrianTestCase::testExample":3.255}}

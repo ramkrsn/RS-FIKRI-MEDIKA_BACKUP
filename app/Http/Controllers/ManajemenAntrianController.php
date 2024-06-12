@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\JadwalPertemuan;
 use Illuminate\Http\Request;
 use Session;
+use Illuminate\Support\Facades\Auth;
 
 class ManajemenAntrianController extends Controller
 {
@@ -53,8 +54,9 @@ class ManajemenAntrianController extends Controller
         $statusAntrian->status = $request->input('status');
         $statusAntrian->save();
 
-        Session::flash('success',"Status pasien dengan NIK $statusAntrian->NIK berhasil diubah menjadi $statusAntrian->status");
-        return redirect('manage-antrian');
+        // Session::flash('success',"Status pasien dengan NIK $statusAntrian->NIK berhasil diubah menjadi $statusAntrian->status");
+        return redirect(url('/manage-antrian'))->with('success', "Status pasien dengan NIK {$statusAntrian->NIK} berhasil diubah menjadi {$statusAntrian->status}");
+
     }
 
 
