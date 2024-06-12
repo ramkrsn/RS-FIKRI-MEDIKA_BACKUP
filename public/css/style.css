@@ -171,3 +171,12 @@ h2 {
     width: 100%;
     padding: 10px 0;
 }
+
+
+.custom-title {
+    font-weight: bold;
+    font-family: 'Arial', sans-serif; /* Ganti dengan jenis huruf yang Anda sukai */
+    font-size: 10rem; /* Sesuaikan dengan ukuran yang diinginkan */
+    color: #333; /* Sesuaikan dengan warna yang diinginkan */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efek shadow */
+}
