@@ -19,6 +19,7 @@ use App\Http\Controllers\MenerimaKunjunganController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\AdminFeedbackController;
 use App\Http\Controllers\InformasiObatController;
+use App\Http\Controllers\AdminReservasiObatController;
 
 
 /*
@@ -131,6 +132,13 @@ Route::delete('/delete-obat/{id}', [ObatController::class, 'deleteObat'])->name(
 Route::get('/queue', [AntrianController::class, "index"])->name('queue.index');
 Route::get('/queue/{id}', [AntrianController::class, "show"])->name('queue.show');
 Route::get('/antrian-obat', [AntrianController::class, "getAntrianObat"]);
+
+// manage- antrian
+//manage obat//
+
+
+//manage antrian end
+
 //end manage obat//
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -149,8 +157,7 @@ Route::get('/antrianhome', [AntrianController::class, "home"]);
 
 Route::get('/manage-antrian', [ManajemenAntrianController::class, "index"]);
 Route::put('/manage-antrian/{id}', [ManajemenAntrianController::class, 'updateStatusAntrian'])->name('manage-antrian.update');
-// Route::delete('/deleteantrian/{idjadwalpertemuan}/delete', [ManajemenAntrianController::class, 'destroyantrian']);
-
+// Route::delete('/deleteantrian/{idjadwalpertemuan}/delete', [ManajemenAntrianController::class, 'destroyantrian'])
 
 route::get('/menerimakunjungan', [MenerimaKunjunganController::class, "index"]);
 Route::delete('/deletekunjungan/{idkunjungan}', [MenerimaKunjunganController::class, 'deletekunjungan']);
@@ -166,4 +173,15 @@ Route::get('/informasiobat/{informasiobat}', [InformasiObatController::class, 's
 Route::get('/informasiobat/{informasiobat}/edit', [InformasiObatController::class, 'edit'])->name('informasiobat.edit');
 Route::put('/informasiobat/{informasiobat}', [InformasiObatController::class, 'update'])->name('informasiobat.update');
 Route::delete('/informasiobat/{informasiobat}', [InformasiObatController::class, 'destroy'])->name('informasiobat.destroy');
+
+//manage- antrian
+
+
+Route::get('/manage-reservasi', [AdminReservasiObatController::class, "index"]);
+Route::put('/manage-reservasi/{id}', [AdminReservasiObatController::class, 'updateStatusReservasi'])->name('manage-reservasi.update');
+
+//Status reservasi
+Route::get('/status-reservasi', [AntrianController::class, "index"])->name('queue.index');
+Route::get('/status-reservasi/{id}', [AntrianController::class, "show"])->name('queue.show');
+Route::get('/status-reservasi', [AntrianController::class, "getAntrianObat"]);
 

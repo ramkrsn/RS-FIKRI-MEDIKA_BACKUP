@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('namadokter'); 
             $table->string("opsi");
             $table->string("status")->default("pending");
+            $table->string("nomerantrian");
+            $table->string("statusobat")->default("pending");
             $table->timestamps();
 
         });
