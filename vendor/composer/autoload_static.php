@@ -584,6 +584,7 @@ class ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d
         'App\\Models\\Antrian' => __DIR__ . '/../..' . '/app/Models/Antrian.php',
         'App\\Models\\Artikel' => __DIR__ . '/../..' . '/app/Models/Artikel.php',
         'App\\Models\\Doctor' => __DIR__ . '/../..' . '/app/Models/Doctor.php',
+        'App\\Models\\Fasilitas' => __DIR__ . '/../..' . '/app/Models/Fasilitas.php',
         'App\\Models\\Feedback' => __DIR__ . '/../..' . '/app/Models/Feedback.php',
         'App\\Models\\InformasiObat' => __DIR__ . '/../..' . '/app/Models/InformasiObat.php',
         'App\\Models\\Kunjungan' => __DIR__ . '/../..' . '/app/Models/Kunjungan.php',

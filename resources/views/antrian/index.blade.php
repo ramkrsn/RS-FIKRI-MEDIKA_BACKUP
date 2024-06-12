@@ -361,7 +361,7 @@
                                         <div>{{ $data->tanggal }}</div>
                                     </div>
                                     <div class="mt-2">
-                                        <div class="fw-semibold">Antrian Anda</div>
+                                        <div class="fw-semibold">Antriannjsfsnj Anda</div>
                                         <div>{{ $data->no_antrian }}</div>
                                     </div>
                                     <div class="mt-2">
