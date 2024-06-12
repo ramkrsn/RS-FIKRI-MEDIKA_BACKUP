@@ -6,12 +6,13 @@ use App\Models\JadwalPertemuan;
 use Illuminate\Http\Request;
 use Session;
 
-class ManajemenAntrianController extends Controller
+class AdminReservasiObatController extends Controller
 {
     public function index()
     {
-        $jadwalpertemuan = JadwalPertemuan::all();
-        return view('admin.manage-antrian', compact('jadwalpertemuan')); 
+        $jadwalpertemuan = JadwalPertemuan::where('status', 'done')->get();
+        
+        return view('admin.manage-obat', compact('jadwalpertemuan')); 
         $jadwalpertemuan->no_antrian = $this->generateQueueNumber($jadwalpertemuan->jampertemuan);
     }
 
@@ -21,12 +22,12 @@ class ManajemenAntrianController extends Controller
         if ($jadwalpertemuan) {
             $jadwalpertemuan->delete();
         }
-        return redirect(url('/manage-antrian'));
+        return redirect(url('/manage-reservasi'));
     }
 
-    private function generateQueueNumber($jampertemuan)
+    private function generateReservasiNumber($jampertemuan)
     {
-        $queueMap = [
+        $reservasiMap = [
             '07:00:00' => 'P001',
             '07:30:00' => 'P002',
             '08:00:00' => 'P003',
@@ -44,17 +45,17 @@ class ManajemenAntrianController extends Controller
         ];
 
         \Log::info('jampertemuan: ' . $jampertemuan);
-        return $queueMap[$jampertemuan] ?? 'N/A';
+        return $reservasiMap[$jampertemuan] ?? 'N/A';
     }
 
-    public function updateStatusAntrian(Request $request, $idjadwalpertemuan)
+    public function updateStatusReservasi(Request $request, $idjadwalpertemuan)
     {
         $statusAntrian = JadwalPertemuan::find($idjadwalpertemuan);
-        $statusAntrian->status = $request->input('status');
+        $statusAntrian->statusobat = $request->input('status');
         $statusAntrian->save();
 
         Session::flash('success',"Status pasien dengan NIK $statusAntrian->NIK berhasil diubah menjadi $statusAntrian->status");
-        return redirect('manage-antrian');
+        return redirect('manage-reservasi');
     }
 
 

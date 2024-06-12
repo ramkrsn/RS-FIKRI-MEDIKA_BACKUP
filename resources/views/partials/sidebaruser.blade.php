@@ -54,8 +54,10 @@
                 <a href="{{ url('fasilitas') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Fasilitas</a>
             </li>
             <li>
-
             <a href="{{ route('feedback.index') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
+            </li>
+            <li>
+                <a href="{{ url('KunjunganPasienView') }}" class="menu-sidebar" style="text-align: end; color: #21BF73">Kunjungan Saya</a>
             </li>
       
             @auth

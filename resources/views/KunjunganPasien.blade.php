@@ -1,75 +1,4 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <title>Kunjungan Pasien</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ asset('css/styleJadwal.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
-</head>
-<body>
-    <div class="wrapper">
-    <header class="header">
-        <div class="logo">
-                <img src="{{ asset('assets/logo.png') }}" alt="RSU Fikri Medika Logo">
-        </div>
-        <button id="openToggle" style="background-color: transparent; border: none; cursor: pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#21BF73" class="menu">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-        </button>
-        </header>
-            <div class="h2">
-                Kunjungan Pasien
-            </div>
-            <div class="card-body">
-                    <form action="{{url('KunjunganPasien')}}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <h5>Data Pengunjung</h5>
-                        <div class="form-group">
-                            <label for="nama_depan">Nama Depan</label>
-                            <input type="text" class="form-control" id="nama_depan" name="nama_depan" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="nama_belakang">Nama Belakang</label>
-                            <input type="text" class="form-control" id="nama_belakang" name="nama_belakang" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="nik">NIK / No KTP Pengunjung</label>
-                            <input type="text" class="form-control" id="nik" name="nik" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="no_hp">Nomor Handphone</label>
-                            <input type="text" class="form-control" id="no_hp" name="no_hp" required>
-                        </div>
-                        <h5>Data Pasien</h5>
-                        <div class="form-group">
-                            <label for="nama_pasien">Nama Lengkap Pasien</label>
-                            <input type="text" class="form-control" id="nama_pasien" name="nama_pasien" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="id_pasien">No. ID Pasien</label>
-                            <input type="text" class="form-control" id="id_pasien" name="id_pasien" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="tanggal">Tanggal</label>
-                            <input type="date" class="form-control" id="tanggal" name="tanggal" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="waktu">Waktu</label>
-                            <input type="time" class="form-control" id="waktu" name="waktu" required>
-                        </div>
-                        <div>
-                            <button type="submit" class="btn btn-success btn-block">Jadwalkan Kunjungan</button>
-                        </div>
-                    </form>
-            </div> 
-        </div> <!-- This closes card -->
-       
- 
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -362,50 +291,52 @@
         </header>
         <p class="header-title poppins-bold">Kunjungan pasien</p>
         <div class="card-header">
-                    <form action="{{url('KunjunganPasien')}}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <h3>Data Pengunjung</h3>
-                        <div class="form-group">
-                            <label for="nama_depan">Nama Depan</label>
-                            <input type="text" class="form-control" id="nama_depan" name="nama_depan" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="nama_belakang">Nama Belakang</label>
-                            <input type="text" class="form-control" id="nama_belakang" name="nama_belakang" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="nik">NIK / No KTP Pengunjung</label>
-                            <input type="text" class="form-control" id="nik" name="nik" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="no_hp">Nomor Handphone</label>
-                            <input type="text" class="form-control" id="no_hp" name="no_hp" required>
-                        </div>
-                        <h3>Data Pasien</h3>
-                        <div class="form-group">
-                            <label for="nama_pasien">Nama Lengkap Pasien</label>
-                            <input type="text" class="form-control" id="nama_pasien" name="nama_pasien" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="tanggal">Tanggal</label>
-                            <input type="date" class="form-control" id="tanggal" name="tanggal" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="waktu">Waktu</label>
-                            <input type="time" class="form-control" id="waktu" name="waktu" required>
-                        </div>
-                        <div>
-                            <button type="submit" class="btn btn-success btn-block">Jadwalkan Kunjungan</button>
-                        </div>
-                    </form>
-            </div> 
+            <form action="{{ url('KunjunganPasien') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <h3>Data Pengunjung</h3>
+                <div class="form-group">
+                    <label for="nama_depan">Nama Depan</label>
+                    <input type="text" class="form-control" id="nama_depan" name="nama_depan" required>
+                </div>
+                <div class="form-group">
+                    <label for="nama_belakang">Nama Belakang</label>
+                    <input type="text" class="form-control" id="nama_belakang" name="nama_belakang" required>
+                </div>
+                <div class="form-group">
+                    <label for="nik">NIK / No KTP Pengunjung</label>
+                    <input type="text" class="form-control" id="nik" name="nik" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="no_hp">Nomor Handphone</label>
+                    <input type="text" class="form-control" id="no_hp" name="no_hp" required>
+                </div>
+                <h3>Data Pasien</h3>
+                <div class="form-group">
+                    <label for="namapasien">Nama Lengkap Pasien</label>
+                    <select class="form-control" id="idpasien" name="idpasien" required>
+                        <option value="" disabled selected>Pilih Pasien</option>
+                        @foreach($pasiens as $pasien)
+                            <option value="{{ $pasien->idpasien }}">{{ $pasien->namapasien }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tanggal">Tanggal</label>
+                    <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+                </div>
+                <div class="form-group">
+                    <label for="waktu">Waktu (10 AM - 10 PM)</label>
+                    <input type="time" class="form-control" id="waktu" name="waktu" required min="10:00" max="22:00">
+                </div>
+                <div>
+                    <button id="jadwalButton" type="submit" class="btn btn-success btn-block">Jadwalkan Kunjungan</button>
+                </div>
+            </form>
         </div>
-
-     
-        
+        </div>     
     </div>
     @include('partials.sidebaruser') 

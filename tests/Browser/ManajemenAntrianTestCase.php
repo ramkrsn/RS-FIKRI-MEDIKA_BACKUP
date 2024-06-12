@@ -16,7 +16,10 @@ class ManajemenAntrianTestCase extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->visit('/manage-antrian')
                     ->assertSee('Manajemen Antrian')
-                    ->assertSee('Dr. Ade Hafni')
+                    ->press('.icon')
+                    ->waitFor('.dropdown-menu')
+                    ->press('Cancel')
+                    ->assertSee('Status pasien dengan NIK')
                     ;
         });
     }

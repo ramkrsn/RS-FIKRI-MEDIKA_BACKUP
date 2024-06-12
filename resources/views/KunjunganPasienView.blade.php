@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -5,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Profil RSU Fikri Medika</title>
+    <title>Kunjungan Pasien</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -140,6 +141,10 @@
             /* Add spacing between sections */
             align-items: center;
         }
+        .card-header {
+    padding: 20px; /* Optional: Add padding around the card header */
+
+}
 
         /* Mobile Responsive Styles */
         @media only screen and (max-width: 768px) {
@@ -255,18 +260,26 @@
             font-weight: 900;
             font-style: italic;
         }
-        .nama_fasilitas {
-            font-weight: bold;
-            font-size: 1.5em;
-            text-align: center;
-        }
-        .deskripsi {
-            text-align: center;
-        }
+
         a {
             text-decoration: none;
         }
+        .btn-block {
+    display: block;
+    width: 100%;
+}
+.form-group {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
 
+.details {
+        border: 1px solid #ccc; /* Warna dan ketebalan border */
+        border-radius: 8px; /* Sudut melengkung */
+        padding: 20px; /* Padding di dalam kotak */
+        margin-bottom: 20px; /* Spasi antar kotak */
+        background-color: #fff; /* Warna latar belakang */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan */
+    }
     </style>
 </head>
 
@@ -275,7 +288,7 @@
     <div class="wrapper">
     
         <header class="header h1">
-        <div class="logo">
+            <div class="logo">
                 <img src="{{ asset('assets/logo.png') }}" alt="RSU Fikri Medika Logo">
             </div>
             <button id="openToggle" style="background-color: transparent; border: none; cursor: pointer">
@@ -284,34 +297,25 @@
                 </svg>
             </button>
         </header>
-
-        <p class="header-title poppins-bold">Fasilitas Rumah Sakit</p>
-
-        <section id="content" style="padding: 16px; min-height: 100%">
-        @foreach($fasilitas as $item)
-                <tr>
-                <td> <div class="nama_fasilitas">{{ $item->nama_fasilitas }} </div></td>
-                <br>
-                    <td><div class="deskripsi">{{ $item->deskripsi }}</div></td>
-                </tr>
+        <p class="header-title poppins-bold">Kunjungan pasien</p>
+        <div class="card-header">
+            @foreach($kunjungans as $kunjunganItem)
+            <div class="queue-wrapper">
+                <div class="details" >
+                    <p class="antrian-text"><strong>Nama:</strong> {{ $kunjunganItem->nama_depan }} {{ $kunjunganItem->nama_belakang }}</p>
+                    <p class="antrian-text"><strong>NIK:</strong> {{ $kunjunganItem->nik }}</p>
+                    <p class="antrian-text"><strong>Email:</strong> {{ $kunjunganItem->email }}</p>
+                    <p class="antrian-text"><strong>Nomor HP:</strong> {{ $kunjunganItem->no_hp }}</p>
+                    <p class="antrian-text"><strong>Nama Pasien:</strong> {{ $kunjunganItem->pasien->namapasien }}</p>
+                    <p class="antrian-text"><strong>Nomor Kamar:</strong> {{ $kunjunganItem->pasien->nomerkamar }}</p>
+                    <p class="antrian-text"><strong>Lantai Kamar:</strong> {{ $kunjunganItem->pasien->lantaikamar }}</p>
+                    <p class="antrian-text"><strong>Tanggal:</strong> {{ $kunjunganItem->tanggal }}</p>
+                    <p class="antrian-text"><strong>Waktu:</strong> {{ $kunjunganItem->waktu }}</p>
+                </div>
+            </div>
             @endforeach
-        </section>
-        
+        </div>
     </div>
-<!-- 
-    <div style="width: 100%; height: full; position: relative; background-color: #F8FAFD; z-index: 2000">
-        <div style="position: absolute; background-color: white; width: 100%; height: 100%; z-index: 50"></div>
-        <div class="sidebar">
-            <div style="width: 100%; display: flex; justify-content: flex-end; padding: 4px;">
-                <button id="closeToggle" style="background-color: transparent; border: none; cursor: pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#21BF73" class="menu">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            <div style="display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-end; padding-right: 10px; row-gap: 0.5rem;">
-                <a href="#" class="w3-bar-item w3-button" style="text-align: end; width: fit-content; padding: 4px 8px; background-color: #21BF73; color: white; border-radius: 0.375rem;">Masuk</a>
-                <a href="#" class="w3-bar-item w3-button" style="text-align: end; width: fit-content; padding: 4px 8px; background-color: #21BF73; color: white; border-radius: 0.375rem;">Daftar</a>
-            </div>
-            <ul style="margin-top: 8px; text-decoration: none; text-align: end; list-style-type: none; display: flex; flex-direction: column; row-gap: 0.75rem;"> -->
-            @include('partials.sidebaruser')               
+    @include('partials.sidebaruser') 
+</body>
+

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Profil RSU Fikri Medika</title>
+    <title>Antrian Jadwal Pertemuan</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -25,6 +25,18 @@
     </script>
     <!-- Styles -->
     <style>
+        .status-pending {
+            color: orange;
+        }
+
+        .status-done {
+            color: green;
+        }
+
+        .status-cancel {
+            color: red;
+        }
+        
         .hidden {
             transform: translateX(-16rem);
             transition: transform 300ms ease-out;
@@ -294,16 +306,16 @@
             <hr style="border: 1px solid black; margin: 10px 0px">
             <div style="display: flex; flex-direction: column; gap: 0.5rem">
                 @auth
-                @foreach($queues as $data)
-                <div data-bs-toggle="modal" data-bs-target="#exampleModal{{ $data->idjadwalpertemuan }}">
+                @foreach($queues->sortBy('tanggal') as $data)
+                <div data-bs-toggle="modal" data-bs-target="#exampleModal{{ $data->idjadwalpertemuan }}" dusk="detailAntrian">
                     <div class="shadow"
-                        style="background-color: white; display: flex; gap: 1rem; 	border-radius: 0.5rem;">
+                        style="background-color: white; display: flex; gap: 1rem; border-radius: 0.5rem;">
                         <div
                             style="background-image: url('{{ asset('./assets/doctor.png') }}'); width: 100px; height: 100px; background-color: white; border-radius: 0.5rem">
                         </div>
                         <div style="display: flex; flex-direction: column; justify-content: center; row-gap: 0.5rem;">
                             <div style="font-size: 1.2rem; font-weight: 500">{{ $data->dokter }}</div>
-                            <div style="font-size: 0.8rem">{{ $data->tanggal }}, {{ $data->no_antrian }}</div>
+                            <div style="font-size: 0.8rem">{{ $data->tanggal }}, {{ $data->no_antrian }}, {{ $data->status }}</div>
                         </div>
                     </div>
                 </div>
@@ -349,19 +361,31 @@
                                         <div>{{ $data->tanggal }}</div>
                                     </div>
                                     <div class="mt-2">
-                                        <div class="fw-semibold">Antrian Anda</div>
+                                        <div class="fw-semibold">Antriannjsfsnj Anda</div>
                                         <div>{{ $data->no_antrian }}</div>
                                     </div>
                                     <div class="mt-2">
                                         <div class="fw-semibold">Estimasi Jadwal</div>
                                         <div>{{ $data->est_jadwal }}</div>
                                     </div>
+                                    <?php
+                                        $statusClass = '';
+                                        if (trim($data->status) === 'pending') {
+                                            $statusClass = 'status-pending';
+                                        } elseif ($data->status === 'done') {
+                                            $statusClass = 'status-done';
+                                        } elseif ($data->status === 'cancel') {
+                                            $statusClass = 'status-cancel';
+                                        }
+                                    ?>
+
+                                    <div class="mt-2">
+                                        <div class="fw-semibold">Status</div>
+                                        <div class="<?php echo $statusClass; ?>">
+                                            <?php echo $data->status; ?>
+                                        </div>
+                                    </div>
                                 </div>
-                                <!-- <div class="mt-5 d-flex" style="flex-direction: column;">
-                                    <img src="{{ asset('assets/barcode.png') }}" alt="Barcode" style="width: 300px;"
-                                        class="mx-auto">
-                                    <p class="fs-6 text-center">Scan barcode ini di loket</p>
-                                </div> -->
                                 <p style="text-align: center"><br>*Anda akan mendapatkan notifikasi Whatsapp konfirmasi jika
                                     jadwal pertemuan Anda telah tiba</p>
                             </div>

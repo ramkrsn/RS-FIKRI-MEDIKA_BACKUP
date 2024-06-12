@@ -384,6 +384,13 @@
     list-style: none;
     padding: 0;
     margin: 40px;
+    border: 1px solid #ccc; /* Warna dan ketebalan border */
+    border-radius: 8px; /* Sudut melengkung */
+    padding: 20px; /* Padding di dalam kotak */
+    margin-bottom: 20px; /* Spasi antar kotak */
+    background-color: #fff; /* Warna latar belakang */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan */
+    
 }
     </style>
 </head>

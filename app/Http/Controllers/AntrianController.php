@@ -2,56 +2,64 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Antrian;
 use App\Models\JadwalPertemuan;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AntrianController extends Controller
 {
-//     public function index(){
-//        $queues = Antrian::all()->map(function($queue) {
-//         $queue->tanggal = Carbon::parse($queue->tanggal)->translatedFormat('d F Y');
-//         return $queue;
-//     });
-//         return view('antrian.index', compact('queues'));
-// }
-
-    public function index(){
-        $queues = JadwalPertemuan::all()->map(function($queue) {
-            $queue->nama_pasien = $queue->namadepan . ' ' . $queue->namabelakang;
-            $queue->keluhan = $queue->keluhanpasien;
-            $queue->tanggal = Carbon::parse($queue->tanggalpertemuan)->translatedFormat('d F Y');
-            $queue->est_jadwal = $queue->jampertemuan;
-            $queue->dokter = $queue->namadokter;
-            $queue->no_antrian = $this->generateQueueNumber($queue->jampertemuan);
-            return $queue;
-        });
-
+    public function index()
+    {
+        $user = Auth::user(); // Get the currently logged-in user
+    
+        // Fetch only the queues that belong to the logged-in user
+        $queues = JadwalPertemuan::where('id', $user->id)
+            ->orderBy('tanggalpertemuan') // Order by date
+            ->orderBy('jampertemuan') // Then order by time
+            ->get()
+            ->map(function($queue) {
+                $queue->nama_pasien = $queue->namadepan . ' ' . $queue->namabelakang;
+                $queue->keluhan = $queue->keluhanpasien;
+                $queue->tanggal = Carbon::parse($queue->tanggalpertemuan)->translatedFormat('d F Y');
+                $queue->est_jadwal = $queue->jampertemuan;
+                $queue->dokter = $queue->namadokter;
+                $queue->no_antrian = $this->generateQueueNumber($queue->tanggalpertemuan, $queue->jampertemuan);
+                return $queue;
+            });
+    
         return view('antrian.index', compact('queues'));
     }
-
-    private function generateQueueNumber($jampertemuan)
+    
+    
+    private function generateQueueNumber($tanggalpertemuan, $jampertemuan)
     {
-        $queueMap = [
-            '07:00:00' => 'P001',
-            '07:30:00' => 'P002',
-            '08:00:00' => 'P003',
-            '08:30:00' => 'P004',
-            '09:00:00' => 'P005',
-            '09:30:00' => 'P006',
-            '10:00:00' => 'P007',
-            '10:30:00' => 'P008',
-            '11:00:00' => 'P009',
-            '11:30:00' => 'P010',
-            '12:00:00' => 'P011',
-            '12:30:00' => 'P012',
-            '13:00:00' => 'P013',
-            '13:30:00' => 'P014',
-        ];
+        // Fetch all appointments for the same date up to the current time slot
+        $count = JadwalPertemuan::where('tanggalpertemuan', $tanggalpertemuan)
+            ->where('jampertemuan', '<=', $jampertemuan)
+            ->count();
 
-        \Log::info('jampertemuan: ' . $jampertemuan);
-        return $queueMap[$jampertemuan] ?? 'N/A';
+        // Generate the queue number based on the count
+        return sprintf('P%03d', $count);
     }
 
+    public function getAntrianObat()
+    {
+        // Get the ID of the current user
+        $userId = Auth::id();
+    
+        // Fetch only the records associated with the current user where status is 'done'
+        $data_antrian_obat = JadwalPertemuan::where('id', $userId)
+            ->where('status', 'done')
+            ->orderBy('tanggalpertemuan') // Order by date
+            ->orderBy('jampertemuan') // Order by time
+            ->get();
+    
+        // Iterate over each item and compute the queue number
+        foreach ($data_antrian_obat as $data) {
+            $data->no_antrian = $this->generateQueueNumber($data->tanggalpertemuan, $data->jampertemuan);
+        }
+    
+        return view('antrian.antrian-obat', compact('data_antrian_obat'));
+    }
 }

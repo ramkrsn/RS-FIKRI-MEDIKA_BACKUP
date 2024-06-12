@@ -295,49 +295,71 @@
             <hr style="border: 1px solid black; margin: 10px 0px">
             <div style="display: flex; flex-direction: column; gap: 0.5rem">
                 @foreach($data_antrian_obat as $data)
-                    <div data-bs-toggle="modal" data-bs-target="#exampleModal{{ $data->id }}">
+                    <div data-bs-toggle="modal" data-bs-target="#exampleModal{{ $data->idjadwalpertemuan }}" dusk="antrianobat">
                         <div class="shadow" 
                             style="background-color: white; display: flex; gap: 1rem; border-radius: 0.5rem;">
                             <div style="background-image: url('{{ asset('./assets/obat-image.png') }}'); width: 100px; height: 100px; background-color: white; border-radius: 0.5rem"></div>
                             <div style="display: flex; flex-direction: column; justify-content: center; row-gap: 0.5rem;">
-                                <div style="font-size: 1.2rem; font-weight: 500;">{{ $data->nama_obat }}</div>
-                                <div style="font-size: 0.8rem;">{{ $data->resep_obat }}</div>
+                                <div style="font-size: 1.2rem; font-weight: 500;font-weight: bold;">{{ $data->namadepan }} {{ $data->namabelakang }}</div>
+                                <div style="font-size: 1rem;">{{ $data->polidokter }}</div>
+                                <div style="font-size: 1rem;">
+                                    <div>
+                                        @if ($data->statusobat == 'pending')
+                                            <p class=class="fw-bolder text-status m-0" style="color: rgb(255, 0, 0); font-weight: bold;">Sedang Diproses</p>
+                                        @elseif ($data->statusobat == 'Sudah Diambil')
+                                            <p class="fw-bolder text-status text-warning m-0" style="color: rgb(91, 198, 91); font-weight: bold;">Sudah Diambil</p>
+                                        @elseif ($data->statusobat == 'Siap Diambil')
+                                            <p class="fw-bolder text-status text-success m-0" style="color: rgb(247, 255, 2); font-weight: bold;">Siap Diambil</p>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal{{ $data->id }}" tabindex="-1"
-                    aria-labelledby="exampleModal{{ $data->id }}Label" aria-hidden="true">
+                <div class="modal fade" id="exampleModal{{ $data->idjadwalpertemuan }}" tabindex="-1"
+                    aria-labelledby="exampleModal{{ $data->idjadwalpertemuan }}Label" aria-hidden="true">
                     <div class="modal-dialog" style=" max-width: 440px;">
                         <div class="modal-content">
                             <div class="" style="background-color: #F1F864; border-radius: 0.5rem;">
                                 <div class=""
-                                    style="display: flex; padding: 12px; align-items: center; justify-content: space-between;">
+                                    style="display: flex; padding: 12px; align-items: center; justify-content: space-between;" >
                                     <img src="{{ asset('assets/logo.png') }}" alt="">
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <p style=" color: #21BF73; font-size: 20px; font-weight: bold; text-align: center;">
-                                    Jadwalkan Pertemuan</p>
+                                    Antrian Obat</p>
                             </div>
                             <div class="modal-body" style="padding: 28px">
                                 <div class="my-4" style="display: flex; align-items: center; justify-content: center;">
                                     <div style="text-align: center;">
-                                        <h3 style="margin: 0;">Nama Obat</h3>
-                                        <span style="font-size: 1.8rem; font-weight: 600;">{{ $data->nama_obat }}</span>
+                                        <h3  style="font-size: 1.8rem; font-weight: bold;">Nama Pasien</h3>
+                                        <span style="font-size: 1.5rem;">{{ $data->namadepan }}</span>
+                                        <span style="font-size: 1.5rem;">{{ $data->namabelakang }}</span>
+                                    </div>
+                                </div>
+                           
+                                <div class="my-4" style="my-5 display: flex; align-items: center; justify-content: center;">
+                                    <div style="text-align: center;">
+                                        <h3 style="font-size: 1.8rem; font-weight: bold;">Nomor Poli</h3>
+                                        <span  style="font-size: 1.5rem;">{{ $data->polidokter }}</span>
                                     </div>
                                 </div>
                                 <div class="my-4" style="my-5 display: flex; align-items: center; justify-content: center;">
                                     <div style="text-align: center;">
-                                        <h3 style="margin: 0;">Nomor Antrian</h3>
-                                        <span style="font-size: 1.8rem; font-weight: 600;">{{ $data->nomor_antrian }}</span>
+                                        <h3 style="font-size: 1.8rem; font-weight: bold;">Status Obat</h3>
+                                        <div style="border: 2px solid #4CAF50; background-color: #DFF0D8; padding: 10px;">
+                                            <span style="font-size: 1.5rem; color: green; font-weight: bold;">{{ $data->statusobat }}</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="my-4 d-flex" style="flex-direction: column;">
-                                    <img src="{{ asset('assets/barcode.png') }}" alt="Barcode" style="width: 300px;"
-                                        class="mx-auto">
-                                    <p class="fs-6 text-center">Scan barcode ini di loket</p>
+                                <div class="my-4" style="my-5 display: flex; align-items: center; justify-content: center;">
+                                    <div style="text-align: center;">
+                                        <h3 style="font-size: 1.8rem; font-weight: bold;">Nomor Antrian</h3>
+                                        <span  style="font-size: 1.5rem; color: green;">{{ $data->no_antrian }}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -347,77 +369,7 @@
             </div>
         </section>
     </div>
-    <div style="width: 100%; height: full; position: relative; background-color: #F8FAFD; z-index: 2000">
-        <div style="position: absolute;background-color: white ;width: 100%; height: 100%; z-index: 50"></div>
-        <div class="sidebar">
-            <div style="width: 100%; display: flex; justify-content: flex-end; padding: 4px;">
-                <button id="closeToggle" style="background-color: transparent; border: none; cursor:pointer ">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                        stroke="#21BF73" class="menu">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            <div
-                style="display: flex; 	flex-direction: column; align-items: flex-end;  justify-content: flex-end; padding-right: 10px; row-gap: 0.5rem;">
-                <a href="#" class="w3-bar-item w3-button"
-                    style="text-align: end; width: fit-content; padding: 4px 8px; background-color: #21BF73; color: white; border-radius: 0.375rem;">Masuk</a>
-                <a href="#" class="w3-bar-item w3-button"
-                    style="text-align: end; width: fit-content; padding: 4px 8px; background-color: #21BF73; color: white; border-radius: 0.375rem;">Daftar</a>
-            </div>
-            <ul
-                style=" margin-top: 8px;text-decoration: none; text-align: end;  list-style-type: none; display: flex; flex-direction: column; row-gap: 0.75rem; ">
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Beranda</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Profil</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Jadwal Dokter</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Kunjungan
-                        Pasien</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Pengambilan
-                        Obat</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar"
-                        style="text-align: end; color: #21BF73">Jadwalkan Pertemuan</a>
-                </li>
-                <li>
-                    <a href="{{ route('queue.index') }}" class="menu-sidebar"
-                        style="text-align: end; color: #21BF73">Antrian</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Artikel Online</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Feedback</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-sidebar" style="text-align: end; color: #21BF73">Riwayat
-                        Pembayaran</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <script>
-        window.addEventListener("DOMContentLoaded", () => {
-            document.getElementById("openToggle").addEventListener("click", () => {
-                const sidebarEl = document.getElementsByClassName("sidebar")[0];
-                sidebarEl.classList.toggle("hidden");
-            });
-            document.getElementById("closeToggle").addEventListener("click", () => {
-                const sidebarEl = document.getElementsByClassName("sidebar")[0];
-                sidebarEl.classList.toggle("hidden");
-            });
-        });
-
-    </script>
+    @include('partials.sidebaruser')  
 </body>
 
 </html>
