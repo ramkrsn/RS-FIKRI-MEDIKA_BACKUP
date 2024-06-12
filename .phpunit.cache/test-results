@@ -1,5 +1,9 @@
 
+{"version":1,"defects":{"Tests\\Browser\\ManajemenAntrianTestCase::testExample":8,"Tests\\Browser\\JadwalPertemuanTest::testExample":8,"Tests\\Browser\\PasienTest::testExample":7,"Tests\\Browser\\PasienEditTest::testExample":8},"times":{"Tests\\Browser\\ManajemenAntrianTestCase::testExample":4.101,"Tests\\Browser\\JadwalPertemuanTest::testExample":2.261,"Tests\\Browser\\ShowAntrianTest::testExample":3.756,"Tests\\Browser\\MelihatKunjunganUserTest::testExample":15.495,"Tests\\Browser\\PasienTest::testExample":4.7,"Tests\\Browser\\PasienEditTest::testExample":4.474,"Tests\\Browser\\KunjunganTest::testExample":15.38}}
+
+
 {"version":1,"defects":{"Tests\\Browser\\KunjunganDeleteTest::testExample":8},"times":{"Tests\\Browser\\MenerimaReservasiTest::testExample":1.158,"Tests\\Browser\\KunjunganTest::testExample":3.897,"Tests\\Browser\\AdminKunjunganTest::testExample":1.123,"Tests\\Browser\\KunjunganDeleteTest::testExample":1.735,"Tests\\Browser\\MelihatJadwal::testExample":3.421}}
 
 {"version":1,"defects":{"Tests\\Browser\\ManajemenAntrianTestCase::testExample":8,"Tests\\Browser\\JadwalPertemuanTest::testExample":8,"Tests\\Browser\\StatusObat::testExample":8},"times":{"Tests\\Browser\\ManajemenAntrianTestCase::testExample":4.101,"Tests\\Browser\\JadwalPertemuanTest::testExample":2.261,"Tests\\Browser\\ShowAntrianTest::testExample":3.756,"Tests\\Browser\\StatusObat::testExample":11.279}}
+
 
