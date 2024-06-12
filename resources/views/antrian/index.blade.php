@@ -306,10 +306,10 @@
             <hr style="border: 1px solid black; margin: 10px 0px">
             <div style="display: flex; flex-direction: column; gap: 0.5rem">
                 @auth
-                @foreach($queues as $data)
+                @foreach($queues->sortBy('tanggal') as $data)
                 <div data-bs-toggle="modal" data-bs-target="#exampleModal{{ $data->idjadwalpertemuan }}">
                     <div class="shadow"
-                        style="background-color: white; display: flex; gap: 1rem; 	border-radius: 0.5rem;">
+                        style="background-color: white; display: flex; gap: 1rem; border-radius: 0.5rem;">
                         <div
                             style="background-image: url('{{ asset('./assets/doctor.png') }}'); width: 100px; height: 100px; background-color: white; border-radius: 0.5rem">
                         </div>
@@ -386,11 +386,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="mt-5 d-flex" style="flex-direction: column;">
-                                    <img src="{{ asset('assets/barcode.png') }}" alt="Barcode" style="width: 300px;"
-                                        class="mx-auto">
-                                    <p class="fs-6 text-center">Scan barcode ini di loket</p>
-                                </div> -->
                                 <p style="text-align: center"><br>*Anda akan mendapatkan notifikasi Whatsapp konfirmasi jika
                                     jadwal pertemuan Anda telah tiba</p>
                             </div>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Models\JadwalPertemuan;
 use App\Models\Pasien;
+use Illuminate\Support\Facades\Auth;
 
 class JadwalController extends Controller
 {
@@ -60,6 +61,7 @@ class JadwalController extends Controller
         $jadwalpertemuan->namadokter = $request->namadokter;
         $jadwalpertemuan->polidokter = $request->polidokter;
         $jadwalpertemuan->opsi = $request->opsi;
+        $jadwalpertemuan->id= Auth::id();
 
         $jadwalpertemuan->save();
 
