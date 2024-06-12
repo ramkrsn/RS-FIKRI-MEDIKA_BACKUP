@@ -315,7 +315,7 @@
                         </div>
                         <div style="display: flex; flex-direction: column; justify-content: center; row-gap: 0.5rem;">
                             <div style="font-size: 1.2rem; font-weight: 500">{{ $data->dokter }}</div>
-                            <div style="font-size: 0.8rem">{{ $data->tanggal }}, {{ $data->no_antrian }}</div>
+                            <div style="font-size: 0.8rem">{{ $data->tanggal }}, {{ $data->no_antrian }}, {{ $data->status }}</div>
                         </div>
                     </div>
                 </div>
