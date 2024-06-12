@@ -19,16 +19,12 @@
                         <a class="nav-link black-text" href="#">Manajemen Artikel</a>
                     </li>
                     <li class="nav-item d-flex align-items-center">
-                        <i class="bi bi-capsule"></i>
-                        <a class="nav-link black-text" href="#">Manajemen Obat</a>
-                    </li>
-                    <li class="nav-item d-flex align-items-center">
                         <img src="/img/1.png" alt="" class="mr-2">
                         <a class="nav-link black-text" href="{{url('/manage-antrian')}}">Manajemen Antrian Dokter</a>
                     </li>
                     <li class="nav-item d-flex align-items-center">
                         <i class="bi bi-capsule"></i>
-                        <a class="nav-link black-text" href="#">Reservasi Obat</a>
+                        <a class="nav-link black-text" href="{{url('/reservasi-obat')}}">Reservasi Obat</a>
                     </li>
                     <li class="nav-item d-flex align-items-center">
                         <i class="bi bi-people-fill"></i>

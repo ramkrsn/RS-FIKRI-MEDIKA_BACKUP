@@ -19,10 +19,9 @@ use App\Http\Controllers\MenerimaKunjunganController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\AdminFeedbackController;
 use App\Http\Controllers\InformasiObatController;
-
 use App\Http\Controllers\AdminReservasiObatController;
-
 use App\Http\Controllers\PasienController;
+use App\Http\Controllers\ReservasiObatController;
 
 
 /*
@@ -107,11 +106,11 @@ Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.in
 Route::post('/feedback', [FeedbackController::class, 'submit'])->name('feedback.submit');
 Route::get('/admin/feedback', [AdminFeedbackController::class, 'index'])->name('admin.feedback.index');
 
-//Reservasi Obat
-Route::get('/reservasi-obat', [ObatController::class, 'showReservasiObat']);
-Route::put('/reservasi-obat/{id}', [ObatController::class, 'updateStatusReservasi'])->name('reservasi-obat.update');
-Route::get('/reservasi-obat/{id}', [ObatController::class, 'deleteReservasi'])->name('reservasi-obat.delete');
-// End Reservasi Obat
+// //Reservasi Obat
+// Route::get('/reservasi-obat', [ObatController::class, 'showReservasiObat']);
+// Route::put('/reservasi-obat/{id}', [ObatController::class, 'updateStatusReservasi'])->name('reservasi-obat.update');
+// Route::get('/reservasi-obat/{id}', [ObatController::class, 'deleteReservasi'])->name('reservasi-obat.delete');
+// // End Reservasi Obat
 
 
 //manage obat//
@@ -188,3 +187,5 @@ Route::post('/pasien', [PasienController::class, 'store'])->name('pasien.store')
 Route::get('/pasien/{id}/edit', [PasienController::class, 'editpasien'])->name('pasien.edit');
 Route::patch('/pasien/{id}/edit', [PasienController::class, 'updatepasien'])->name('pasien.update');
 
+Route::get('/reservasi-obat', [ReservasiObatController::class, 'index'])->name('reservasi-obat.index');
+Route::put('/reservasi-obat/{idjadwalpertemuan}', [ReservasiObatController::class, 'addReservasi'])->name('jadwal-reservasi-obat.update');
