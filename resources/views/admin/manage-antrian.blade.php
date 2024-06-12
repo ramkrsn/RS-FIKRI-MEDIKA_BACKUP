@@ -29,7 +29,6 @@
                             <th>Nama Dokter</th>
                             <th>Opsi</th>
                             <th>Status</th>
-                            <th>Ubah Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,8 +53,7 @@
                                             <p class="fw-bolder text-status text-warning m-0">Cancel</p>
                                         @endif
                                     </div>
-                                </td>
-                                <td>
+                                
                                     <div class="filter">
                                         <a class="icon" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                             <i class="bi bi-three-dots m-3"></i>
