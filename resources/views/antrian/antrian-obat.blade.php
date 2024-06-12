@@ -295,21 +295,21 @@
             <hr style="border: 1px solid black; margin: 10px 0px">
             <div style="display: flex; flex-direction: column; gap: 0.5rem">
                 @foreach($data_antrian_obat as $data)
-                    <div data-bs-toggle="modal" data-bs-target="#exampleModal{{ $data->idjadwalpertemuan }}">
+                    <div data-bs-toggle="modal" data-bs-target="#exampleModal{{ $data->idjadwalpertemuan }}" dusk="antrianobat">
                         <div class="shadow" 
                             style="background-color: white; display: flex; gap: 1rem; border-radius: 0.5rem;">
                             <div style="background-image: url('{{ asset('./assets/obat-image.png') }}'); width: 100px; height: 100px; background-color: white; border-radius: 0.5rem"></div>
                             <div style="display: flex; flex-direction: column; justify-content: center; row-gap: 0.5rem;">
-                                <div style="font-size: 1.2rem; font-weight: 500;">{{ $data->namadepan }} {{ $data->namabelakang }}</div>
-                                <div style="font-size: 0.8rem;">{{ $data->polidokter }}</div>
-                                <div style="font-size: 0.8rem;">
+                                <div style="font-size: 1.2rem; font-weight: 500;font-weight: bold;">{{ $data->namadepan }} {{ $data->namabelakang }}</div>
+                                <div style="font-size: 1rem;">{{ $data->polidokter }}</div>
+                                <div style="font-size: 1rem;">
                                     <div>
                                         @if ($data->statusobat == 'pending')
-                                            <p class="fw-bolder text-status text-secondary m-0">Sedang Diproses</p>
+                                            <p class=class="fw-bolder text-status m-0" style="color: rgb(255, 0, 0); font-weight: bold;">Sedang Diproses</p>
                                         @elseif ($data->statusobat == 'Sudah Diambil')
-                                            <p class="fw-bolder text-status text-warning m-0">Sudah Diambil</p>
+                                            <p class="fw-bolder text-status text-warning m-0" style="color: rgb(91, 198, 91); font-weight: bold;">Sudah Diambil</p>
                                         @elseif ($data->statusobat == 'Siap Diambil')
-                                            <p class="fw-bolder text-status text-success m-0">Siap Diambil</p>
+                                            <p class="fw-bolder text-status text-success m-0" style="color: rgb(247, 255, 2); font-weight: bold;">Siap Diambil</p>
                                         @endif
                                     </div>
                                 </div>
@@ -324,37 +324,41 @@
                         <div class="modal-content">
                             <div class="" style="background-color: #F1F864; border-radius: 0.5rem;">
                                 <div class=""
-                                    style="display: flex; padding: 12px; align-items: center; justify-content: space-between;">
+                                    style="display: flex; padding: 12px; align-items: center; justify-content: space-between;" >
                                     <img src="{{ asset('assets/logo.png') }}" alt="">
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <p style=" color: #21BF73; font-size: 20px; font-weight: bold; text-align: center;">
-                                    Jadwalkan Pertemuan</p>
+                                    Antrian Obat</p>
                             </div>
                             <div class="modal-body" style="padding: 28px">
                                 <div class="my-4" style="display: flex; align-items: center; justify-content: center;">
                                     <div style="text-align: center;">
-                                        <h3 style="margin: 0;">Nama Pasien</h3>
-                                        <span style="font-size: 1.8rem; font-weight: 600;">{{ $data->namadepan }} {{ $data->namabelakang }}</span>
+                                        <h3  style="font-size: 1.8rem; font-weight: bold;">Nama Pasien</h3>
+                                        <span style="font-size: 1.5rem;">{{ $data->namadepan }}</span>
+                                        <span style="font-size: 1.5rem;">{{ $data->namabelakang }}</span>
+                                    </div>
+                                </div>
+                           
+                                <div class="my-4" style="my-5 display: flex; align-items: center; justify-content: center;">
+                                    <div style="text-align: center;">
+                                        <h3 style="font-size: 1.8rem; font-weight: bold;">Nomor Poli</h3>
+                                        <span  style="font-size: 1.5rem;">{{ $data->polidokter }}</span>
                                     </div>
                                 </div>
                                 <div class="my-4" style="my-5 display: flex; align-items: center; justify-content: center;">
                                     <div style="text-align: center;">
-                                        <h3 style="margin: 0;">Nomor Poli</h3>
-                                        <span style="font-size: 1.8rem; font-weight: 600;">{{ $data->polidokter }}</span>
+                                        <h3 style="font-size: 1.8rem; font-weight: bold;">Status Obat</h3>
+                                        <div style="border: 2px solid #4CAF50; background-color: #DFF0D8; padding: 10px;">
+                                            <span style="font-size: 1.5rem; color: green; font-weight: bold;">{{ $data->statusobat }}</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="my-4" style="my-5 display: flex; align-items: center; justify-content: center;">
                                     <div style="text-align: center;">
-                                        <h3 style="margin: 0;">Status Obat</h3>
-                                        <span style="font-size: 1.8rem; font-weight: 600;">{{ $data->statusobat }}</span>
-                                    </div>
-                                </div>
-                                <div class="my-4" style="my-5 display: flex; align-items: center; justify-content: center;">
-                                    <div style="text-align: center;">
-                                        <h3 style="margin: 0;">Nomor Antrian</h3>
-                                        <span style="font-size: 1.8rem; font-weight: 600;">{{ $data->no_antrian }}</span>
+                                        <h3 style="font-size: 1.8rem; font-weight: bold;">Nomor Antrian</h3>
+                                        <span  style="font-size: 1.5rem; color: green;">{{ $data->no_antrian }}</span>
                                     </div>
                                 </div>
                             </div>
