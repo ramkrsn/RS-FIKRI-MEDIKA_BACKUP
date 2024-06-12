@@ -19,14 +19,4 @@ class MenerimaKunjunganController extends Controller
         ]);
     }
 
-    
-
-    // public function deletekunjungan($idkunjungan) // Accept idkunjungan as parameter
-    // {
-    //     $kunjungan = Kunjungan::find($idkunjungan); // Correctly reference the primary key
-    //     if ($kunjungan) {
-    //         $kunjungan->delete();
-    //     }
-    //     return redirect(url('menerimakunjungan'));
-    // }
 }

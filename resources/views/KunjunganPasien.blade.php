@@ -317,10 +317,10 @@
                 <h3>Data Pasien</h3>
                 <div class="form-group">
                     <label for="namapasien">Nama Lengkap Pasien</label>
-                    <select class="form-control" id="namapasien" name="namapasien" required>
+                    <select class="form-control" id="idpasien" name="idpasien" required>
                         <option value="" disabled selected>Pilih Pasien</option>
                         @foreach($pasiens as $pasien)
-                            <option value="{{ $pasien->namapasien }}">{{ $pasien->namapasien }}</option>
+                            <option value="{{ $pasien->idpasien }}">{{ $pasien->namapasien }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -335,7 +335,6 @@
                 <div>
                     <button id="jadwalButton" type="submit" class="btn btn-success btn-block">Jadwalkan Kunjungan</button>
                 </div>
-            </div>
             </form>
         </div>
         </div>     
