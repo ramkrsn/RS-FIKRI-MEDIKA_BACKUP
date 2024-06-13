@@ -53,15 +53,13 @@
                                 <input type="text" class="form-control" name="penyakit" placeholder="Penyakit" value="{{ $pasien->penyakit }}">
                             </div>
                             <div class="form-group">
-                                <div class="nama-dokter-container">
-                                    <p class="black-text">Pilih Dokter</p>
-                                    <select class="dropdown input-choice form-control" name="namadokter">
-                                        @foreach($dokters as $dokter)
-                                            <option value="{{ $dokter->namadokter }}" {{ $pasien->dokter == $dokter->namadokter ? 'selected' : '' }}>{{ $dokter->namadokter }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
+                                <p class="black-text">Dokter:</p>
+                                <select class="form-control" name="namadokter">
+                                    <option value="" selected></option>
+                                    @foreach($dokters as $dokter)
+                                        <option value="{{ $dokter->namadokter }}">{{ $dokter->namadokter }}</option>
+                                    @endforeach
+                                </select>
                             <div class="form-group">
                                 <p class="black-text">Tanggal Masuk:</p>
                                 <input type="date" class="form-control" name="tanggal_masuk" value="{{ $pasien->tanggal_masuk }}">
@@ -73,9 +71,10 @@
                             <div class="form-group">
                                 <p class="black-text">Status:</p>
                                 <select class="form-control" name="status">
-                                    <option value="rawat inap" {{ $pasien->status == 'rawat inap' ? 'selected' : '' }}>Rawat Inap</option>
-                                    <option value="rawat jalan" {{ $pasien->status == 'rawat jalan' ? 'selected' : '' }}>Rawat Jalan</option>
-                                    <option value="sudah pulang" {{ $pasien->status == 'sudah pulang' ? 'selected' : '' }}>Sudah Pulang</option>
+                                    <option value="" selected></option>
+                                    @foreach($statusEnum as $value)
+                                        <option value="{{ $value }}">{{ ucfirst($value) }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="d-flex justify-content-between">
