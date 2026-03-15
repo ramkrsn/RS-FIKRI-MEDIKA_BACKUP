@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d
+class ComposerStaticInit3e764e07363a02749fe92232b4be3bdd
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -556,6 +556,8 @@ class ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d
     );
 
     public static $classMap = array (
+        'App\\Http\\Controllers\\AdminReservasiObatController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminReservasiObatController.php',
+        'App\\Http\\Controllers\\Admin\\AdminFeedbackController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdminFeedbackController.php',
         'App\\Http\\Controllers\\AntrianController' => __DIR__ . '/../..' . '/app/Http/Controllers/AntrianController.php',
         'App\\Http\\Controllers\\ArtikelController' => __DIR__ . '/../..' . '/app/Http/Controllers/ArtikelController.php',
         'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
@@ -577,20 +579,25 @@ class ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d
         'App\\Http\\Controllers\\MelihatJadwalController' => __DIR__ . '/../..' . '/app/Http/Controllers/MelihatJadwalController.php',
         'App\\Http\\Controllers\\MenerimaKunjunganController' => __DIR__ . '/../..' . '/app/Http/Controllers/MenerimaKunjunganController.php',
         'App\\Http\\Controllers\\ObatController' => __DIR__ . '/../..' . '/app/Http/Controllers/ObatController.php',
+        'App\\Http\\Controllers\\PasienController' => __DIR__ . '/../..' . '/app/Http/Controllers/PasienController.php',
         'App\\Http\\Controllers\\PengambilanObatController' => __DIR__ . '/../..' . '/app/Http/Controllers/PengambilanObatController.php',
+        'App\\Http\\Controllers\\ProfilController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfilController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegisterController.php',
         'App\\Http\\Controllers\\ReservasiController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReservasiController.php',
+        'App\\Http\\Controllers\\ReservasiObatController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReservasiObatController.php',
+        'App\\Http\\Controllers\\StatusReservasiController' => __DIR__ . '/../..' . '/app/Http/Controllers/StatusReservasiController.php',
         'App\\Models\\Antrian' => __DIR__ . '/../..' . '/app/Models/Antrian.php',
         'App\\Models\\Artikel' => __DIR__ . '/../..' . '/app/Models/Artikel.php',
         'App\\Models\\Doctor' => __DIR__ . '/../..' . '/app/Models/Doctor.php',
         'App\\Models\\Fasilitas' => __DIR__ . '/../..' . '/app/Models/Fasilitas.php',
         'App\\Models\\Feedback' => __DIR__ . '/../..' . '/app/Models/Feedback.php',
         'App\\Models\\InformasiObat' => __DIR__ . '/../..' . '/app/Models/InformasiObat.php',
+        'App\\Models\\JadwalPertemuan' => __DIR__ . '/../..' . '/app/Models/JadwalPertemuan.php',
         'App\\Models\\Kunjungan' => __DIR__ . '/../..' . '/app/Models/Kunjungan.php',
         'App\\Models\\Obat' => __DIR__ . '/../..' . '/app/Models/Obat.php',
+        'App\\Models\\Pasien' => __DIR__ . '/../..' . '/app/Models/Pasien.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
-        'App\\Models\\pasien' => __DIR__ . '/../..' . '/app/Models/pasien.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
@@ -6854,27 +6861,34 @@ class ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d
         'Tests\\Browser\\DeleteKamarTest' => __DIR__ . '/../..' . '/tests/Browser/DeleteKamarTest.php',
         'Tests\\Browser\\EditDoctorTest' => __DIR__ . '/../..' . '/tests/Browser/EditDoctorTest.php',
         'Tests\\Browser\\EditKamarTest' => __DIR__ . '/../..' . '/tests/Browser/EditKamarTest.php',
+        'Tests\\Browser\\EditManajemenAntrianTestCase' => __DIR__ . '/../..' . '/tests/Browser/EditManajemenAntrianTestCase.php',
         'Tests\\Browser\\EditProfileTestCase' => __DIR__ . '/../..' . '/tests/Browser/EditProfileTestCase.php',
         'Tests\\Browser\\ExampleTest' => __DIR__ . '/../..' . '/tests/Browser/ExampleTest.php',
         'Tests\\Browser\\FasilitasTest' => __DIR__ . '/../..' . '/tests/Browser/FasilitasTest.php',
         'Tests\\Browser\\JadwalPertemuanTest' => __DIR__ . '/../..' . '/tests/Browser/JadwalPertemuanTest.php',
-        'Tests\\Browser\\KunjunganDeleteTest' => __DIR__ . '/../..' . '/tests/Browser/KunjunganDeleteTest.php',
         'Tests\\Browser\\KunjunganTest' => __DIR__ . '/../..' . '/tests/Browser/KunjunganTest.php',
         'Tests\\Browser\\ManajemenAntrianTestCase' => __DIR__ . '/../..' . '/tests/Browser/ManajemenAntrianTestCase.php',
         'Tests\\Browser\\MelihatJadwal' => __DIR__ . '/../..' . '/tests/Browser/MelihatJadwal.php',
+        'Tests\\Browser\\MelihatKunjunganUserTest' => __DIR__ . '/../..' . '/tests/Browser/MelihatKunjunganUserTest.php',
         'Tests\\Browser\\MenerimaReservasiTest' => __DIR__ . '/../..' . '/tests/Browser/MenerimaReservasiTest.php',
         'Tests\\Browser\\NomorAntrianTestCase' => __DIR__ . '/../..' . '/tests/Browser/NomorAntrianTestCase.php',
         'Tests\\Browser\\Pages\\HomePage' => __DIR__ . '/../..' . '/tests/Browser/Pages/HomePage.php',
         'Tests\\Browser\\Pages\\Page' => __DIR__ . '/../..' . '/tests/Browser/Pages/Page.php',
+        'Tests\\Browser\\PasienCreateTest' => __DIR__ . '/../..' . '/tests/Browser/PasienCreateTest.php',
+        'Tests\\Browser\\PasienEditTest' => __DIR__ . '/../..' . '/tests/Browser/PasienEditTest.php',
+        'Tests\\Browser\\PasienTest' => __DIR__ . '/../..' . '/tests/Browser/PasienTest.php',
         'Tests\\Browser\\PengambilanobatTest' => __DIR__ . '/../..' . '/tests/Browser/PengambilanobatTest.php',
         'Tests\\Browser\\ProfilRSTestCase' => __DIR__ . '/../..' . '/tests/Browser/ProfilRSTestCase.php',
         'Tests\\Browser\\ReadDoctorTest' => __DIR__ . '/../..' . '/tests/Browser/ReadDoctorTest.php',
         'Tests\\Browser\\ReadFeedbackTest' => __DIR__ . '/../..' . '/tests/Browser/ReadFeedbackTest.php',
         'Tests\\Browser\\ReadInformasiObatTest' => __DIR__ . '/../..' . '/tests/Browser/ReadInformasiObatTest.php',
         'Tests\\Browser\\ReadKamarTest' => __DIR__ . '/../..' . '/tests/Browser/ReadKamarTest.php',
+        'Tests\\Browser\\ShowAntrianTest' => __DIR__ . '/../..' . '/tests/Browser/ShowAntrianTest.php',
+        'Tests\\Browser\\StatusObat' => __DIR__ . '/../..' . '/tests/Browser/StatusObat.php',
         'Tests\\Browser\\UpdateInformasiObatTest' => __DIR__ . '/../..' . '/tests/Browser/UpdateInformasiObatTest.php',
         'Tests\\DuskTestCase' => __DIR__ . '/../..' . '/tests/DuskTestCase.php',
         'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
+        'Tests\\Feature\\HomePageTest' => __DIR__ . '/../..' . '/tests/Feature/HomePageTest.php',
         'Tests\\Feature\\ObatTest' => __DIR__ . '/../..' . '/tests/Feature/ObatTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
@@ -6924,9 +6938,9 @@ class ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit3e764e07363a02749fe92232b4be3bdd::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit3e764e07363a02749fe92232b4be3bdd::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit3e764e07363a02749fe92232b4be3bdd::$classMap;
 
         }, null, ClassLoader::class);
     }
