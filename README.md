@@ -1,67 +1,91 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# RS FIKRI MEDIKA - Hospital Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**RS FIKRI MEDIKA** is a comprehensive web-based hospital management system built with Laravel. It streamlines hospital operations including patient registration, doctor scheduling, queue management, and pharmacy services.
 
-## About Laravel
+## 🚀 Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **👨‍⚕️ Manajemen Dokter**: Manage doctor profiles, specialties, and schedules.
+- **🏥 Manajemen Pasien**: Full CRUD for patient records, including inpatient and outpatient status.
+- **📅 Jadwal Pertemuan**: Online appointment booking system for patients.
+- **🎫 Sistem Antrian**: Real-time queue management for doctor consultations and pharmacy.
+- **💊 Farmasi & Obat**: 
+    - Inventory management of medicines.
+    - Online medicine reservation.
+    - Information center for drug usage.
+- **📰 Artikel Kesehatan**: Informative health blog/articles for visitors.
+- **🏢 Fasilitas Rumah Sakit**: Information about available hospital facilities and rooms.
+- **💬 Feedback & Keluhan**: Integrated system for patient feedback and reviews.
+- **👥 Kunjungan Pasien**: Management of visitor logs for patients.
+- **🔐 User Authentication**: Secure login and registration with profile management.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠️ Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Backend**: Laravel 11 (PHP 8.2+)
+- **Frontend**: Blade Templates, Tailwind CSS (implied by modern Laravel), Vite
+- **Database**: MySQL
+- **Authentication**: Laravel Sanctum & Laravel UI
 
-## Learning Laravel
+## 📋 Prerequisites
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- PHP >= 8.2
+- Composer
+- MySQL/MariaDB
+- Node.js & NPM
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## ⚙️ Installation
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd RS-FIKRI-MEDIKA_BACKUP
+   ```
 
-## Laravel Sponsors
+2. **Install Dependencies**
+   ```bash
+   composer install
+   npm install
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+3. **Environment Setup**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-### Premium Partners
+4. **Database Configuration**
+   Create a database named `RS_FIKRI_MEDIKA2` in your MySQL server, then update your `.env` file:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=RS_FIKRI_MEDIKA2
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+5. **Run Migrations & Seeders**
+   ```bash
+   php artisan migrate --seed
+   ```
 
-## Contributing
+6. **Compile Assets**
+   ```bash
+   npm run dev
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+7. **Start the Server**
+   ```bash
+   php artisan serve
+   ```
 
-## Code of Conduct
+## 📂 Project Structure Highlights
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- `app/Models/`: Contains core business entities (Pasien, Doctor, Antrian, etc.).
+- `app/Http/Controllers/`: Handles business logic and routing responses.
+- `database/migrations/`: Database schema definitions.
+- `resources/views/`: Blade templates for the user interface.
+- `routes/web.php`: Definition of all web routes.
 
-## Security Vulnerabilities
+## 📄 License
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# rs
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

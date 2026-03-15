@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             'poli' => 'Anak',
             'tanggal' =>  Carbon::now()->format('Y-m-d'),
             'est_jadwal' => '09:00 - 09:30',
+            'idjadwalpertemuan' => 1,
         ]);
     }
 }
